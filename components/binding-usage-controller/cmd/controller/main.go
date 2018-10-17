@@ -38,6 +38,7 @@ type Config struct {
 
 func main() {
 	var cfg Config
+	r := &http.Request{}.Header
 	err := envconfig.InitWithPrefix(&cfg, "APP")
 	fatalOnError(errors.Wrap(err, "while reading configuration from environment variables"))
 

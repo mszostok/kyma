@@ -15,7 +15,7 @@ type Provider struct {
 	components map[string]Map
 }
 
-//Common returns overrides common for all components
+//Common returns overrides internal for all components
 func (o *Provider) Common() Map {
 	res := o.common
 
@@ -97,7 +97,7 @@ func versionOverrides() (Map, error) {
 	return ToMap(versionsFileData.String())
 }
 
-//commonOverrides reads overrides common to all components
+//commonOverrides reads overrides internal to all components
 func commonOverrides(r *reader) (Map, error) {
 	common, err := r.getCommonConfig()
 	if err != nil {

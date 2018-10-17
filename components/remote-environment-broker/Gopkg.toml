@@ -83,6 +83,12 @@ required = [
   branch = "master"
   name = "github.com/vrischmann/envconfig"
 
+# main repo
+[[constraint]]
+  name = "k8s.io/kubernetes"
+  branch = "release-1.10"
+
+# related repos
 [[constraint]]
   name = "k8s.io/api"
   version = "kubernetes-1.10.1"
@@ -103,9 +109,6 @@ required = [
   name = "github.com/kubernetes-incubator/service-catalog"
   version = "=v0.1.28"
 
-[[constraint]]
-  name = "k8s.io/kubernetes"
-  branch = "release-1.10"
 
 [[constraint]]
   name = "k8s.io/gengo"
