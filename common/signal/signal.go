@@ -1,5 +1,3 @@
-// Copied from github.com/kyma-project/kyma/components/binding-usage-controller/pkg/signal/signal.go
-
 package signal
 
 import (

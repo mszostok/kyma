@@ -2,7 +2,7 @@ package gateway
 
 import (
 	"fmt"
-	"github.com/mszostok/kyma/internal/pkg/iosafety"
+	"github.com/mszostok/kyma/common/iosafety"
 	"net/http"
 	"sync"
 	"time"
