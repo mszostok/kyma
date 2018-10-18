@@ -1,7 +1,7 @@
 FROM golang:1.9-alpine3.7 as builder
 LABEL source=git@github.com:kyma-project/kyma.git
 
-ENV SRC_DIR=/go/src/github.com/kyma-project/kyma/tests/metadata-service-tests
+ENV SRC_DIR=/go/src/"github.com/mszostok/kyma/tests/metadata-service-tests
 
 ADD . $SRC_DIR
 
@@ -14,7 +14,7 @@ FROM alpine
 
 LABEL source=git@github.com:kyma-project/kyma.git
 
-COPY --from=builder /go/src/github.com/kyma-project/kyma/tests/metadata-service-tests .
-COPY --from=builder /go/src/github.com/kyma-project/kyma/tests/metadata-service-tests/scripts/entrypoint.sh .
+COPY --from=builder /go/src/"github.com/mszostok/kyma/tests/metadata-service-tests .
+COPY --from=builder /go/src/"github.com/mszostok/kyma/tests/metadata-service-tests/scripts/entrypoint.sh .
 
 ENTRYPOINT ./entrypoint.sh

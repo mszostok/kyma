@@ -1,6 +1,6 @@
 FROM golang:1.10.2-alpine3.7 as builder
 
-ENV BASE_APP_DIR /go/src/github.com/kyma-project/kyma/tests/test-environments/
+ENV BASE_APP_DIR /go/src/"github.com/mszostok/kyma/tests/test-environments/
 WORKDIR ${BASE_APP_DIR}
 
 # Copy files

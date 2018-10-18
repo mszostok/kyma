@@ -1,6 +1,6 @@
 FROM golang:1.10.4-alpine3.8 as builder
 
-ENV BASE_APP_DIR /go/src/github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests
+ENV BASE_APP_DIR /go/src/"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests
 WORKDIR ${BASE_APP_DIR}
 
 #
@@ -31,7 +31,7 @@ FROM alpine:3.8
 LABEL source = git@github.com:kyma-project/kyma.git
 WORKDIR /app
 
-ENV TESTS_DIR /go/src/github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests/domain
+ENV TESTS_DIR /go/src/"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests/domain
 ENV TEST_SERVICE_CATALOG_DIR /app/tests/servicecatalog
 
 #

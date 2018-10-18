@@ -7,9 +7,9 @@ import (
 	"time"
 
 	corev1 "github.com/kubernetes/client-go/kubernetes/typed/core/v1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
-	"github.com/kyma-project/kyma/tests/acceptance/servicecatalog/wait"
+	""github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	""github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
+	""github.com/mszostok/kyma/tests/acceptance/servicecatalog/wait"
 	"github.com/pkg/errors"
 	"github.com/pmorie/go-open-service-broker-client/v2"
 	"github.com/stretchr/testify/assert"

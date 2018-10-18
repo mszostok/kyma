@@ -1,6 +1,6 @@
 FROM golang:1.9-alpine3.7 as builder
 
-ENV SRC_DIR /go/src/github.com/kyma-project/kyma/tests/api-controller-acceptance-tests/
+ENV SRC_DIR /go/src/"github.com/mszostok/kyma/tests/api-controller-acceptance-tests/
 WORKDIR ${SRC_DIR}
 
 COPY ./apicontroller ${SRC_DIR}/apicontroller/

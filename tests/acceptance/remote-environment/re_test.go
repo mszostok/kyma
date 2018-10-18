@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/tests/acceptance/remote-environment/suite"
+	""github.com/mszostok/kyma/tests/acceptance/remote-environment/suite"
 	"github.com/vrischmann/envconfig"
 )
 

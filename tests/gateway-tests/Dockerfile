@@ -1,6 +1,6 @@
 FROM golang:1.9-alpine3.7
 
-ENV SRC_DIR=/go/src/github.com/kyma-project/kyma/tests/gateway-tests
+ENV SRC_DIR=/go/src/"github.com/mszostok/kyma/tests/gateway-tests
 
 ADD . $SRC_DIR
 
