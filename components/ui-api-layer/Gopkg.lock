@@ -234,6 +234,8 @@
 [[projects]]
   name = "github.com/mszostok/kyma"
   packages = [
+    "common/iosafety",
+    "common/signal",
     "components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1",
     "components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2",
     "components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned",
@@ -285,7 +287,6 @@
     "components/remote-environment-broker/pkg/client/informers/externalversions/applicationconnector/v1alpha1",
     "components/remote-environment-broker/pkg/client/informers/externalversions/internalinterfaces",
     "components/remote-environment-broker/pkg/client/listers/applicationconnector/v1alpha1",
-    "components/ui-api-layer/internal/domain",
     "components/ui-api-layer/internal/domain/apicontroller",
     "components/ui-api-layer/internal/domain/apicontroller/automock",
     "components/ui-api-layer/internal/domain/apicontroller/pretty",
@@ -323,11 +324,9 @@
     "components/ui-api-layer/pkg/executor",
     "components/ui-api-layer/pkg/gqlerror",
     "components/ui-api-layer/pkg/resource",
-    "components/ui-api-layer/pkg/resource/automock",
-    "components/ui-api-layer/pkg/signal",
-    "internal/pkg/iosafety"
+    "components/ui-api-layer/pkg/resource/automock"
   ]
-  revision = "2755f2442f85d65d8b185132f5b4f588c51b61a5"
+  revision = "43a60ba8f85ffd2da52d8b0d17da94c84d16bfec"
 
 [[projects]]
   branch = "master"
@@ -752,6 +751,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "cc7cc79b6a581f5a0f49f2d56064cd24d96153ef81f327733579b5e5300a1fbe"
+  inputs-digest = "d684e1a264fac6899cb08b9327a6c36a5a14e1033b85656f426859ec5671889a"
   solver-name = "gps-cdcl"
   solver-version = 1
