@@ -188,7 +188,51 @@
   version = "v0.1.28"
 
 [[projects]]
-  name = "github.com/kyma-project/kyma"
+  name = "github.com/magiconair/properties"
+  packages = ["assert"]
+  revision = "c2353362d570a7bfa228149c62842019201cfb71"
+  version = "v1.8.0"
+
+[[projects]]
+  name = "github.com/minio/minio-go"
+  packages = [
+    ".",
+    "pkg/credentials",
+    "pkg/encrypt",
+    "pkg/policy",
+    "pkg/s3signer",
+    "pkg/s3utils",
+    "pkg/set"
+  ]
+  revision = "9e124ec59547551cb3f1324f73623bbb30650cf8"
+  version = "4.0.9"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mitchellh/go-homedir"
+  packages = ["."]
+  revision = "3864e76763d94a6df2f9960b16a20a33da9f9a66"
+
+[[projects]]
+  name = "github.com/moby/moby"
+  packages = ["pkg/namesgenerator"]
+  revision = "092cba3727bb9b4a2f0e922cd6c0f93ea270e363"
+  version = "v1.13.1"
+
+[[projects]]
+  name = "github.com/modern-go/concurrent"
+  packages = ["."]
+  revision = "bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94"
+  version = "1.0.3"
+
+[[projects]]
+  name = "github.com/modern-go/reflect2"
+  packages = ["."]
+  revision = "4b7aa43c6742a2c18fdef89dd197aaae7dac7ccd"
+  version = "1.0.1"
+
+[[projects]]
+  name = "github.com/mszostok/kyma"
   packages = [
     "components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1",
     "components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2",
@@ -240,53 +284,50 @@
     "components/remote-environment-broker/pkg/client/informers/externalversions/applicationconnector",
     "components/remote-environment-broker/pkg/client/informers/externalversions/applicationconnector/v1alpha1",
     "components/remote-environment-broker/pkg/client/informers/externalversions/internalinterfaces",
-    "components/remote-environment-broker/pkg/client/listers/applicationconnector/v1alpha1"
+    "components/remote-environment-broker/pkg/client/listers/applicationconnector/v1alpha1",
+    "components/ui-api-layer/internal/domain",
+    "components/ui-api-layer/internal/domain/apicontroller",
+    "components/ui-api-layer/internal/domain/apicontroller/automock",
+    "components/ui-api-layer/internal/domain/apicontroller/pretty",
+    "components/ui-api-layer/internal/domain/authentication",
+    "components/ui-api-layer/internal/domain/authentication/automock",
+    "components/ui-api-layer/internal/domain/authentication/pretty",
+    "components/ui-api-layer/internal/domain/content",
+    "components/ui-api-layer/internal/domain/content/automock",
+    "components/ui-api-layer/internal/domain/content/pretty",
+    "components/ui-api-layer/internal/domain/content/storage",
+    "components/ui-api-layer/internal/domain/content/storage/automock",
+    "components/ui-api-layer/internal/domain/k8s",
+    "components/ui-api-layer/internal/domain/k8s/automock",
+    "components/ui-api-layer/internal/domain/k8s/pretty",
+    "components/ui-api-layer/internal/domain/kubeless",
+    "components/ui-api-layer/internal/domain/kubeless/automock",
+    "components/ui-api-layer/internal/domain/kubeless/pretty",
+    "components/ui-api-layer/internal/domain/remoteenvironment",
+    "components/ui-api-layer/internal/domain/remoteenvironment/automock",
+    "components/ui-api-layer/internal/domain/remoteenvironment/gateway",
+    "components/ui-api-layer/internal/domain/remoteenvironment/gateway/automock",
+    "components/ui-api-layer/internal/domain/remoteenvironment/pretty",
+    "components/ui-api-layer/internal/domain/servicecatalog",
+    "components/ui-api-layer/internal/domain/servicecatalog/automock",
+    "components/ui-api-layer/internal/domain/servicecatalog/listener",
+    "components/ui-api-layer/internal/domain/servicecatalog/listener/automock",
+    "components/ui-api-layer/internal/domain/servicecatalog/pretty",
+    "components/ui-api-layer/internal/domain/servicecatalog/status",
+    "components/ui-api-layer/internal/gqlschema",
+    "components/ui-api-layer/internal/name",
+    "components/ui-api-layer/internal/pager",
+    "components/ui-api-layer/internal/pager/automock",
+    "components/ui-api-layer/internal/resource",
+    "components/ui-api-layer/internal/testing",
+    "components/ui-api-layer/pkg/executor",
+    "components/ui-api-layer/pkg/gqlerror",
+    "components/ui-api-layer/pkg/resource",
+    "components/ui-api-layer/pkg/resource/automock",
+    "components/ui-api-layer/pkg/signal",
+    "internal/pkg/iosafety"
   ]
-  revision = "19bd8876363a9b27c68344898a3c0220fbf03c11"
-
-[[projects]]
-  name = "github.com/magiconair/properties"
-  packages = ["assert"]
-  revision = "c2353362d570a7bfa228149c62842019201cfb71"
-  version = "v1.8.0"
-
-[[projects]]
-  name = "github.com/minio/minio-go"
-  packages = [
-    ".",
-    "pkg/credentials",
-    "pkg/encrypt",
-    "pkg/policy",
-    "pkg/s3signer",
-    "pkg/s3utils",
-    "pkg/set"
-  ]
-  revision = "9e124ec59547551cb3f1324f73623bbb30650cf8"
-  version = "4.0.9"
-
-[[projects]]
-  branch = "master"
-  name = "github.com/mitchellh/go-homedir"
-  packages = ["."]
-  revision = "3864e76763d94a6df2f9960b16a20a33da9f9a66"
-
-[[projects]]
-  name = "github.com/moby/moby"
-  packages = ["pkg/namesgenerator"]
-  revision = "092cba3727bb9b4a2f0e922cd6c0f93ea270e363"
-  version = "v1.13.1"
-
-[[projects]]
-  name = "github.com/modern-go/concurrent"
-  packages = ["."]
-  revision = "bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94"
-  version = "1.0.3"
-
-[[projects]]
-  name = "github.com/modern-go/reflect2"
-  packages = ["."]
-  revision = "4b7aa43c6742a2c18fdef89dd197aaae7dac7ccd"
-  version = "1.0.1"
+  revision = "2755f2442f85d65d8b185132f5b4f588c51b61a5"
 
 [[projects]]
   branch = "master"
@@ -711,6 +752,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "f08a892a4bcb4d8dad7345cf024819c836327e19f003e5b1c9c9f90e4f43d0dc"
+  inputs-digest = "cc7cc79b6a581f5a0f49f2d56064cd24d96153ef81f327733579b5e5300a1fbe"
   solver-name = "gps-cdcl"
   solver-version = 1
