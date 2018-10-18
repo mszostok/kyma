@@ -4,7 +4,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/summary"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/summary"
 	"github.com/stretchr/testify/assert"
 )
 

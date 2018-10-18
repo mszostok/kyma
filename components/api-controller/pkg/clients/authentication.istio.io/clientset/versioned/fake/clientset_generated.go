@@ -3,9 +3,9 @@
 package fake
 
 import (
-	clientset "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned"
-	authenticationv1alpha1 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/typed/authentication.istio.io/v1alpha1"
-	fakeauthenticationv1alpha1 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/typed/authentication.istio.io/v1alpha1/fake"
+	clientset "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned"
+	authenticationv1alpha1 "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/typed/authentication.istio.io/v1alpha1"
+	fakeauthenticationv1alpha1 "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/typed/authentication.istio.io/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

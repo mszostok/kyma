@@ -3,10 +3,10 @@ package serviceapi
 import (
 	"testing"
 
-	secretsmocks "github.com/kyma-project/kyma/components/gateway/internal/metadata/secrets/mocks"
+	secretsmocks "github.com/mszostok/kyma/components/gateway/internal/metadata/secrets/mocks"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/remoteenv"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/remoteenv"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

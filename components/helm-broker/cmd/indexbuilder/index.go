@@ -6,7 +6,7 @@ import (
 	"github.com/ghodss/yaml"
 	"github.com/pkg/errors"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
 )
 
 type index struct {

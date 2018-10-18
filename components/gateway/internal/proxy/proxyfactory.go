@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
 	log "github.com/sirupsen/logrus"
 )
 

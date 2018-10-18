@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	re_type_v1alpha1 "github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	re_type_v1alpha1 "github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
 )
 
 type reCRValidator struct{}

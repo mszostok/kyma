@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	testingUtils "github.com/kyma-project/kyma/components/ui-api-layer/internal/testing"
+	testingUtils "github.com/mszostok/kyma/components/ui-api-layer/internal/testing"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

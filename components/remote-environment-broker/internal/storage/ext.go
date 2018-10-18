@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
 )
 
 // RemoteEnvironment is an interface that describe storage layer operations for Charts

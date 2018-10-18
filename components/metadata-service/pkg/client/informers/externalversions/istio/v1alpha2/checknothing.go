@@ -5,10 +5,10 @@ package v1alpha2
 import (
 	time "time"
 
-	istio_v1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
-	versioned "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
-	v1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/client/listers/istio/v1alpha2"
+	istio_v1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
+	versioned "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/client/listers/istio/v1alpha2"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

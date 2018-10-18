@@ -3,7 +3,7 @@ package controller
 import (
 	"strings"
 
-	"github.com/kyma-project/kyma/components/binding-usage-controller/internal/controller/pretty"
+	"github.com/mszostok/kyma/components/binding-usage-controller/internal/controller/pretty"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	apiErrors "k8s.io/apimachinery/pkg/api/errors"

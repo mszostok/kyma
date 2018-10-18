@@ -3,8 +3,8 @@
 package v1alpha2
 
 import (
-	v1alpha2 "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/scheme"
+	v1alpha2 "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
+	"github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/scheme"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	rest "k8s.io/client-go/rest"
 )

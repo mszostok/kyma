@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/crd"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/crd"
 	apiExtensionsClient "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
 	"k8s.io/client-go/tools/clientcmd"
 )

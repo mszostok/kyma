@@ -4,8 +4,8 @@ import (
 	"errors"
 	"log"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/config"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymasources"
+	"github.com/mszostok/kyma/components/installer/pkg/config"
+	"github.com/mszostok/kyma/components/installer/pkg/kymasources"
 )
 
 //DownloadKyma .

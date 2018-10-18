@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	api "github.com/kyma-project/kyma/components/event-bus/api/publish"
+	api "github.com/mszostok/kyma/components/event-bus/api/publish"
 	"github.com/stretchr/testify/assert"
 )
 

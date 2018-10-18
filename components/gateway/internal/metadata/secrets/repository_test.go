@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/k8sconsts"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/secrets/mocks"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/k8sconsts"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/secrets/mocks"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/api/core/v1"
 	k8serrors "k8s.io/apimachinery/pkg/api/errors"

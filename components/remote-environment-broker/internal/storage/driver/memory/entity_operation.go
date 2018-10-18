@@ -3,10 +3,10 @@ package memory
 import (
 	"time"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
 	"github.com/pkg/errors"
 
-	pTime "github.com/kyma-project/kyma/components/remote-environment-broker/platform/time"
+	pTime "github.com/mszostok/kyma/components/remote-environment-broker/platform/time"
 )
 
 // NewInstanceOperation returns new instance of InstanceOperation storage.

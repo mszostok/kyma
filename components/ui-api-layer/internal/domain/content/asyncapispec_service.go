@@ -3,7 +3,7 @@ package content
 import (
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage"
 )
 
 type asyncApiSpecService struct {

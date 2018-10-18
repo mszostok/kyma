@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal"
+	"github.com/mszostok/kyma/tools/stability-checker/internal"
 	"github.com/pkg/errors"
 	"github.com/satori/go.uuid"
 	"github.com/sirupsen/logrus"

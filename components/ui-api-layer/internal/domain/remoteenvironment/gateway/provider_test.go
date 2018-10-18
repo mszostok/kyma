@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway"
 	"github.com/stretchr/testify/assert"
 	apiv1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

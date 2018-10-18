@@ -3,7 +3,7 @@
 package scheme
 
 import (
-	networkingv1alpha3 "github.com/kyma-project/kyma/components/api-controller/pkg/apis/networking.istio.io/v1alpha3"
+	networkingv1alpha3 "github.com/mszostok/kyma/components/api-controller/pkg/apis/networking.istio.io/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

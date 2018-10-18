@@ -3,11 +3,11 @@ package ea
 import (
 	"log"
 
-	eaclientset "github.com/kyma-project/kyma/components/event-bus/generated/ea/clientset/versioned"
-	eav1alpha1 "github.com/kyma-project/kyma/components/event-bus/generated/ea/informers/externalversions/applicationconnector.kyma.cx/v1alpha1"
-	subscriptionClientSet "github.com/kyma-project/kyma/components/event-bus/generated/push/clientset/versioned"
-	eaApis "github.com/kyma-project/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
-	"github.com/kyma-project/kyma/components/event-bus/internal/sv/opts"
+	eaclientset "github.com/mszostok/kyma/components/event-bus/generated/ea/clientset/versioned"
+	eav1alpha1 "github.com/mszostok/kyma/components/event-bus/generated/ea/informers/externalversions/applicationconnector.kyma.cx/v1alpha1"
+	subscriptionClientSet "github.com/mszostok/kyma/components/event-bus/generated/push/clientset/versioned"
+	eaApis "github.com/mszostok/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
+	"github.com/mszostok/kyma/components/event-bus/internal/sv/opts"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/cache"

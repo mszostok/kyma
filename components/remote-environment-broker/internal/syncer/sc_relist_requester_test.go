@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/syncer"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/syncer/automock"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/platform/logger/spy"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/syncer"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/syncer/automock"
+	"github.com/mszostok/kyma/components/remote-environment-broker/platform/logger/spy"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"

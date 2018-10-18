@@ -3,8 +3,8 @@
 package applicationconnector
 
 import (
-	v1alpha1 "github.com/kyma-project/kyma/components/event-bus/generated/ea/informers/externalversions/applicationconnector.kyma.cx/v1alpha1"
-	internalinterfaces "github.com/kyma-project/kyma/components/event-bus/generated/ea/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/mszostok/kyma/components/event-bus/generated/ea/informers/externalversions/applicationconnector.kyma.cx/v1alpha1"
+	internalinterfaces "github.com/mszostok/kyma/components/event-bus/generated/ea/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

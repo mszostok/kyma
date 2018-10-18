@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/consts"
+	"github.com/mszostok/kyma/components/installer/pkg/consts"
 
-	installationv1alpha1 "github.com/kyma-project/kyma/components/installer/pkg/apis/installer/v1alpha1"
-	fake "github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned/fake"
-	installationInformers "github.com/kyma-project/kyma/components/installer/pkg/client/informers/externalversions"
+	installationv1alpha1 "github.com/mszostok/kyma/components/installer/pkg/apis/installer/v1alpha1"
+	fake "github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned/fake"
+	installationInformers "github.com/mszostok/kyma/components/installer/pkg/client/informers/externalversions"
 	. "github.com/smartystreets/goconvey/convey"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

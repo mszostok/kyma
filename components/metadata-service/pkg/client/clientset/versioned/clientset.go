@@ -4,7 +4,7 @@ package versioned
 
 import (
 	glog "github.com/golang/glog"
-	istiov1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2"
+	istiov1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

@@ -3,8 +3,8 @@ package actionmanager
 import (
 	"log"
 
-	clientset "github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned"
-	listers "github.com/kyma-project/kyma/components/installer/pkg/client/listers/installer/v1alpha1"
+	clientset "github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned"
+	listers "github.com/mszostok/kyma/components/installer/pkg/client/listers/installer/v1alpha1"
 	"k8s.io/client-go/util/retry"
 )
 

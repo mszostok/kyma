@@ -3,8 +3,8 @@
 package v1alpha1
 
 import (
-	v1alpha1 "github.com/kyma-project/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
-	"github.com/kyma-project/kyma/components/idppreset/pkg/client/clientset/versioned/scheme"
+	v1alpha1 "github.com/mszostok/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
+	"github.com/mszostok/kyma/components/idppreset/pkg/client/clientset/versioned/scheme"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	rest "k8s.io/client-go/rest"
 )

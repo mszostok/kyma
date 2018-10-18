@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/log"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/log"
 	"github.com/pkg/errors"
 )
 

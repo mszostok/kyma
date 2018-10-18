@@ -3,9 +3,9 @@ package controllers
 import (
 	"log"
 
-	subscriptionApis "github.com/kyma-project/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
-	"github.com/kyma-project/kyma/components/event-bus/internal/common"
-	"github.com/kyma-project/kyma/components/event-bus/internal/push/actors"
+	subscriptionApis "github.com/mszostok/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
+	"github.com/mszostok/kyma/components/event-bus/internal/common"
+	"github.com/mszostok/kyma/components/event-bus/internal/push/actors"
 )
 
 func getAddFnWithoutEventActivationCheck(supervisor actors.SubscriptionsSupervisorInterface) func(obj interface{}) {

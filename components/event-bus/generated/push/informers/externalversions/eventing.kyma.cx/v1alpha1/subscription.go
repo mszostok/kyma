@@ -5,10 +5,10 @@ package v1alpha1
 import (
 	time "time"
 
-	eventingkymacxv1alpha1 "github.com/kyma-project/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
-	versioned "github.com/kyma-project/kyma/components/event-bus/generated/push/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/event-bus/generated/push/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/kyma-project/kyma/components/event-bus/generated/push/listers/eventing.kyma.cx/v1alpha1"
+	eventingkymacxv1alpha1 "github.com/mszostok/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
+	versioned "github.com/mszostok/kyma/components/event-bus/generated/push/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/event-bus/generated/push/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/mszostok/kyma/components/event-bus/generated/push/listers/eventing.kyma.cx/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

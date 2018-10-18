@@ -10,8 +10,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/bundle"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal/bundle"
 )
 
 func main() {

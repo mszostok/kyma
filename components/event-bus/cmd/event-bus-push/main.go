@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kyma-project/kyma/components/event-bus/cmd/event-bus-push/application"
-	"github.com/kyma-project/kyma/components/event-bus/internal/push/opts"
+	"github.com/mszostok/kyma/components/event-bus/cmd/event-bus-push/application"
+	"github.com/mszostok/kyma/components/event-bus/internal/push/opts"
 )
 
 func main() {

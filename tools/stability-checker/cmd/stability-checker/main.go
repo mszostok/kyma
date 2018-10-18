@@ -9,10 +9,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/notifier"
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/runner"
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/summary"
-	"github.com/kyma-project/kyma/tools/stability-checker/platform/logger"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/notifier"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/runner"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/summary"
+	"github.com/mszostok/kyma/tools/stability-checker/platform/logger"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/vrischmann/envconfig"
@@ -20,7 +20,7 @@ import (
 	restclient "k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 
-	podlogger "github.com/kyma-project/kyma/tools/stability-checker/internal/log"
+	podlogger "github.com/mszostok/kyma/tools/stability-checker/internal/log"
 )
 
 // Config holds application configuration

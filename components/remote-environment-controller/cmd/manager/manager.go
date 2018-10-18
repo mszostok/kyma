@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/kyma-project/kyma/components/remote-environment-controller/pkg/api"
-	"github.com/kyma-project/kyma/components/remote-environment-controller/pkg/controller"
+	"github.com/mszostok/kyma/components/remote-environment-controller/pkg/api"
+	"github.com/mszostok/kyma/components/remote-environment-controller/pkg/controller"
 	log "github.com/sirupsen/logrus"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 	"sigs.k8s.io/controller-runtime/pkg/client/config"

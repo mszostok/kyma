@@ -3,9 +3,9 @@ package content_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/automock"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

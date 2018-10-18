@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	istioNetworking "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/meta"
+	istioNetworking "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/meta"
 	k8s "k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 )

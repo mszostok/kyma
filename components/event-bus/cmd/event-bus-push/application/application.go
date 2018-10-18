@@ -4,11 +4,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kyma-project/kyma/components/event-bus/internal/common"
-	"github.com/kyma-project/kyma/components/event-bus/internal/push/actors"
-	"github.com/kyma-project/kyma/components/event-bus/internal/push/controllers"
-	pushOpts "github.com/kyma-project/kyma/components/event-bus/internal/push/opts"
-	"github.com/kyma-project/kyma/components/event-bus/internal/trace"
+	"github.com/mszostok/kyma/components/event-bus/internal/common"
+	"github.com/mszostok/kyma/components/event-bus/internal/push/actors"
+	"github.com/mszostok/kyma/components/event-bus/internal/push/controllers"
+	pushOpts "github.com/mszostok/kyma/components/event-bus/internal/push/opts"
+	"github.com/mszostok/kyma/components/event-bus/internal/trace"
 	"k8s.io/client-go/tools/cache"
 )
 

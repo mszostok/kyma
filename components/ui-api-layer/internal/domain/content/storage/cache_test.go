@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/allegro/bigcache"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage/automock"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

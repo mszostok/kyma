@@ -11,10 +11,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"k8s.io/helm/pkg/proto/hapi/chart"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/bundle"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/bundle/automock"
-	"github.com/kyma-project/kyma/components/helm-broker/platform/logger/spy"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal/bundle"
+	"github.com/mszostok/kyma/components/helm-broker/internal/bundle/automock"
+	"github.com/mszostok/kyma/components/helm-broker/platform/logger/spy"
 )
 
 func TestPopulatorInitHappyPath(t *testing.T) {

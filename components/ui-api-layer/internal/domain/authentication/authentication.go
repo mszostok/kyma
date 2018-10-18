@@ -3,8 +3,8 @@ package authentication
 import (
 	"time"
 
-	"github.com/kyma-project/kyma/components/idppreset/pkg/client/clientset/versioned"
-	"github.com/kyma-project/kyma/components/idppreset/pkg/client/informers/externalversions"
+	"github.com/mszostok/kyma/components/idppreset/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/components/idppreset/pkg/client/informers/externalversions"
 	"github.com/pkg/errors"
 	"k8s.io/client-go/rest"
 )

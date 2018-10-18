@@ -5,8 +5,8 @@ import (
 	"strings"
 	"sync"
 
-	api "github.com/kyma-project/kyma/components/event-bus/api/publish"
-	"github.com/kyma-project/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
+	api "github.com/mszostok/kyma/components/event-bus/api/publish"
+	"github.com/mszostok/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
 )
 
 type EventDetails struct {

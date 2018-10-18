@@ -3,7 +3,7 @@ package gateway
 import (
 	"time"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/executor"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/executor"
 	"github.com/pkg/errors"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"

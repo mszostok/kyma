@@ -12,7 +12,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/kyma-project/kyma/tests/connector-service-tests/test/testkit"
+	"github.com/mszostok/kyma/tests/connector-service-tests/test/testkit"
 	"github.com/stretchr/testify/require"
 )
 

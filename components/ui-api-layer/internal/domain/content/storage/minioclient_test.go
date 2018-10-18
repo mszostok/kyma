@@ -3,8 +3,8 @@ package storage_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage/automock"
 	minio2 "github.com/minio/minio-go"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"

@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/k8s"
-	testingUtils "github.com/kyma-project/kyma/components/ui-api-layer/internal/testing"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/k8s"
+	testingUtils "github.com/mszostok/kyma/components/ui-api-layer/internal/testing"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	apps "k8s.io/api/apps/v1"

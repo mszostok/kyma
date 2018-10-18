@@ -4,9 +4,9 @@ import (
 	"log"
 	"time"
 
-	subApis "github.com/kyma-project/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
-	subscriptionClientSet "github.com/kyma-project/kyma/components/event-bus/generated/push/clientset/versioned"
-	eaApis "github.com/kyma-project/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
+	subApis "github.com/mszostok/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
+	subscriptionClientSet "github.com/mszostok/kyma/components/event-bus/generated/push/clientset/versioned"
+	eaApis "github.com/mszostok/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

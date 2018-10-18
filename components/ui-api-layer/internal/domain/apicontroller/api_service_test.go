@@ -4,11 +4,11 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/tools/cache"
 
-	testingUtils "github.com/kyma-project/kyma/components/ui-api-layer/internal/testing"
+	testingUtils "github.com/mszostok/kyma/components/ui-api-layer/internal/testing"
 
-	"github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/fake"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions"
+	"github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
+	"github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/fake"
+	"github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions"
 
 	"testing"
 	"time"

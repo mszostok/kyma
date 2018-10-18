@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal/storage"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/storage/testdata"
+	"github.com/mszostok/kyma/components/helm-broker/internal/storage"
+	"github.com/mszostok/kyma/components/helm-broker/internal/storage/testdata"
 )
 
 func TestConfigParse(t *testing.T) {

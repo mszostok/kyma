@@ -5,7 +5,7 @@ package externalversions
 import (
 	"fmt"
 
-	v1alpha3 "github.com/kyma-project/kyma/components/api-controller/pkg/apis/networking.istio.io/v1alpha3"
+	v1alpha3 "github.com/mszostok/kyma/components/api-controller/pkg/apis/networking.istio.io/v1alpha3"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )

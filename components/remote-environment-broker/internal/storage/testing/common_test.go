@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage/driver/memory"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage/driver/memory"
 )
 
 var allDrivers = map[storage.DriverType]func() storage.ConfigList{

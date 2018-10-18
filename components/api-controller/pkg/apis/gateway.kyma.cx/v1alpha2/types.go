@@ -1,7 +1,7 @@
 package v1alpha2
 
 import (
-	kymaMeta "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
+	kymaMeta "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
 	k8sMeta "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

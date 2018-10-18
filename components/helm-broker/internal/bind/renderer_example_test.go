@@ -8,10 +8,10 @@ import (
 	"log"
 	"path/filepath"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/bind"
-	yhelm "github.com/kyma-project/kyma/components/helm-broker/internal/helm"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/platform/logger/spy"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal/bind"
+	yhelm "github.com/mszostok/kyma/components/helm-broker/internal/helm"
+	"github.com/mszostok/kyma/components/helm-broker/internal/platform/logger/spy"
 	"k8s.io/helm/pkg/chartutil"
 )
 

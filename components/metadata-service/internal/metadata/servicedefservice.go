@@ -4,11 +4,11 @@ package metadata
 import (
 	"encoding/json"
 	"github.com/go-openapi/spec"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/minio"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/remoteenv"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/serviceapi"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/uuid"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/minio"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/remoteenv"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/serviceapi"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/uuid"
 	"net/url"
 )
 

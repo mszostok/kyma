@@ -3,8 +3,8 @@ package remoteenv
 import (
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
 	log "github.com/sirupsen/logrus"
 )
 

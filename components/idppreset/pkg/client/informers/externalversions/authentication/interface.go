@@ -3,8 +3,8 @@
 package authentication
 
 import (
-	v1alpha1 "github.com/kyma-project/kyma/components/idppreset/pkg/client/informers/externalversions/authentication/v1alpha1"
-	internalinterfaces "github.com/kyma-project/kyma/components/idppreset/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/mszostok/kyma/components/idppreset/pkg/client/informers/externalversions/authentication/v1alpha1"
+	internalinterfaces "github.com/mszostok/kyma/components/idppreset/pkg/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

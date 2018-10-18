@@ -8,7 +8,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/configurations-generator/pkg/kube_config"
+	"github.com/mszostok/kyma/components/configurations-generator/pkg/kube_config"
 	log "github.com/sirupsen/logrus"
 )
 

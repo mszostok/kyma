@@ -2,9 +2,9 @@
 package metadata
 
 import (
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/remoteenv"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/serviceapi"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/remoteenv"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/serviceapi"
 	log "github.com/sirupsen/logrus"
 )
 

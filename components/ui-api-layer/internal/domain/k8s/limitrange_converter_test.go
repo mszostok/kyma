@@ -3,7 +3,7 @@ package k8s
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"

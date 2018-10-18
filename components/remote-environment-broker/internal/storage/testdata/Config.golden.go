@@ -1,6 +1,6 @@
 package testdata
 
-import "github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage"
+import "github.com/mszostok/kyma/components/remote-environment-broker/internal/storage"
 
 func GoldenConfigMemorySingleAll() storage.ConfigList {
 	return storage.ConfigList{

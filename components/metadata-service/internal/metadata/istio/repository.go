@@ -3,9 +3,9 @@ package istio
 import (
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/k8sconsts"
-	"github.com/kyma-project/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/k8sconsts"
+	"github.com/mszostok/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
 	k8serrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 )

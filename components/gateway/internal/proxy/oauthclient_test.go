@@ -2,7 +2,7 @@ package proxy
 
 import (
 	"encoding/json"
-	"github.com/kyma-project/kyma/components/gateway/internal/proxy/tokencache/mocks"
+	"github.com/mszostok/kyma/components/gateway/internal/proxy/tokencache/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"net/http"

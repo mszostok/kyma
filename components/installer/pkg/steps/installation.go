@@ -3,16 +3,16 @@ package steps
 import (
 	"log"
 
-	actionmanager "github.com/kyma-project/kyma/components/installer/pkg/actionmanager"
-	"github.com/kyma-project/kyma/components/installer/pkg/config"
-	internalerrors "github.com/kyma-project/kyma/components/installer/pkg/errors"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymahelm"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymainstallation"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymasources"
-	"github.com/kyma-project/kyma/components/installer/pkg/overrides"
-	serviceCatalog "github.com/kyma-project/kyma/components/installer/pkg/servicecatalog"
-	statusmanager "github.com/kyma-project/kyma/components/installer/pkg/statusmanager"
-	"github.com/kyma-project/kyma/components/installer/pkg/toolkit"
+	actionmanager "github.com/mszostok/kyma/components/installer/pkg/actionmanager"
+	"github.com/mszostok/kyma/components/installer/pkg/config"
+	internalerrors "github.com/mszostok/kyma/components/installer/pkg/errors"
+	"github.com/mszostok/kyma/components/installer/pkg/kymahelm"
+	"github.com/mszostok/kyma/components/installer/pkg/kymainstallation"
+	"github.com/mszostok/kyma/components/installer/pkg/kymasources"
+	"github.com/mszostok/kyma/components/installer/pkg/overrides"
+	serviceCatalog "github.com/mszostok/kyma/components/installer/pkg/servicecatalog"
+	statusmanager "github.com/mszostok/kyma/components/installer/pkg/statusmanager"
+	"github.com/mszostok/kyma/components/installer/pkg/toolkit"
 	"k8s.io/client-go/kubernetes"
 )
 

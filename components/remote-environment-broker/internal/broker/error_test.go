@@ -3,7 +3,7 @@ package broker_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/broker"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/broker"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 )

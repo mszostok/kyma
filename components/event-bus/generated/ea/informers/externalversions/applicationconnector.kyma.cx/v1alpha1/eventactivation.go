@@ -5,10 +5,10 @@ package v1alpha1
 import (
 	time "time"
 
-	versioned "github.com/kyma-project/kyma/components/event-bus/generated/ea/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/event-bus/generated/ea/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/kyma-project/kyma/components/event-bus/generated/ea/listers/applicationconnector.kyma.cx/v1alpha1"
-	applicationconnectorkymacxv1alpha1 "github.com/kyma-project/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
+	versioned "github.com/mszostok/kyma/components/event-bus/generated/ea/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/event-bus/generated/ea/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/mszostok/kyma/components/event-bus/generated/ea/listers/applicationconnector.kyma.cx/v1alpha1"
+	applicationconnectorkymacxv1alpha1 "github.com/mszostok/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

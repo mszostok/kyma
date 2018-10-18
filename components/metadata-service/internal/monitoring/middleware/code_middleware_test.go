@@ -3,7 +3,7 @@ package middleware
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/monitoring/collector/mocks"
+	"github.com/mszostok/kyma/components/metadata-service/internal/monitoring/collector/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"net/http"

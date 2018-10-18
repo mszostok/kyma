@@ -5,7 +5,7 @@ import (
 
 	"github.com/golang/glog"
 	api "github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/pkg/errors"
 )
 

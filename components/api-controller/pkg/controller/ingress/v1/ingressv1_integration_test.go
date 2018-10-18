@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/meta"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/meta"
 	k8s "k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 )

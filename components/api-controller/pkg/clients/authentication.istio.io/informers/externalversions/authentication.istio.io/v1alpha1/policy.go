@@ -5,10 +5,10 @@ package v1alpha1
 import (
 	time "time"
 
-	authenticationistioiov1alpha1 "github.com/kyma-project/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
-	versioned "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/listers/authentication.istio.io/v1alpha1"
+	authenticationistioiov1alpha1 "github.com/mszostok/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
+	versioned "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/listers/authentication.istio.io/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

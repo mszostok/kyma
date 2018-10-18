@@ -3,9 +3,9 @@ package externalapi
 import (
 	"encoding/json"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/serviceapi"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/serviceapi"
 )
 
 type Service struct {

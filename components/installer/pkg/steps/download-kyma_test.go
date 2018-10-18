@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
-	fake "github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned/fake"
-	installationInformers "github.com/kyma-project/kyma/components/installer/pkg/client/informers/externalversions"
-	"github.com/kyma-project/kyma/components/installer/pkg/config"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymasources"
-	statusmanager "github.com/kyma-project/kyma/components/installer/pkg/statusmanager"
+	fake "github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned/fake"
+	installationInformers "github.com/mszostok/kyma/components/installer/pkg/client/informers/externalversions"
+	"github.com/mszostok/kyma/components/installer/pkg/config"
+	"github.com/mszostok/kyma/components/installer/pkg/kymasources"
+	statusmanager "github.com/mszostok/kyma/components/installer/pkg/statusmanager"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/apiserver-proxy/internal/authn"
-	"github.com/kyma-project/kyma/components/apiserver-proxy/internal/authz"
+	"github.com/mszostok/kyma/components/apiserver-proxy/internal/authn"
+	"github.com/mszostok/kyma/components/apiserver-proxy/internal/authz"
 	"k8s.io/apiserver/pkg/authentication/authenticator"
 	"k8s.io/apiserver/pkg/authentication/request/bearertoken"
 	"k8s.io/apiserver/pkg/authentication/user"

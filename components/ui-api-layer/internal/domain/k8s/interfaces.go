@@ -2,7 +2,7 @@ package k8s
 
 import (
 	bindingApi "github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	usageApi "github.com/kyma-project/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
+	usageApi "github.com/mszostok/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
 	api "k8s.io/api/apps/v1beta2"
 	"k8s.io/api/core/v1"
 )

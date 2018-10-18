@@ -7,7 +7,7 @@ import (
 	"github.com/kubernetes-incubator/service-catalog/pkg/client/clientset_generated/clientset"
 	"github.com/kubernetes-incubator/service-catalog/pkg/client/clientset_generated/clientset/fake"
 	"github.com/kubernetes-incubator/service-catalog/pkg/client/informers_generated/externalversions"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/broker"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/broker"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/client-go/tools/cache"
 )

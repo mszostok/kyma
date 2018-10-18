@@ -4,7 +4,7 @@ package versioned
 
 import (
 	glog "github.com/golang/glog"
-	authenticationv1alpha1 "github.com/kyma-project/kyma/components/idppreset/pkg/client/clientset/versioned/typed/authentication/v1alpha1"
+	authenticationv1alpha1 "github.com/mszostok/kyma/components/idppreset/pkg/client/clientset/versioned/typed/authentication/v1alpha1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

@@ -3,9 +3,9 @@
 package fake
 
 import (
-	clientset "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
-	gatewayv1alpha2 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/typed/gateway.kyma.cx/v1alpha2"
-	fakegatewayv1alpha2 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/typed/gateway.kyma.cx/v1alpha2/fake"
+	clientset "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
+	gatewayv1alpha2 "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/typed/gateway.kyma.cx/v1alpha2"
+	fakegatewayv1alpha2 "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/typed/gateway.kyma.cx/v1alpha2/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

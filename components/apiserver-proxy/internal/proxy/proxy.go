@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/golang/glog"
-	"github.com/kyma-project/kyma/components/apiserver-proxy/internal/authn"
-	"github.com/kyma-project/kyma/components/apiserver-proxy/internal/authz"
+	"github.com/mszostok/kyma/components/apiserver-proxy/internal/authn"
+	"github.com/mszostok/kyma/components/apiserver-proxy/internal/authz"
 
 	yaml "gopkg.in/yaml.v2"
 	"k8s.io/apimachinery/pkg/util/sets"

@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/tools/etcd-backup/internal/cleaner"
-	"github.com/kyma-project/kyma/tools/etcd-backup/internal/cleaner/automock"
-	"github.com/kyma-project/kyma/tools/etcd-backup/internal/platform/logger/spy"
+	"github.com/mszostok/kyma/tools/etcd-backup/internal/cleaner"
+	"github.com/mszostok/kyma/tools/etcd-backup/internal/cleaner/automock"
+	"github.com/mszostok/kyma/tools/etcd-backup/internal/platform/logger/spy"
 
 	"github.com/Azure/azure-storage-blob-go/2018-03-28/azblob"
 	"github.com/stretchr/testify/assert"

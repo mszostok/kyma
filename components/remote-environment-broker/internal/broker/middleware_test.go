@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/broker/automock"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/platform/logger/spy"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/broker/automock"
+	"github.com/mszostok/kyma/components/remote-environment-broker/platform/logger/spy"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

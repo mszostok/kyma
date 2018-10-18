@@ -2,7 +2,7 @@
 package automock
 
 import (
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
 	mock "github.com/stretchr/testify/mock"
 )
 

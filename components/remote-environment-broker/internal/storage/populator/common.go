@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
 )
 
 const informerResyncPeriod = 30 * time.Minute

@@ -2,7 +2,7 @@
 package automock
 
 import mock "github.com/stretchr/testify/mock"
-import resource "github.com/kyma-project/kyma/components/ui-api-layer/pkg/resource"
+import resource "github.com/mszostok/kyma/components/ui-api-layer/pkg/resource"
 
 import v1beta1 "github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
 

@@ -3,12 +3,12 @@ package authentication
 import (
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
-	idppresetv1alpha1 "github.com/kyma-project/kyma/components/idppreset/pkg/client/clientset/versioned/typed/authentication/v1alpha1"
+	"github.com/mszostok/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
+	idppresetv1alpha1 "github.com/mszostok/kyma/components/idppreset/pkg/client/clientset/versioned/typed/authentication/v1alpha1"
 	"github.com/pkg/errors"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/pager"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/pager"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

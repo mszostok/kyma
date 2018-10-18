@@ -1,6 +1,6 @@
 package broker
 
-import "github.com/kyma-project/kyma/components/helm-broker/internal"
+import "github.com/mszostok/kyma/components/helm-broker/internal"
 
 func NewDeprovisionService(ig instanceGetter, oi operationInserter, ou operationUpdater, ibdr instanceBindDataRemover, hd helmDeleter, oIDProv func() (internal.OperationID, error), isg instanceStateGetter) *deprovisionService {
 	return &deprovisionService{

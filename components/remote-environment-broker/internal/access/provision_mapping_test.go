@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/access"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/access/automock"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/fake"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/access"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/access/automock"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/fake"
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

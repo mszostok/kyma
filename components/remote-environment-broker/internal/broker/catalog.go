@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
 	"github.com/pkg/errors"
 	osb "github.com/pmorie/go-open-service-broker-client/v2"
 )

@@ -1,6 +1,6 @@
 package trace
 
-import api "github.com/kyma-project/kyma/components/event-bus/api/publish"
+import api "github.com/mszostok/kyma/components/event-bus/api/publish"
 
 const (
 	eventID                 = "event-id"

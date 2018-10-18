@@ -1,7 +1,7 @@
 package automock
 
 import "k8s.io/helm/pkg/proto/hapi/chart"
-import "github.com/kyma-project/kyma/components/helm-broker/internal"
+import "github.com/mszostok/kyma/components/helm-broker/internal"
 import "github.com/stretchr/testify/mock"
 import "github.com/Masterminds/semver"
 

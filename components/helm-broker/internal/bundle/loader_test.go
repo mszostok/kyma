@@ -11,8 +11,8 @@ import (
 
 	"k8s.io/helm/pkg/chartutil"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal/bundle"
-	"github.com/kyma-project/kyma/components/helm-broker/platform/logger/spy"
+	"github.com/mszostok/kyma/components/helm-broker/internal/bundle"
+	"github.com/mszostok/kyma/components/helm-broker/platform/logger/spy"
 )
 
 // TestLoaderLoad processes given test case bundle and compares it to the

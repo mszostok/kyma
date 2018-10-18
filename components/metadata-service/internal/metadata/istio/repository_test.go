@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/k8sconsts"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/istio/mocks"
-	"github.com/kyma-project/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
+	"github.com/mszostok/kyma/components/metadata-service/internal/k8sconsts"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/istio/mocks"
+	"github.com/mszostok/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	k8serrors "k8s.io/apimachinery/pkg/api/errors"

@@ -1,8 +1,8 @@
 package authentication_test
 
 import (
-	"github.com/kyma-project/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	metaV1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

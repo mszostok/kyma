@@ -3,7 +3,7 @@
 package scheme
 
 import (
-	authenticationv1alpha1 "github.com/kyma-project/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
+	authenticationv1alpha1 "github.com/mszostok/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

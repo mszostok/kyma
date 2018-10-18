@@ -9,7 +9,7 @@ import (
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
 	"github.com/kubernetes-incubator/service-catalog/pkg/client/clientset_generated/clientset/fake"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/nsbroker"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/nsbroker"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	apiErrors "k8s.io/apimachinery/pkg/api/errors"

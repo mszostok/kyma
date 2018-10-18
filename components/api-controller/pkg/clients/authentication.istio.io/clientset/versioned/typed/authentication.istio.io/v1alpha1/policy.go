@@ -3,8 +3,8 @@
 package v1alpha1
 
 import (
-	v1alpha1 "github.com/kyma-project/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
-	scheme "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/scheme"
+	v1alpha1 "github.com/mszostok/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
+	scheme "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

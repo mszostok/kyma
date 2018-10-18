@@ -3,8 +3,8 @@
 package gateway
 
 import (
-	v1alpha2 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/gateway.kyma.cx/v1alpha2"
-	internalinterfaces "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/internalinterfaces"
+	v1alpha2 "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/gateway.kyma.cx/v1alpha2"
+	internalinterfaces "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

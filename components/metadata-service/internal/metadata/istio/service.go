@@ -2,7 +2,7 @@
 package istio
 
 import (
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
 )
 
 // Service is responsible for creating Istio resources associated with deniers.

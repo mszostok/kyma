@@ -10,11 +10,11 @@ import (
 	"testing"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/certificates"
-	"github.com/kyma-project/kyma/components/connector-service/internal/httperrors"
-	tokenMocks "github.com/kyma-project/kyma/components/connector-service/internal/tokens/mocks"
-	tokenCacheMocks "github.com/kyma-project/kyma/components/connector-service/internal/tokens/tokencache/mocks"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/certificates"
+	"github.com/mszostok/kyma/components/connector-service/internal/httperrors"
+	tokenMocks "github.com/mszostok/kyma/components/connector-service/internal/tokens/mocks"
+	tokenCacheMocks "github.com/mszostok/kyma/components/connector-service/internal/tokens/tokencache/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

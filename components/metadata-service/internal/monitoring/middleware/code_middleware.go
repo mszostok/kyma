@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/monitoring/collector"
+	"github.com/mszostok/kyma/components/metadata-service/internal/monitoring/collector"
 	"github.com/sirupsen/logrus"
 	"net/http"
 	"strconv"

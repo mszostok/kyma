@@ -3,7 +3,7 @@
 package fake
 
 import (
-	v1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
+	v1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

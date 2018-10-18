@@ -3,12 +3,12 @@ package v2
 import (
 	"reflect"
 
-	istioAuthApi "github.com/kyma-project/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
-	kymaMeta "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
-	istioAuth "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned"
-	istioAuthTyped "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/typed/authentication.istio.io/v1alpha1"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/commons"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/meta"
+	istioAuthApi "github.com/mszostok/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
+	kymaMeta "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
+	istioAuth "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned"
+	istioAuthTyped "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/typed/authentication.istio.io/v1alpha1"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/commons"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/meta"
 	log "github.com/sirupsen/logrus"
 	apiErrors "k8s.io/apimachinery/pkg/api/errors"
 	k8sMeta "k8s.io/apimachinery/pkg/apis/meta/v1"

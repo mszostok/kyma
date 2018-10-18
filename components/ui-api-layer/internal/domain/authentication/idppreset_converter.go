@@ -1,8 +1,8 @@
 package authentication
 
 import (
-	"github.com/kyma-project/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 )
 
 type idpPresetConverter struct{}

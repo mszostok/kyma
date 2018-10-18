@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	api "github.com/kyma-project/kyma/components/event-bus/api/publish"
-	"github.com/kyma-project/kyma/components/event-bus/cmd/event-bus-publish/application"
-	"github.com/kyma-project/kyma/components/event-bus/internal/publish"
+	api "github.com/mszostok/kyma/components/event-bus/api/publish"
+	"github.com/mszostok/kyma/components/event-bus/cmd/event-bus-publish/application"
+	"github.com/mszostok/kyma/components/event-bus/internal/publish"
 	"github.com/nats-io/nats-streaming-server/server"
 	"github.com/stretchr/testify/assert"
 

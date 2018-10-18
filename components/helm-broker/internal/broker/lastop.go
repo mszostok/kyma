@@ -7,7 +7,7 @@ import (
 
 	osb "github.com/pmorie/go-open-service-broker-client/v2"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
 )
 
 type getLastOperationService struct {

@@ -7,9 +7,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
-	networkingistioio "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/networking.istio.io"
+	versioned "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
+	networkingistioio "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/networking.istio.io"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

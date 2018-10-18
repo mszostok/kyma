@@ -6,13 +6,13 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/gateway/internal/httperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/k8sconsts"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/serviceapi"
-	"github.com/kyma-project/kyma/components/gateway/internal/proxy/proxycache"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/httpconsts"
+	"github.com/mszostok/kyma/components/gateway/internal/httperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/k8sconsts"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/serviceapi"
+	"github.com/mszostok/kyma/components/gateway/internal/proxy/proxycache"
 	log "github.com/sirupsen/logrus"
 )
 

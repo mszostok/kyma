@@ -3,9 +3,9 @@ package servicecatalog
 import (
 	"testing"
 
-	api "github.com/kyma-project/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/automock"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	api "github.com/mszostok/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

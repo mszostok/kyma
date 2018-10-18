@@ -8,9 +8,9 @@ import (
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
 	"github.com/kubernetes-incubator/service-catalog/pkg/client/clientset_generated/clientset"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/status"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/pager"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/resource"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/status"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/pager"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/resource"
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

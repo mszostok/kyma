@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/kyma-project/kyma/components/helm-broker/cmd/targz/archiver"
+	"github.com/mszostok/kyma/components/helm-broker/cmd/targz/archiver"
 )
 
 func main() {

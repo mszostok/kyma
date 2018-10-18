@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/pager"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/resource"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/pager"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/resource"
 	"k8s.io/client-go/tools/cache"
 )
 

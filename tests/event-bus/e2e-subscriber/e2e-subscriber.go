@@ -5,7 +5,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/kyma-project/kyma/components/event-bus/test/util"
+	"github.com/mszostok/kyma/components/event-bus/test/util"
 )
 
 func main() {

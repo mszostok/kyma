@@ -3,12 +3,12 @@ package remoteenvironment_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment/automock"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/gqlerror"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/gqlerror"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

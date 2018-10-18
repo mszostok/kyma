@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/connector-service/internal/errorhandler"
+	"github.com/mszostok/kyma/components/connector-service/internal/errorhandler"
 )
 
 type TokenHandler interface {

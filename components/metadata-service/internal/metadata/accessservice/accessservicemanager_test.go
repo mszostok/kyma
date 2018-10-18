@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	"fmt"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/k8sconsts"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/accessservice/mocks"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/k8sconsts"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/accessservice/mocks"
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
 	k8serrors "k8s.io/apimachinery/pkg/api/errors"

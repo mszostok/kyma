@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kyma-project/kyma/components/event-service/internal/events/bus"
-	"github.com/kyma-project/kyma/components/event-service/internal/externalapi"
-	"github.com/kyma-project/kyma/components/event-service/internal/httptools"
+	"github.com/mszostok/kyma/components/event-service/internal/events/bus"
+	"github.com/mszostok/kyma/components/event-service/internal/externalapi"
+	"github.com/mszostok/kyma/components/event-service/internal/httptools"
 	log "github.com/sirupsen/logrus"
 )
 

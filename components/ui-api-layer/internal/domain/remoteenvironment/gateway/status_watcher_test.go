@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway/automock"
 )
 
 func TestGatewayStatusWatcher_GetStatusNotServing(t *testing.T) {

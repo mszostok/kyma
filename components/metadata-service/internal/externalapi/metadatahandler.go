@@ -8,11 +8,11 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/httperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/httptools"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/httpconsts"
+	"github.com/mszostok/kyma/components/metadata-service/internal/httperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/httptools"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata"
 )
 
 type metadataHandler struct {

@@ -3,7 +3,7 @@
 package v1alpha2
 
 import (
-	v1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
+	v1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/tools/cache"

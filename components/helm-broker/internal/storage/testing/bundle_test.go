@@ -7,8 +7,8 @@ import (
 	"github.com/Masterminds/semver"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/storage"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal/storage"
 )
 
 func TestBundleGet(t *testing.T) {

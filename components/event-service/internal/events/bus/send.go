@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/kyma-project/kyma/components/event-service/internal/events/api"
-	"github.com/kyma-project/kyma/components/event-service/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/event-service/internal/httptools"
+	"github.com/mszostok/kyma/components/event-service/internal/events/api"
+	"github.com/mszostok/kyma/components/event-service/internal/httpconsts"
+	"github.com/mszostok/kyma/components/event-service/internal/httptools"
 )
 
 var (

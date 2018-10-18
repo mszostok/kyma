@@ -5,10 +5,10 @@ package v1alpha1
 import (
 	time "time"
 
-	authentication_v1alpha1 "github.com/kyma-project/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
-	versioned "github.com/kyma-project/kyma/components/idppreset/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/idppreset/pkg/client/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/kyma-project/kyma/components/idppreset/pkg/client/listers/authentication/v1alpha1"
+	authentication_v1alpha1 "github.com/mszostok/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
+	versioned "github.com/mszostok/kyma/components/idppreset/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/idppreset/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/mszostok/kyma/components/idppreset/pkg/client/listers/authentication/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

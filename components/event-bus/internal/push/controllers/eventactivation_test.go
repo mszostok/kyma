@@ -3,8 +3,8 @@ package controllers
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
-	"github.com/kyma-project/kyma/components/event-bus/internal/common"
+	"github.com/mszostok/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
+	"github.com/mszostok/kyma/components/event-bus/internal/common"
 	"github.com/stretchr/testify/mock"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

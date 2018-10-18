@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage/driver/memory"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage/driver/memory"
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 )

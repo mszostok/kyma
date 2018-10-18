@@ -10,7 +10,7 @@ import (
 	"k8s.io/helm/pkg/proto/hapi/chart"
 	rls "k8s.io/helm/pkg/proto/hapi/services"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
 )
 
 const (

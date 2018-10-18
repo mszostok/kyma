@@ -10,8 +10,8 @@ import (
 
 	"path/filepath"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/informers/externalversions"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/informers/externalversions"
 	"github.com/sirupsen/logrus"
 	restclient "k8s.io/client-go/rest"
 

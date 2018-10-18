@@ -3,8 +3,8 @@
 package v1alpha1
 
 import (
-	"github.com/kyma-project/kyma/components/event-bus/generated/ea/clientset/versioned/scheme"
-	v1alpha1 "github.com/kyma-project/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
+	"github.com/mszostok/kyma/components/event-bus/generated/ea/clientset/versioned/scheme"
+	v1alpha1 "github.com/mszostok/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	rest "k8s.io/client-go/rest"
 )

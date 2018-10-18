@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	appsApi "k8s.io/api/apps/v1beta2"

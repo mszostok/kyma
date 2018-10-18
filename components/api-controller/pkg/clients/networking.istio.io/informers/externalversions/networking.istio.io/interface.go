@@ -3,8 +3,8 @@
 package networking
 
 import (
-	internalinterfaces "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
-	v1alpha3 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/networking.istio.io/v1alpha3"
+	internalinterfaces "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
+	v1alpha3 "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/networking.istio.io/v1alpha3"
 )
 
 // Interface provides access to each of this group's versions.

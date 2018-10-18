@@ -5,10 +5,10 @@ import (
 	"fmt"
 
 	"github.com/golang/glog"
-	contentPretty "github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/pretty"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment/pretty"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/gqlerror"
+	contentPretty "github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/pretty"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment/pretty"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/gqlerror"
 	"github.com/pkg/errors"
 )
 

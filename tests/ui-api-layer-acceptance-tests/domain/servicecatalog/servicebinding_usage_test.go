@@ -12,10 +12,10 @@ import (
 	"github.com/stretchr/testify/require"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	tester "github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests"
-	"github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests/dex"
-	"github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests/graphql"
-	"github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests/k8s"
+	tester "github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests"
+	"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests/dex"
+	"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests/graphql"
+	"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests/k8s"
 )
 
 type ServiceBindingUsage struct {

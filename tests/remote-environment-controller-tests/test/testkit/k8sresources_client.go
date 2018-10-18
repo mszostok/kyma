@@ -1,8 +1,8 @@
 package testkit
 
 import (
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
 	v1apps "k8s.io/api/apps/v1"
 	v1core "k8s.io/api/core/v1"
 	v1extensions "k8s.io/api/extensions/v1beta1"

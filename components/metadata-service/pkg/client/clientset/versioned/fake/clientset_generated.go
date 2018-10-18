@@ -3,9 +3,9 @@
 package fake
 
 import (
-	clientset "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned"
-	istiov1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2"
-	fakeistiov1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2/fake"
+	clientset "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned"
+	istiov1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2"
+	fakeistiov1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

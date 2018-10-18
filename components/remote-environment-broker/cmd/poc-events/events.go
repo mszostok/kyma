@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/scheme"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/scheme"
 	"github.com/pkg/errors"
 	"k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

@@ -4,17 +4,17 @@ import (
 	"errors"
 	"time"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/config"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymasources"
-	"github.com/kyma-project/kyma/components/installer/pkg/overrides"
+	"github.com/mszostok/kyma/components/installer/pkg/config"
+	"github.com/mszostok/kyma/components/installer/pkg/kymasources"
+	"github.com/mszostok/kyma/components/installer/pkg/overrides"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned/fake"
-	"github.com/kyma-project/kyma/components/installer/pkg/statusmanager"
+	"github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned/fake"
+	"github.com/mszostok/kyma/components/installer/pkg/statusmanager"
 	"k8s.io/helm/pkg/proto/hapi/release"
 
-	installationInformers "github.com/kyma-project/kyma/components/installer/pkg/client/informers/externalversions"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymahelm"
-	"github.com/kyma-project/kyma/components/installer/pkg/toolkit"
+	installationInformers "github.com/mszostok/kyma/components/installer/pkg/client/informers/externalversions"
+	"github.com/mszostok/kyma/components/installer/pkg/kymahelm"
+	"github.com/mszostok/kyma/components/installer/pkg/toolkit"
 
 	rls "k8s.io/helm/pkg/proto/hapi/services"
 )

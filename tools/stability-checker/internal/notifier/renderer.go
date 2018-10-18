@@ -5,9 +5,9 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/summary"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/summary"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal"
+	"github.com/mszostok/kyma/tools/stability-checker/internal"
 	"github.com/pkg/errors"
 )
 

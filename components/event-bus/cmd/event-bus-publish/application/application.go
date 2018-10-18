@@ -4,10 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kyma-project/kyma/components/event-bus/cmd/event-bus-publish/controllers"
-	"github.com/kyma-project/kyma/components/event-bus/cmd/event-bus-publish/handlers"
-	"github.com/kyma-project/kyma/components/event-bus/internal/publish"
-	"github.com/kyma-project/kyma/components/event-bus/internal/trace"
+	"github.com/mszostok/kyma/components/event-bus/cmd/event-bus-publish/controllers"
+	"github.com/mszostok/kyma/components/event-bus/cmd/event-bus-publish/handlers"
+	"github.com/mszostok/kyma/components/event-bus/internal/publish"
+	"github.com/mszostok/kyma/components/event-bus/internal/trace"
 )
 
 type PublishApplication struct {

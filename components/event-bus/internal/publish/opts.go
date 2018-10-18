@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/kyma-project/kyma/components/event-bus/internal/trace"
+	"github.com/mszostok/kyma/components/event-bus/internal/trace"
 	"github.com/nats-io/go-nats-streaming"
 )
 

@@ -2,7 +2,7 @@ package kubeless
 
 import (
 	"github.com/kubeless/kubeless/pkg/apis/kubeless/v1beta1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 )
 
 type functionConverter struct{}

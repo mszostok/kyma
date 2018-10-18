@@ -1,7 +1,7 @@
 package broker_test
 
 import (
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
 )
 
 type expAll struct {

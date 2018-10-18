@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/go-multierror"
 	v1beta12 "github.com/kubernetes-incubator/service-catalog/pkg/client/clientset_generated/clientset/typed/servicecatalog/v1beta1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/nsbroker"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/nsbroker"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	apiErrors "k8s.io/apimachinery/pkg/api/errors"

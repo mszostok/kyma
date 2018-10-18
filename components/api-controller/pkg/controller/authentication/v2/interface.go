@@ -3,8 +3,8 @@ package v2
 import (
 	"fmt"
 
-	kymaMeta "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/meta"
+	kymaMeta "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/meta"
 )
 
 type Interface interface {

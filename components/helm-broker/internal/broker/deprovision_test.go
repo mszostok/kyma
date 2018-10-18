@@ -12,9 +12,9 @@ import (
 
 	osb "github.com/pmorie/go-open-service-broker-client/v2"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/broker"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/broker/automock"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal/broker"
+	"github.com/mszostok/kyma/components/helm-broker/internal/broker/automock"
 )
 
 func TestDeprovisionServiceDeprovisionSuccess(t *testing.T) {

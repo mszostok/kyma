@@ -7,20 +7,20 @@ import (
 
 	"time"
 
-	kymaMeta "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
-	kymaApi "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
-	kyma "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
-	kymaInformers "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions"
-	kymaListers "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/listers/gateway.kyma.cx/v1alpha2"
+	kymaMeta "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
+	kymaApi "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
+	kyma "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
+	kymaInformers "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions"
+	kymaListers "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/listers/gateway.kyma.cx/v1alpha2"
 
 	"reflect"
 
 	"strings"
 
-	authentication "github.com/kyma-project/kyma/components/api-controller/pkg/controller/authentication/v2"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/meta"
-	networking "github.com/kyma-project/kyma/components/api-controller/pkg/controller/networking/v1"
-	service "github.com/kyma-project/kyma/components/api-controller/pkg/controller/service/v1"
+	authentication "github.com/mszostok/kyma/components/api-controller/pkg/controller/authentication/v2"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/meta"
+	networking "github.com/mszostok/kyma/components/api-controller/pkg/controller/networking/v1"
+	service "github.com/mszostok/kyma/components/api-controller/pkg/controller/service/v1"
 	"k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/tools/cache"

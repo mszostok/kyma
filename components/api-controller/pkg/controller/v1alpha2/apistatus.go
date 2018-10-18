@@ -1,9 +1,9 @@
 package v1alpha2
 
 import (
-	kymaMeta "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
-	kymaApi "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
-	kyma "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
+	kymaMeta "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
+	kymaApi "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
+	kyma "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
 	log "github.com/sirupsen/logrus"
 )
 

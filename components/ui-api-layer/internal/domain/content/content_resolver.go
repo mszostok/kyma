@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/golang/glog"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/pkg/errors"
 )
 

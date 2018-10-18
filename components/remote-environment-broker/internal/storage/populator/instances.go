@@ -3,7 +3,7 @@ package populator
 import (
 	"context"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/nsbroker"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/nsbroker"
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/tools/cache"

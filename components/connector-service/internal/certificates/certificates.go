@@ -10,7 +10,7 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
 )
 
 const CertificateValidityDays = 365

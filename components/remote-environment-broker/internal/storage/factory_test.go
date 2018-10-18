@@ -3,9 +3,9 @@ package storage_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage/driver/memory"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage/testdata"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage/driver/memory"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage/testdata"
 	"github.com/stretchr/testify/assert"
 )
 

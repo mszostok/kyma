@@ -3,7 +3,7 @@ package minio
 import (
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
 )
 
 type Service interface {

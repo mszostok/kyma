@@ -3,7 +3,7 @@ package broker
 import (
 	"github.com/sirupsen/logrus"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
 )
 
 func NewProvisionService(bg bundleIDGetter, cg chartGetter, ii instanceInserter, isg instanceStateGetter, oi operationInserter, ou operationUpdater,

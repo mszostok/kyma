@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	api "github.com/kyma-project/kyma/components/event-bus/api/publish"
+	api "github.com/mszostok/kyma/components/event-bus/api/publish"
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"
 	otlog "github.com/opentracing/opentracing-go/log"

@@ -7,9 +7,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/kyma-project/kyma/components/idppreset/pkg/client/clientset/versioned"
-	authentication "github.com/kyma-project/kyma/components/idppreset/pkg/client/informers/externalversions/authentication"
-	internalinterfaces "github.com/kyma-project/kyma/components/idppreset/pkg/client/informers/externalversions/internalinterfaces"
+	versioned "github.com/mszostok/kyma/components/idppreset/pkg/client/clientset/versioned"
+	authentication "github.com/mszostok/kyma/components/idppreset/pkg/client/informers/externalversions/authentication"
+	internalinterfaces "github.com/mszostok/kyma/components/idppreset/pkg/client/informers/externalversions/internalinterfaces"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

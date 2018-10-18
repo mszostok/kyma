@@ -3,7 +3,7 @@ package authentication
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
+	"github.com/mszostok/kyma/components/idppreset/pkg/apis/authentication/v1alpha1"
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

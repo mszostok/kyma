@@ -1,13 +1,13 @@
 package servicecatalog
 
 import (
-	api "github.com/kyma-project/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
+	api "github.com/mszostok/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	sbuTypes "github.com/kyma-project/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/status"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/name"
+	sbuTypes "github.com/mszostok/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/status"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/name"
 )
 
 //go:generate mockery -name=statusBindingUsageExtractor -output=automock -outpkg=automock -case=underscore

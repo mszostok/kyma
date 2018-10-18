@@ -7,9 +7,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
-	gatewaykymacx "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/gateway.kyma.cx"
-	internalinterfaces "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/internalinterfaces"
+	versioned "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned"
+	gatewaykymacx "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/gateway.kyma.cx"
+	internalinterfaces "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/informers/externalversions/internalinterfaces"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

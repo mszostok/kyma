@@ -1,6 +1,6 @@
 package metadata
 
-import "github.com/kyma-project/kyma/components/metadata-service/internal/metadata/serviceapi"
+import "github.com/mszostok/kyma/components/metadata-service/internal/metadata/serviceapi"
 
 // ServiceDefinition is an internal representation of a service.
 type ServiceDefinition struct {

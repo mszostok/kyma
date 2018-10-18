@@ -7,9 +7,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/kyma-project/kyma/components/event-bus/generated/push/clientset/versioned"
-	eventingkymacx "github.com/kyma-project/kyma/components/event-bus/generated/push/informers/externalversions/eventing.kyma.cx"
-	internalinterfaces "github.com/kyma-project/kyma/components/event-bus/generated/push/informers/externalversions/internalinterfaces"
+	versioned "github.com/mszostok/kyma/components/event-bus/generated/push/clientset/versioned"
+	eventingkymacx "github.com/mszostok/kyma/components/event-bus/generated/push/informers/externalversions/eventing.kyma.cx"
+	internalinterfaces "github.com/mszostok/kyma/components/event-bus/generated/push/informers/externalversions/internalinterfaces"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

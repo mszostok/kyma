@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/golang/glog"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/k8s/pretty"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/gqlerror"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/k8s/pretty"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/gqlerror"
 	"github.com/pkg/errors"
 	"k8s.io/api/core/v1"
 )

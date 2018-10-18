@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal/bundle"
+	"github.com/mszostok/kyma/components/helm-broker/internal/bundle"
 )
 
 func TestHTTPRepository_IndexReader(t *testing.T) {

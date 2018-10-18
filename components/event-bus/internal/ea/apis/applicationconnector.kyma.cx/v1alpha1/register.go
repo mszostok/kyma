@@ -5,7 +5,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	remoteenvironmentkymaio "github.com/kyma-project/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx"
+	remoteenvironmentkymaio "github.com/mszostok/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx"
 )
 
 // SchemeGroupVersion is group version used to register these objects

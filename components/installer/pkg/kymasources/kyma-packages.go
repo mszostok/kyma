@@ -4,7 +4,7 @@ import (
 	"errors"
 	"path"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/toolkit"
+	"github.com/mszostok/kyma/components/installer/pkg/toolkit"
 )
 
 const (

@@ -3,7 +3,7 @@ package broker
 import (
 	"github.com/pkg/errors"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
 )
 
 type instanceStateService struct {

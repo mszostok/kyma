@@ -17,13 +17,13 @@ struct_tag: json
 # graphql. These normally come from the db or a remote api.
 models:
   JSON:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.JSON"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.JSON"
   Labels:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.Labels"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.Labels"
   Timestamp:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.Timestamp"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.Timestamp"
   ServiceInstance:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.ServiceInstance"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.ServiceInstance"
     fields:
       bindable:
         resolver: true
@@ -40,7 +40,7 @@ models:
       clusterServiceClass:
         resolver: true
   ServiceClass:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.ServiceClass"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.ServiceClass"
     fields:
       plans:
         resolver: true
@@ -53,7 +53,7 @@ models:
       content:
         resolver: true
   ClusterServiceClass:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.ClusterServiceClass"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.ClusterServiceClass"
     fields:
       plans:
         resolver: true
@@ -66,19 +66,19 @@ models:
       content:
         resolver: true
   RemoteEnvironment:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.RemoteEnvironment"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.RemoteEnvironment"
     fields:
       enabledInEnvironments:
         resolver: true
       status:
         resolver: true
   ServiceBinding:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.ServiceBinding"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.ServiceBinding"
     fields:
       secret:
         resolver: true
   ServiceBindingUsage:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.ServiceBindingUsage"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.ServiceBindingUsage"
     fields:
       serviceBinding:
         resolver: true
@@ -88,13 +88,13 @@ models:
         resolver: true
   DeploymentStatus:
   EventActivation:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.EventActivation"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.EventActivation"
     fields:
       events:
         resolver: true
   Section:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.Section"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.Section"
   TopicEntry:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.TopicEntry"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.TopicEntry"
   Title:
-    model: "github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema.Title"
+    model: "github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema.Title"

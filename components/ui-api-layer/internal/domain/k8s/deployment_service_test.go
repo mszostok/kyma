@@ -13,8 +13,8 @@ import (
 	"k8s.io/client-go/kubernetes/fake"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/k8s"
-	testingUtils "github.com/kyma-project/kyma/components/ui-api-layer/internal/testing"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/k8s"
+	testingUtils "github.com/mszostok/kyma/components/ui-api-layer/internal/testing"
 )
 
 func TestDeploymentService_List(t *testing.T) {

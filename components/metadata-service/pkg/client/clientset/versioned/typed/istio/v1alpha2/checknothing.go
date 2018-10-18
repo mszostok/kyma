@@ -3,8 +3,8 @@
 package v1alpha2
 
 import (
-	v1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
-	scheme "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned/scheme"
+	v1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
+	scheme "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

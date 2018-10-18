@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"path"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/apis/installer/v1alpha1"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymahelm"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymasources"
-	"github.com/kyma-project/kyma/components/installer/pkg/overrides"
+	"github.com/mszostok/kyma/components/installer/pkg/apis/installer/v1alpha1"
+	"github.com/mszostok/kyma/components/installer/pkg/kymahelm"
+	"github.com/mszostok/kyma/components/installer/pkg/kymasources"
+	"github.com/mszostok/kyma/components/installer/pkg/overrides"
 )
 
 // Step represents contract for installation step

@@ -12,7 +12,7 @@ import (
 	"github.com/pkg/errors"
 	"k8s.io/helm/pkg/proto/hapi/chart"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
 )
 
 // NewChart creates new storage for Charts

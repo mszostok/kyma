@@ -3,7 +3,7 @@
 package fake
 
 import (
-	v1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2"
+	v1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned/typed/istio/v1alpha2"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

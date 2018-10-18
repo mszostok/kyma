@@ -3,7 +3,7 @@ package summary_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/summary"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/summary"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

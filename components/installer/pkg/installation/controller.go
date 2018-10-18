@@ -20,18 +20,18 @@ import (
 	"k8s.io/client-go/util/retry"
 	"k8s.io/client-go/util/workqueue"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/apis/installer/v1alpha1"
-	internalClientset "github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned"
-	internalscheme "github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned/scheme"
-	informers "github.com/kyma-project/kyma/components/installer/pkg/client/informers/externalversions"
-	listers "github.com/kyma-project/kyma/components/installer/pkg/client/listers/installer/v1alpha1"
-	"github.com/kyma-project/kyma/components/installer/pkg/conditionmanager"
-	"github.com/kyma-project/kyma/components/installer/pkg/finalizer"
-	"github.com/kyma-project/kyma/components/installer/pkg/overrides"
+	"github.com/mszostok/kyma/components/installer/pkg/apis/installer/v1alpha1"
+	internalClientset "github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned"
+	internalscheme "github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned/scheme"
+	informers "github.com/mszostok/kyma/components/installer/pkg/client/informers/externalversions"
+	listers "github.com/mszostok/kyma/components/installer/pkg/client/listers/installer/v1alpha1"
+	"github.com/mszostok/kyma/components/installer/pkg/conditionmanager"
+	"github.com/mszostok/kyma/components/installer/pkg/finalizer"
+	"github.com/mszostok/kyma/components/installer/pkg/overrides"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/config"
-	internalerrors "github.com/kyma-project/kyma/components/installer/pkg/errors"
-	"github.com/kyma-project/kyma/components/installer/pkg/steps"
+	"github.com/mszostok/kyma/components/installer/pkg/config"
+	internalerrors "github.com/mszostok/kyma/components/installer/pkg/errors"
+	"github.com/mszostok/kyma/components/installer/pkg/steps"
 )
 
 const (

@@ -5,27 +5,27 @@ import (
 	"log"
 	"time"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/actionmanager"
-	"github.com/kyma-project/kyma/components/installer/pkg/conditionmanager"
-	"github.com/kyma-project/kyma/components/installer/pkg/consts"
-	"github.com/kyma-project/kyma/components/installer/pkg/finalizer"
-	"github.com/kyma-project/kyma/components/installer/pkg/installation"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymahelm"
-	"github.com/kyma-project/kyma/components/installer/pkg/kymasources"
-	"github.com/kyma-project/kyma/components/installer/pkg/servicecatalog"
-	"github.com/kyma-project/kyma/components/installer/pkg/toolkit"
+	"github.com/mszostok/kyma/components/installer/pkg/actionmanager"
+	"github.com/mszostok/kyma/components/installer/pkg/conditionmanager"
+	"github.com/mszostok/kyma/components/installer/pkg/consts"
+	"github.com/mszostok/kyma/components/installer/pkg/finalizer"
+	"github.com/mszostok/kyma/components/installer/pkg/installation"
+	"github.com/mszostok/kyma/components/installer/pkg/kymahelm"
+	"github.com/mszostok/kyma/components/installer/pkg/kymasources"
+	"github.com/mszostok/kyma/components/installer/pkg/servicecatalog"
+	"github.com/mszostok/kyma/components/installer/pkg/toolkit"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/statusmanager"
+	"github.com/mszostok/kyma/components/installer/pkg/statusmanager"
 
-	"github.com/kyma-project/kyma/components/installer/pkg/steps"
+	"github.com/mszostok/kyma/components/installer/pkg/steps"
 
 	kubeinformers "k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 
-	clientset "github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned"
-	informers "github.com/kyma-project/kyma/components/installer/pkg/client/informers/externalversions"
+	clientset "github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned"
+	informers "github.com/mszostok/kyma/components/installer/pkg/client/informers/externalversions"
 )
 
 var gitCommitHash string

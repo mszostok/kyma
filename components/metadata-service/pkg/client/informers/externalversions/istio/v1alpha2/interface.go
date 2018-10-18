@@ -3,7 +3,7 @@
 package v1alpha2
 
 import (
-	internalinterfaces "github.com/kyma-project/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/mszostok/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

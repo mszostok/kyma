@@ -3,9 +3,9 @@
 package fake
 
 import (
-	clientset "github.com/kyma-project/kyma/components/event-bus/generated/ea/clientset/versioned"
-	applicationconnectorv1alpha1 "github.com/kyma-project/kyma/components/event-bus/generated/ea/clientset/versioned/typed/applicationconnector.kyma.cx/v1alpha1"
-	fakeapplicationconnectorv1alpha1 "github.com/kyma-project/kyma/components/event-bus/generated/ea/clientset/versioned/typed/applicationconnector.kyma.cx/v1alpha1/fake"
+	clientset "github.com/mszostok/kyma/components/event-bus/generated/ea/clientset/versioned"
+	applicationconnectorv1alpha1 "github.com/mszostok/kyma/components/event-bus/generated/ea/clientset/versioned/typed/applicationconnector.kyma.cx/v1alpha1"
+	fakeapplicationconnectorv1alpha1 "github.com/mszostok/kyma/components/event-bus/generated/ea/clientset/versioned/typed/applicationconnector.kyma.cx/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

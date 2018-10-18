@@ -7,9 +7,9 @@ import (
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
 	sc_fake "github.com/kubernetes-incubator/service-catalog/pkg/client/clientset_generated/clientset/fake"
-	"github.com/kyma-project/kyma/components/helm-broker/platform/logger/spy"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/nsbroker"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/nsbroker/automock"
+	"github.com/mszostok/kyma/components/helm-broker/platform/logger/spy"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/nsbroker"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/nsbroker/automock"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

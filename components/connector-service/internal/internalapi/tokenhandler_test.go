@@ -9,9 +9,9 @@ import (
 	"testing"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/httperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/tokens/mocks"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/httperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/tokens/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

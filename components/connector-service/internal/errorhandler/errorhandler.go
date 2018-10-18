@@ -5,8 +5,8 @@ import (
 
 	"net/http"
 
-	"github.com/kyma-project/kyma/components/connector-service/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/connector-service/internal/httperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/httpconsts"
+	"github.com/mszostok/kyma/components/connector-service/internal/httperrors"
 )
 
 type ErrorHandler struct {

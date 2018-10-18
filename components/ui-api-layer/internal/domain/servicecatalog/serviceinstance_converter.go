@@ -5,10 +5,10 @@ import (
 	"strings"
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/pretty"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/status"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/resource"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/pretty"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/status"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/resource"
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 )

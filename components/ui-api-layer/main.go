@@ -9,7 +9,7 @@ import (
 
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/golang/glog"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/signal"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/signal"
 	"github.com/pkg/errors"
 	"github.com/rs/cors"
 	"github.com/vrischmann/envconfig"
@@ -17,10 +17,10 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 
 	"github.com/99designs/gqlgen/handler"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 )
 
 type config struct {

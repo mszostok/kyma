@@ -12,8 +12,8 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/kyma-project/kyma/components/event-bus/cmd/event-bus-publish/application"
-	"github.com/kyma-project/kyma/components/event-bus/internal/publish"
+	"github.com/mszostok/kyma/components/event-bus/cmd/event-bus-publish/application"
+	"github.com/mszostok/kyma/components/event-bus/internal/publish"
 )
 
 const (

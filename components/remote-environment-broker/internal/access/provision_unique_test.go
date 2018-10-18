@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/access"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/storage/driver/memory"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/access"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/storage/driver/memory"
 )
 
 func TestUniquenessProvisionChecker(t *testing.T) {

@@ -3,7 +3,7 @@ package k8s
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/k8s/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/k8s/automock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	apps "k8s.io/api/apps/v1"

@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/gateway/internal/proxy/tokencache"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/httpconsts"
+	"github.com/mszostok/kyma/components/gateway/internal/proxy/tokencache"
 )
 
 type oauthResponse struct {

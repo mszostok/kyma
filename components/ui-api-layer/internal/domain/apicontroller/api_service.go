@@ -1,7 +1,7 @@
 package apicontroller
 
 import (
-	"github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
+	"github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/v1alpha2"
 	"k8s.io/client-go/tools/cache"
 
 	"fmt"

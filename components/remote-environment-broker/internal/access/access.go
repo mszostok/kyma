@@ -5,8 +5,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
-	versioned "github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/typed/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
+	versioned "github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/typed/applicationconnector/v1alpha1"
 )
 
 //go:generate mockery -name=ProvisionChecker -output=automock -outpkg=automock -case=underscore

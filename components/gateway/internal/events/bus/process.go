@@ -3,7 +3,7 @@ package bus
 import (
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/events/api"
+	"github.com/mszostok/kyma/components/gateway/internal/events/api"
 )
 
 type configurationData struct {

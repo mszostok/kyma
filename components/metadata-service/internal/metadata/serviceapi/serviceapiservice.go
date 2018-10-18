@@ -1,12 +1,12 @@
 package serviceapi
 
 import (
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/k8sconsts"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/accessservice"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/istio"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/remoteenv"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/secrets"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/k8sconsts"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/accessservice"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/istio"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/remoteenv"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/secrets"
 )
 
 // API is an internal representation of a service's API.

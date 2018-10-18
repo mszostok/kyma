@@ -4,15 +4,15 @@ import (
 	"context"
 	"time"
 
-	re_type_v1alpha1 "github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	informers "github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/informers/externalversions/applicationconnector/v1alpha1"
+	re_type_v1alpha1 "github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	informers "github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/informers/externalversions/applicationconnector/v1alpha1"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
 )
 
 const (

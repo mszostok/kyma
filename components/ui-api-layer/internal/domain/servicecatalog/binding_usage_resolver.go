@@ -5,11 +5,11 @@ import (
 
 	"github.com/golang/glog"
 	bindingApi "github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	api "github.com/kyma-project/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/listener"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/pretty"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/gqlerror"
+	api "github.com/mszostok/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/listener"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/pretty"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/gqlerror"
 	"github.com/pkg/errors"
 )
 

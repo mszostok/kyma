@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/ghodss/yaml"
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/helm"
-	"github.com/kyma-project/kyma/components/helm-broker/platform/logger/spy"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal/helm"
+	"github.com/mszostok/kyma/components/helm-broker/platform/logger/spy"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"

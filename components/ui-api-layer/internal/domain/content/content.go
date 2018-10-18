@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/allegro/bigcache"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage"
 	"github.com/minio/minio-go"
 )
 

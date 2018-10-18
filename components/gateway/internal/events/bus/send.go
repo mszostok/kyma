@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/events/api"
-	"github.com/kyma-project/kyma/components/gateway/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/gateway/internal/httptools"
+	"github.com/mszostok/kyma/components/gateway/internal/events/api"
+	"github.com/mszostok/kyma/components/gateway/internal/httpconsts"
+	"github.com/mszostok/kyma/components/gateway/internal/httptools"
 )
 
 var (

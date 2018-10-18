@@ -6,10 +6,10 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/connector-service/internal/httperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/tokens"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/httpconsts"
+	"github.com/mszostok/kyma/components/connector-service/internal/httperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/tokens"
 )
 
 const TokenURL = "https://%s/v1/remoteenvironments/%s/info?token=%s"

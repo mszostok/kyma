@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kyma-project/kyma/components/event-bus/internal/sv"
-	"github.com/kyma-project/kyma/components/event-bus/internal/sv/opts"
+	"github.com/mszostok/kyma/components/event-bus/internal/sv"
+	"github.com/mszostok/kyma/components/event-bus/internal/sv/opts"
 	"k8s.io/client-go/tools/cache"
 )
 

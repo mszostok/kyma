@@ -8,13 +8,13 @@ import (
 	"time"
 
 	"github.com/ghodss/yaml"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/syncer"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/internal/syncer/automock"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/fake"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/informers/externalversions"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/platform/logger/spy"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/syncer"
+	"github.com/mszostok/kyma/components/remote-environment-broker/internal/syncer/automock"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned/fake"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/informers/externalversions"
+	"github.com/mszostok/kyma/components/remote-environment-broker/platform/logger/spy"
 	"github.com/stretchr/testify/mock"
 )
 

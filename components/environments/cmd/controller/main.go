@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/kyma-project/kyma/components/environments/internal/controller"
+	"github.com/mszostok/kyma/components/environments/internal/controller"
 	"github.com/pkg/errors"
 	"github.com/vrischmann/envconfig"
 	"k8s.io/client-go/kubernetes"

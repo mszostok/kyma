@@ -10,11 +10,11 @@ import (
 	"github.com/stretchr/testify/require"
 	"k8s.io/api/apps/v1beta2"
 
-	"github.com/kyma-project/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/k8s"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/k8s/automock"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/gqlerror"
+	"github.com/mszostok/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/k8s"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/k8s/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/gqlerror"
 )
 
 func TestDeploymentResolver_DeploymentsQuery(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/kyma-project/kyma/tests/metadata-service-tests/test/testkit"
+	"github.com/mszostok/kyma/tests/metadata-service-tests/test/testkit"
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 	"strings"

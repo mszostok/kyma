@@ -1,6 +1,6 @@
 package broker
 
-import "github.com/kyma-project/kyma/components/remote-environment-broker/internal"
+import "github.com/mszostok/kyma/components/remote-environment-broker/internal"
 
 func NewBindService(reFinder reFinder) *bindService {
 	return &bindService{

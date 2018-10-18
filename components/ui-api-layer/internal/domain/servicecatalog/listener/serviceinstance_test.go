@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/listener"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog/listener/automock"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/listener"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog/listener/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 )

@@ -1,9 +1,9 @@
 package serviceapi
 
 import (
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/remoteenv"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/secrets"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/remoteenv"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/secrets"
 )
 
 // API is an internal representation of a service's API.

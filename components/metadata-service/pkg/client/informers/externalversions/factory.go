@@ -7,9 +7,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
-	istio "github.com/kyma-project/kyma/components/metadata-service/pkg/client/informers/externalversions/istio"
+	versioned "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
+	istio "github.com/mszostok/kyma/components/metadata-service/pkg/client/informers/externalversions/istio"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

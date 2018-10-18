@@ -2,7 +2,7 @@ package kubeless
 
 import (
 	"github.com/kubeless/kubeless/pkg/apis/kubeless/v1beta1"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/pager"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/pager"
 )
 
 //go:generate mockery -name=functionLister -output=automock -outpkg=automock -case=underscore

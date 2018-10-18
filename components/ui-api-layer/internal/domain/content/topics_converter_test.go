@@ -3,8 +3,8 @@ package content
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/content/storage"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/content/storage"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/stretchr/testify/assert"
 )
 

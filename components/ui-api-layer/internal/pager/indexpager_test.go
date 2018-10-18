@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/pager/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/pager/automock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

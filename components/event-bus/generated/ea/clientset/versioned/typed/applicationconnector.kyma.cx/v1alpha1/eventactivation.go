@@ -3,8 +3,8 @@
 package v1alpha1
 
 import (
-	scheme "github.com/kyma-project/kyma/components/event-bus/generated/ea/clientset/versioned/scheme"
-	v1alpha1 "github.com/kyma-project/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
+	scheme "github.com/mszostok/kyma/components/event-bus/generated/ea/clientset/versioned/scheme"
+	v1alpha1 "github.com/mszostok/kyma/components/event-bus/internal/ea/apis/applicationconnector.kyma.cx/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

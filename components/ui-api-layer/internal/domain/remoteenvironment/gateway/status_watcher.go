@@ -2,12 +2,12 @@ package gateway
 
 import (
 	"fmt"
+	"github.com/mszostok/kyma/internal/pkg/iosafety"
 	"net/http"
 	"sync"
 	"time"
 
 	"github.com/golang/glog"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/iosafety"
 )
 
 type Status string

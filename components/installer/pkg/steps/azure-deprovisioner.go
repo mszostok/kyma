@@ -5,9 +5,9 @@ import (
 	"time"
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	installationConfig "github.com/kyma-project/kyma/components/installer/pkg/config"
-	internalerrors "github.com/kyma-project/kyma/components/installer/pkg/errors"
-	serviceCatalog "github.com/kyma-project/kyma/components/installer/pkg/servicecatalog"
+	installationConfig "github.com/mszostok/kyma/components/installer/pkg/config"
+	internalerrors "github.com/mszostok/kyma/components/installer/pkg/errors"
+	serviceCatalog "github.com/mszostok/kyma/components/installer/pkg/servicecatalog"
 )
 
 // For now we're only interested in these

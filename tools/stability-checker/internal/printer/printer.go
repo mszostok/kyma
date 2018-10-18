@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/log"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/log"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/runner"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/runner"
 )
 
 const (

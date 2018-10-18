@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	ns "github.com/kyma-project/kyma/components/event-bus/internal/stanutil"
+	ns "github.com/mszostok/kyma/components/event-bus/internal/stanutil"
 	stan "github.com/nats-io/go-nats-streaming"
 )
 

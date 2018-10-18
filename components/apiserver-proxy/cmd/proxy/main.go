@@ -15,9 +15,9 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/hkwi/h2c"
-	"github.com/kyma-project/kyma/components/apiserver-proxy/internal/authn"
-	"github.com/kyma-project/kyma/components/apiserver-proxy/internal/authz"
-	"github.com/kyma-project/kyma/components/apiserver-proxy/internal/proxy"
+	"github.com/mszostok/kyma/components/apiserver-proxy/internal/authn"
+	"github.com/mszostok/kyma/components/apiserver-proxy/internal/authz"
+	"github.com/mszostok/kyma/components/apiserver-proxy/internal/proxy"
 	flag "github.com/spf13/pflag"
 	"golang.org/x/net/http2"
 	"k8s.io/apiserver/pkg/authentication/authenticator"

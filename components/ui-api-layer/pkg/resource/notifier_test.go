@@ -3,8 +3,8 @@ package resource_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/resource"
-	"github.com/kyma-project/kyma/components/ui-api-layer/pkg/resource/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/resource"
+	"github.com/mszostok/kyma/components/ui-api-layer/pkg/resource/automock"
 )
 
 func TestNotifier_AddListener(t *testing.T) {

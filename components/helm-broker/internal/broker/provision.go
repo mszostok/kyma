@@ -11,7 +11,7 @@ import (
 	"github.com/sirupsen/logrus"
 	rls "k8s.io/helm/pkg/proto/hapi/services"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
 )
 
 type provisionService struct {

@@ -3,10 +3,10 @@ package v2
 import (
 	"testing"
 
-	istioAuthApi "github.com/kyma-project/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
-	kymaMeta "github.com/kyma-project/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
-	istioFakes "github.com/kyma-project/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/fake"
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/meta"
+	istioAuthApi "github.com/mszostok/kyma/components/api-controller/pkg/apis/authentication.istio.io/v1alpha1"
+	kymaMeta "github.com/mszostok/kyma/components/api-controller/pkg/apis/gateway.kyma.cx/meta/v1"
+	istioFakes "github.com/mszostok/kyma/components/api-controller/pkg/clients/authentication.istio.io/clientset/versioned/fake"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/meta"
 	k8sMeta "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

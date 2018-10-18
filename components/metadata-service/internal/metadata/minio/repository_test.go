@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/minio/mocks"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/minio/mocks"
 	"github.com/minio/minio-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

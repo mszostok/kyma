@@ -3,7 +3,7 @@ package remoteenvironment
 import (
 	"fmt"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
 
 	"k8s.io/client-go/tools/cache"
 )

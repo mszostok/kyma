@@ -3,7 +3,7 @@
 package fake
 
 import (
-	v1alpha2 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/typed/gateway.kyma.cx/v1alpha2"
+	v1alpha2 "github.com/mszostok/kyma/components/api-controller/pkg/clients/gateway.kyma.cx/clientset/versioned/typed/gateway.kyma.cx/v1alpha2"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

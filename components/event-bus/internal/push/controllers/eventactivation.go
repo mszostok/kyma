@@ -3,9 +3,9 @@ package controllers
 import (
 	"log"
 
-	subApis "github.com/kyma-project/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
-	"github.com/kyma-project/kyma/components/event-bus/internal/common"
-	"github.com/kyma-project/kyma/components/event-bus/internal/push/actors"
+	subApis "github.com/mszostok/kyma/components/event-bus/api/push/eventing.kyma.cx/v1alpha1"
+	"github.com/mszostok/kyma/components/event-bus/internal/common"
+	"github.com/mszostok/kyma/components/event-bus/internal/push/actors"
 )
 
 func getUpdateFnWithEventActivationCheck(supervisor actors.SubscriptionsSupervisorInterface) func(oldObj, newObj interface{}) {

@@ -3,13 +3,13 @@ package serviceapi
 import (
 	"testing"
 
-	k8smocks "github.com/kyma-project/kyma/components/metadata-service/internal/k8sconsts/mocks"
-	asmocks "github.com/kyma-project/kyma/components/metadata-service/internal/metadata/accessservice/mocks"
-	istiomocks "github.com/kyma-project/kyma/components/metadata-service/internal/metadata/istio/mocks"
-	secretsmocks "github.com/kyma-project/kyma/components/metadata-service/internal/metadata/secrets/mocks"
+	k8smocks "github.com/mszostok/kyma/components/metadata-service/internal/k8sconsts/mocks"
+	asmocks "github.com/mszostok/kyma/components/metadata-service/internal/metadata/accessservice/mocks"
+	istiomocks "github.com/mszostok/kyma/components/metadata-service/internal/metadata/istio/mocks"
+	secretsmocks "github.com/mszostok/kyma/components/metadata-service/internal/metadata/secrets/mocks"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/remoteenv"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/remoteenv"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

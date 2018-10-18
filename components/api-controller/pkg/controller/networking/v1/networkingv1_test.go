@@ -3,9 +3,9 @@ package v1
 import (
 	"testing"
 
-	fake "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned/fake"
+	fake "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned/fake"
 
-	"github.com/kyma-project/kyma/components/api-controller/pkg/controller/meta"
+	"github.com/mszostok/kyma/components/api-controller/pkg/controller/meta"
 	k8sCore "k8s.io/api/core/v1"
 	k8sMeta "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"

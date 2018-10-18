@@ -3,7 +3,7 @@
 package v1alpha3
 
 import (
-	internalinterfaces "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

@@ -3,8 +3,8 @@ package istio
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/metadata/istio/mocks"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/metadata/istio/mocks"
 	"github.com/stretchr/testify/assert"
 )
 

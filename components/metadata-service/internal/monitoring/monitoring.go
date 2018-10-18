@@ -2,9 +2,9 @@ package monitoring
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/monitoring/collector"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/monitoring/middleware"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/monitoring/collector"
+	"github.com/mszostok/kyma/components/metadata-service/internal/monitoring/middleware"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

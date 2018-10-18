@@ -7,12 +7,12 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/certificates"
-	"github.com/kyma-project/kyma/components/connector-service/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/connector-service/internal/httperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/secrets"
-	"github.com/kyma-project/kyma/components/connector-service/internal/tokens/tokencache"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/certificates"
+	"github.com/mszostok/kyma/components/connector-service/internal/httpconsts"
+	"github.com/mszostok/kyma/components/connector-service/internal/httperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/secrets"
+	"github.com/mszostok/kyma/components/connector-service/internal/tokens/tokencache"
 )
 
 type signatureHandler struct {

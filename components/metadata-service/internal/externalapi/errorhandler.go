@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/httpconsts"
-	"github.com/kyma-project/kyma/components/metadata-service/internal/httperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/httpconsts"
+	"github.com/mszostok/kyma/components/metadata-service/internal/httperrors"
 )
 
 type ErrorHandler struct {

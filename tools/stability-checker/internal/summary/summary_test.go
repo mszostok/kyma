@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/log"
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/summary"
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/summary/automock"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/log"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/summary"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/summary/automock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

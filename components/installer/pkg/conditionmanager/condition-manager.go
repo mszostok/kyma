@@ -1,10 +1,10 @@
 package conditionmanager
 
 import (
-	installationv1alpha1 "github.com/kyma-project/kyma/components/installer/pkg/apis/installer/v1alpha1"
-	installationClientset "github.com/kyma-project/kyma/components/installer/pkg/client/clientset/versioned"
-	listers "github.com/kyma-project/kyma/components/installer/pkg/client/listers/installer/v1alpha1"
-	"github.com/kyma-project/kyma/components/installer/pkg/consts"
+	installationv1alpha1 "github.com/mszostok/kyma/components/installer/pkg/apis/installer/v1alpha1"
+	installationClientset "github.com/mszostok/kyma/components/installer/pkg/client/clientset/versioned"
+	listers "github.com/mszostok/kyma/components/installer/pkg/client/listers/installer/v1alpha1"
+	"github.com/mszostok/kyma/components/installer/pkg/consts"
 	"k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/util/retry"

@@ -5,11 +5,11 @@ package servicecatalog
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
-	"github.com/kyma-project/kyma/components/binding-usage-controller/pkg/client/clientset/versioned"
-	"github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests/dex"
-	"github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests/graphql"
-	"github.com/kyma-project/kyma/tests/ui-api-layer-acceptance-tests/k8s"
+	"github.com/mszostok/kyma/components/binding-usage-controller/pkg/apis/servicecatalog/v1alpha1"
+	"github.com/mszostok/kyma/components/binding-usage-controller/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests/dex"
+	"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests/graphql"
+	"github.com/mszostok/kyma/tests/ui-api-layer-acceptance-tests/k8s"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	appv1 "k8s.io/api/apps/v1beta1"

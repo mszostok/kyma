@@ -13,7 +13,7 @@ import (
 	"github.com/coreos/etcd/clientv3/namespace"
 	"github.com/pkg/errors"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/mszostok/kyma/components/helm-broker/internal"
 )
 
 // NewBundle creates new storage for Bundles

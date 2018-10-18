@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/summary"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/summary"
 
-	"github.com/kyma-project/kyma/tools/stability-checker/internal"
+	"github.com/mszostok/kyma/tools/stability-checker/internal"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"k8s.io/api/core/v1"

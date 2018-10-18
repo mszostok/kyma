@@ -6,10 +6,10 @@ import (
 	"github.com/pkg/errors"
 	"k8s.io/client-go/rest"
 
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/informers/externalversions"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/informers/externalversions"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/remoteenvironment/gateway"
 )
 
 type Config struct {

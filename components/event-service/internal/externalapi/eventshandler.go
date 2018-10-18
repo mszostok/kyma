@@ -6,11 +6,11 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/kyma-project/kyma/components/event-service/internal/events/api"
-	"github.com/kyma-project/kyma/components/event-service/internal/events/bus"
-	"github.com/kyma-project/kyma/components/event-service/internal/events/shared"
+	"github.com/mszostok/kyma/components/event-service/internal/events/api"
+	"github.com/mszostok/kyma/components/event-service/internal/events/bus"
+	"github.com/mszostok/kyma/components/event-service/internal/events/shared"
 	log "github.com/sirupsen/logrus"
-	"github.com/kyma-project/kyma/components/event-service/internal/httpconsts"
+	"github.com/mszostok/kyma/components/event-service/internal/httpconsts"
 )
 
 var (

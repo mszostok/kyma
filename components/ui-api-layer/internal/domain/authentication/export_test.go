@@ -1,7 +1,7 @@
 package authentication
 
 import (
-	idppresetv1alpha1 "github.com/kyma-project/kyma/components/idppreset/pkg/client/clientset/versioned/typed/authentication/v1alpha1"
+	idppresetv1alpha1 "github.com/mszostok/kyma/components/idppreset/pkg/client/clientset/versioned/typed/authentication/v1alpha1"
 	"k8s.io/client-go/tools/cache"
 )
 

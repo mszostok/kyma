@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/connector-service/internal/tokens/tokencache/mocks"
+	"github.com/mszostok/kyma/components/connector-service/internal/tokens/tokencache/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

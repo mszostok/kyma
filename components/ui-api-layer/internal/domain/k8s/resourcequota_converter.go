@@ -1,7 +1,7 @@
 package k8s
 
 import (
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"k8s.io/api/core/v1"
 )
 

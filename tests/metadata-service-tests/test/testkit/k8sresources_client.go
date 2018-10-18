@@ -1,10 +1,10 @@
 package testkit
 
 import (
-	"github.com/kyma-project/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
-	istioclient "github.com/kyma-project/kyma/components/metadata-service/pkg/client/clientset/versioned"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
-	"github.com/kyma-project/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/components/metadata-service/pkg/apis/istio/v1alpha2"
+	istioclient "github.com/mszostok/kyma/components/metadata-service/pkg/client/clientset/versioned"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/apis/applicationconnector/v1alpha1"
+	"github.com/mszostok/kyma/components/remote-environment-broker/pkg/client/clientset/versioned"
 	v1core "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 

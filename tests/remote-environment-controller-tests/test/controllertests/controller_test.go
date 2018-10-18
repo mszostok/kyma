@@ -1,7 +1,7 @@
 package controllertests
 
 import (
-	"github.com/kyma-project/kyma/tests/remote-environment-controller-tests/test/testkit"
+	"github.com/mszostok/kyma/tests/remote-environment-controller-tests/test/testkit"
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 	"testing"

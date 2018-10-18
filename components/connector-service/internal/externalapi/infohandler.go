@@ -5,10 +5,10 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/certificates"
-	"github.com/kyma-project/kyma/components/connector-service/internal/tokens"
-	"github.com/kyma-project/kyma/components/connector-service/internal/tokens/tokencache"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/certificates"
+	"github.com/mszostok/kyma/components/connector-service/internal/tokens"
+	"github.com/mszostok/kyma/components/connector-service/internal/tokens/tokencache"
 )
 
 const (

@@ -13,8 +13,8 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/servicecatalog"
-	testingUtils "github.com/kyma-project/kyma/components/ui-api-layer/internal/testing"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/servicecatalog"
+	testingUtils "github.com/mszostok/kyma/components/ui-api-layer/internal/testing"
 )
 
 func TestBindingServiceCreate(t *testing.T) {

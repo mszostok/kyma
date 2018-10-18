@@ -7,8 +7,8 @@ import (
 	"log"
 	"strings"
 
-	podlogger "github.com/kyma-project/kyma/tools/stability-checker/internal/log"
-	"github.com/kyma-project/kyma/tools/stability-checker/internal/printer"
+	podlogger "github.com/mszostok/kyma/tools/stability-checker/internal/log"
+	"github.com/mszostok/kyma/tools/stability-checker/internal/printer"
 	"github.com/pkg/errors"
 	"github.com/vrischmann/envconfig"
 )

@@ -1,7 +1,7 @@
 package apitests
 
 import (
-	"github.com/kyma-project/kyma/tests/metadata-service-tests/test/testkit"
+	"github.com/mszostok/kyma/tests/metadata-service-tests/test/testkit"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"

@@ -3,8 +3,8 @@
 package istio
 
 import (
-	internalinterfaces "github.com/kyma-project/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
-	v1alpha2 "github.com/kyma-project/kyma/components/metadata-service/pkg/client/informers/externalversions/istio/v1alpha2"
+	internalinterfaces "github.com/mszostok/kyma/components/metadata-service/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha2 "github.com/mszostok/kyma/components/metadata-service/pkg/client/informers/externalversions/istio/v1alpha2"
 )
 
 // Interface provides access to each of this group's versions.

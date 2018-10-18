@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	api "github.com/kyma-project/kyma/components/event-bus/api/publish"
+	api "github.com/mszostok/kyma/components/event-bus/api/publish"
 )
 
 //SendJSONError sends an HTTP response containing a JSON error

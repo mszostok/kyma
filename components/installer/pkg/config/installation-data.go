@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/kyma-project/kyma/components/installer/pkg/apis/installer/v1alpha1"
+	"github.com/mszostok/kyma/components/installer/pkg/apis/installer/v1alpha1"
 )
 
 // InstallationContext describes properties of K8S Installation object that triggers installation process

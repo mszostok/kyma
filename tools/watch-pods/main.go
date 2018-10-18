@@ -13,7 +13,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
 
-	"github.com/kyma-project/kyma/tools/watch-pods/internal/tester"
+	"github.com/mszostok/kyma/tools/watch-pods/internal/tester"
 )
 
 func main() {

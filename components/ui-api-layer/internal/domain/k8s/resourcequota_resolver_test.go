@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/domain/k8s/automock"
-	"github.com/kyma-project/kyma/components/ui-api-layer/internal/gqlschema"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/domain/k8s/automock"
+	"github.com/mszostok/kyma/components/ui-api-layer/internal/gqlschema"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"k8s.io/api/core/v1"

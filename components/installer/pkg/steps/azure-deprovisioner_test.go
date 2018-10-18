@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/v1beta1"
-	internalerrors "github.com/kyma-project/kyma/components/installer/pkg/errors"
+	internalerrors "github.com/mszostok/kyma/components/installer/pkg/errors"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

@@ -4,8 +4,8 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
-	"github.com/kyma-project/kyma/components/connector-service/internal/tokens/tokencache"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/tokens/tokencache"
 )
 
 type TokenGenerator interface {

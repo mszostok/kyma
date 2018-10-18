@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/connector-service/internal/apperrors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

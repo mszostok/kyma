@@ -3,11 +3,11 @@ package metadata
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/gateway/internal/apperrors"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/remoteenv"
-	remoteenvmocks "github.com/kyma-project/kyma/components/gateway/internal/metadata/remoteenv/mocks"
-	"github.com/kyma-project/kyma/components/gateway/internal/metadata/serviceapi"
-	serviceapimocks "github.com/kyma-project/kyma/components/gateway/internal/metadata/serviceapi/mocks"
+	"github.com/mszostok/kyma/components/gateway/internal/apperrors"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/remoteenv"
+	remoteenvmocks "github.com/mszostok/kyma/components/gateway/internal/metadata/remoteenv/mocks"
+	"github.com/mszostok/kyma/components/gateway/internal/metadata/serviceapi"
+	serviceapimocks "github.com/mszostok/kyma/components/gateway/internal/metadata/serviceapi/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

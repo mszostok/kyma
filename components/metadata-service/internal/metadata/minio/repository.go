@@ -6,7 +6,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/kyma-project/kyma/components/metadata-service/internal/apperrors"
+	"github.com/mszostok/kyma/components/metadata-service/internal/apperrors"
 	"github.com/minio/minio-go"
 )
 

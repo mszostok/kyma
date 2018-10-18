@@ -4,8 +4,8 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 
-	"github.com/kyma-project/kyma/components/helm-broker/internal/storage/driver/etcd"
-	"github.com/kyma-project/kyma/components/helm-broker/internal/storage/driver/memory"
+	"github.com/mszostok/kyma/components/helm-broker/internal/storage/driver/etcd"
+	"github.com/mszostok/kyma/components/helm-broker/internal/storage/driver/memory"
 )
 
 // Factory provides access to concrete storage.

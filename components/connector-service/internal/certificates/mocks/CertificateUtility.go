@@ -2,8 +2,8 @@
 
 package mocks
 
-import apperrors "github.com/kyma-project/kyma/components/connector-service/internal/apperrors"
-import certificates "github.com/kyma-project/kyma/components/connector-service/internal/certificates"
+import apperrors "github.com/mszostok/kyma/components/connector-service/internal/apperrors"
+import certificates "github.com/mszostok/kyma/components/connector-service/internal/certificates"
 import mock "github.com/stretchr/testify/mock"
 import rsa "crypto/rsa"
 import x509 "crypto/x509"

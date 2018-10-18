@@ -5,10 +5,10 @@ package v1alpha3
 import (
 	time "time"
 
-	networkingistioiov1alpha3 "github.com/kyma-project/kyma/components/api-controller/pkg/apis/networking.istio.io/v1alpha3"
-	versioned "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned"
-	internalinterfaces "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
-	v1alpha3 "github.com/kyma-project/kyma/components/api-controller/pkg/clients/networking.istio.io/listers/networking.istio.io/v1alpha3"
+	networkingistioiov1alpha3 "github.com/mszostok/kyma/components/api-controller/pkg/apis/networking.istio.io/v1alpha3"
+	versioned "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/clientset/versioned"
+	internalinterfaces "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/informers/externalversions/internalinterfaces"
+	v1alpha3 "github.com/mszostok/kyma/components/api-controller/pkg/clients/networking.istio.io/listers/networking.istio.io/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
