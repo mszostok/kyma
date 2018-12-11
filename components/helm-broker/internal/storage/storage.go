@@ -87,51 +87,55 @@ func NewFactory(cl *ConfigList) (Factory, error) {
 	for _, cfg := range *cl {
 
 		var (
-			bundleFact            func() (Bundle, error)
-			chartFact             func() (Chart, error)
-			instanceFact          func() (Instance, error)
-			instanceOperationFact func() (InstanceOperation, error)
-			instanceBindDataFact  func() (InstanceBindData, error)
+			bundleFact            func() Bundle
+			chartFact             func() Chart
+			instanceFact          func() Instance
+			instanceOperationFact func() InstanceOperation
+			instanceBindDataFact  func() InstanceBindData
 		)
 
 		switch cfg.Driver {
 		case DriverMemory:
-			bundleFact = func() (Bundle, error) {
-				return memory.NewBundle(), nil
+			bundleFact = func() Bundle {
+				return memory.NewBundle()
 			}
-			chartFact = func() (Chart, error) {
-				return memory.NewChart(), nil
+			chartFact = func() Chart {
+				return memory.NewChart()
 			}
-			instanceFact = func() (Instance, error) {
-				return memory.NewInstance(), nil
+			instanceFact = func() Instance {
+				return memory.NewInstance()
 			}
-			instanceOperationFact = func() (InstanceOperation, error) {
-				return memory.NewInstanceOperation(), nil
+			instanceOperationFact = func() InstanceOperation {
+				return memory.NewInstanceOperation()
 			}
-			instanceBindDataFact = func() (InstanceBindData, error) {
-				return memory.NewInstanceBindData(), nil
+			instanceBindDataFact = func() InstanceBindData {
+				return memory.NewInstanceBindData()
 			}
 		case DriverEtcd:
 			var cli etcd.Client
 			if cfg.Etcd.ForceClient != nil {
 				cli = cfg.Etcd.ForceClient
 			} else {
-				cli, _ = etcd.NewClient(cfg.Etcd)
+				var err error
+				cli, err = etcd.NewClient(cfg.Etcd)
+				if err != nil {
+					return nil, errors.Wrap(err, "while creating new ETCD client")
+				}
 			}
 
-			bundleFact = func() (Bundle, error) {
+			bundleFact = func() Bundle {
 				return etcd.NewBundle(cli)
 			}
-			chartFact = func() (Chart, error) {
+			chartFact = func() Chart {
 				return etcd.NewChart(cli)
 			}
-			instanceFact = func() (Instance, error) {
+			instanceFact = func() Instance {
 				return etcd.NewInstance(cli)
 			}
-			instanceOperationFact = func() (InstanceOperation, error) {
+			instanceOperationFact = func() InstanceOperation {
 				return etcd.NewInstanceOperation(cli)
 			}
-			instanceBindDataFact = func() (InstanceBindData, error) {
+			instanceBindDataFact = func() InstanceBindData {
 				return etcd.NewInstanceBindData(cli)
 			}
 		default:
@@ -141,21 +145,21 @@ func NewFactory(cl *ConfigList) (Factory, error) {
 		for em := range cfg.Provide {
 			switch em {
 			case EntityChart:
-				fact.chart, _ = chartFact()
+				fact.chart = chartFact()
 			case EntityBundle:
-				fact.bundle, _ = bundleFact()
+				fact.bundle = bundleFact()
 			case EntityInstance:
-				fact.instance, _ = instanceFact()
+				fact.instance = instanceFact()
 			case EntityInstanceOperation:
-				fact.instanceOperation, _ = instanceOperationFact()
+				fact.instanceOperation = instanceOperationFact()
 			case EntityInstanceBindData:
-				fact.instanceBindData, _ = instanceBindDataFact()
+				fact.instanceBindData = instanceBindDataFact()
 			case EntityAll:
-				fact.chart, _ = chartFact()
-				fact.bundle, _ = bundleFact()
-				fact.instance, _ = instanceFact()
-				fact.instanceOperation, _ = instanceOperationFact()
-				fact.instanceBindData, _ = instanceBindDataFact()
+				fact.chart = chartFact()
+				fact.bundle = bundleFact()
+				fact.instance = instanceFact()
+				fact.instanceOperation = instanceOperationFact()
+				fact.instanceBindData = instanceBindDataFact()
 			default:
 			}
 		}

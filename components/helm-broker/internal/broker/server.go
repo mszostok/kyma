@@ -18,6 +18,7 @@ import (
 	osb "github.com/pmorie/go-open-service-broker-client/v2"
 
 	"github.com/kyma-project/kyma/components/helm-broker/internal"
+	"github.com/kyma-project/kyma/components/helm-broker/platform/deferutil"
 )
 
 //go:generate mockery -name=catalogGetter -output=automock -outpkg=automock -case=underscore
@@ -127,7 +128,9 @@ func (srv *Server) createHandler() http.Handler {
 
 	rtr.HandleFunc("/statusz", func(w http.ResponseWriter, req *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		fmt.Fprint(w, "OK")
+		if _, err := fmt.Fprint(w, "OK"); err != nil {
+			srv.logger.Errorf("Cannot write response body, got err: %v ", err)
+		}
 	}).Methods("GET")
 
 	// sync operations
@@ -400,10 +403,6 @@ func (srv *Server) unBindAction(w http.ResponseWriter, r *http.Request) {
 }
 
 func (srv *Server) writeResponse(w http.ResponseWriter, code int, object interface{}) {
-	writeResponse(w, code, object)
-}
-
-func writeResponse(w http.ResponseWriter, code int, object interface{}) {
 	data, err := json.Marshal(object)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -412,18 +411,16 @@ func writeResponse(w http.ResponseWriter, code int, object interface{}) {
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(code)
-	w.Write(data)
+	if _, err := w.Write(data); err != nil {
+		srv.logger.Errorf("Cannot write request body, got err: %v", err)
+	}
 }
 
+// writeErrorResponse writes error response compatible with OpenServiceBroker API specification.
 func (srv *Server) writeErrorResponse(w http.ResponseWriter, code int, errorMsg, desc string) {
 	if srv.logger != nil {
 		srv.logger.Warnf("Server responds with error: [HTTP %d]: [%s] [%s]", code, errorMsg, desc)
 	}
-	writeErrorResponse(w, code, errorMsg, desc)
-}
-
-// writeErrorResponse writes error response compatible with OpenServiceBroker API specification.
-func writeErrorResponse(w http.ResponseWriter, code int, errorMsg, desc string) {
 	dto := struct {
 		// Error is a machine readable info on an error.
 		// As of 2.13 Open Broker API spec it's NOT passed to entity querying the catalog.
@@ -441,7 +438,7 @@ func writeErrorResponse(w http.ResponseWriter, code int, errorMsg, desc string) 
 	if desc != "" {
 		dto.Desc = desc
 	}
-	writeResponse(w, code, &dto)
+	srv.writeResponse(w, code, &dto)
 }
 
 func httpBodyToDTO(r *http.Request, object interface{}) error {
@@ -449,7 +446,7 @@ func httpBodyToDTO(r *http.Request, object interface{}) error {
 	if err != nil {
 		return err
 	}
-	defer r.Body.Close()
+	defer deferutil.CheckFn(r.Body.Close, "while closing request body")
 
 	err = json.Unmarshal(body, object)
 	if err != nil {

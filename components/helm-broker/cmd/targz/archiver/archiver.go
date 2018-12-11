@@ -4,6 +4,7 @@ package archiver
 
 import (
 	"fmt"
+	"github.com/kyma-project/kyma/components/helm-broker/platform/deferutil"
 	"io"
 	"log"
 	"os"
@@ -58,7 +59,7 @@ func writeNewFile(fpath string, in io.Reader, fm os.FileMode) error {
 	if err != nil {
 		return fmt.Errorf("%s: creating new file: %v", fpath, err)
 	}
-	defer out.Close()
+	defer deferutil.CheckFn(out.Close, "while closing %s file", fpath)
 
 	err = out.Chmod(fm)
 	if err != nil && runtime.GOOS != "windows" {

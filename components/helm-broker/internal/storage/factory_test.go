@@ -3,6 +3,9 @@ package storage_test
 import (
 	"testing"
 
+	"github.com/coreos/etcd/clientv3"
+	"github.com/stretchr/testify/require"
+
 	"github.com/stretchr/testify/assert"
 
 	"github.com/kyma-project/kyma/components/helm-broker/internal/storage"
@@ -32,12 +35,22 @@ func TestNewFactory(t *testing.T) {
 			// GIVEN:
 			cfg := tc.cfgGen()
 
+			// This is unit test and we do not want to create a real client
+			// to ETCD in `storage.NewFactory` in case of ETCD Driver
+			// because we do not have any etcd server available
+			fakeEtcdCli := clientv3.Client{}
+			for i := range cfg {
+				if cfg[i].Driver == storage.DriverEtcd {
+					cfg[i].Etcd.ForceClient = &fakeEtcdCli
+				}
+			}
+
 			// WHEN:
 			got, err := storage.NewFactory(&cfg)
 
 			// THEN:
-			assert.NoError(t, err)
-
+			require.NoError(t, err)
+			assert.NotNil(t, got)
 			assert.IsType(t, tc.expBundle, got.Bundle())
 			assert.IsType(t, tc.expChart, got.Chart())
 			assert.IsType(t, tc.expInstance, got.Instance())

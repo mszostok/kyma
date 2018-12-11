@@ -4,7 +4,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"github.com/kyma-project/kyma/components/helm-broker/platform/iosafety"
 	"net/http"
 	"os"
 	"os/signal"
@@ -95,9 +95,12 @@ func waitForHelmBrokerIsReady(url string, timeout time.Duration, log logrus.Fiel
 	for {
 		r, err := http.Get(fmt.Sprintf("%s/statusz", url))
 		if err == nil {
-			// no need to read the response
-			ioutil.ReadAll(r.Body)
-			r.Body.Close()
+			if err = iosafety.DrainReader(r.Body); err != nil {
+				log.Errorf("Cannot drain body, got err: %v", err)
+			}
+			if err = r.Body.Close(); err != nil {
+				log.Errorf("Cannot close body, got err: %v", err)
+			}
 		}
 		if err == nil && r.StatusCode == http.StatusOK {
 			break

@@ -15,17 +15,15 @@ import (
 )
 
 // NewInstanceBindData returns new instance of BindData storage.
-func NewInstanceBindData(cli clientv3.KV) (*InstanceBindData, error) {
+func NewInstanceBindData(cli clientv3.KV) *InstanceBindData {
 	prefixParts := append(entityNamespacePrefixParts(), string(entityNamespaceInstanceBindData))
 	kv := namespace.NewKV(cli, strings.Join(prefixParts, entityNamespaceSeparator))
 
-	d := &InstanceBindData{
+	return &InstanceBindData{
 		generic: generic{
 			kv: kv,
 		},
 	}
-
-	return d, nil
 }
 
 // InstanceBindData implements etcd based storage for BindData.

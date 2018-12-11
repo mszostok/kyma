@@ -8,6 +8,8 @@ import (
 	"io"
 	"os"
 	"strings"
+
+	"github.com/kyma-project/kyma/components/helm-broker/platform/deferutil"
 )
 
 // TarGz is for TarGz format
@@ -32,13 +34,13 @@ func isTarGz(targzPath string) bool {
 	if err != nil {
 		return false
 	}
-	defer f.Close()
+	defer deferutil.CheckFn(f.Close, "while closing %s file", targzPath)
 
 	gzr, err := gzip.NewReader(f)
 	if err != nil {
 		return false
 	}
-	defer gzr.Close()
+	defer deferutil.CheckFn(gzr.Close, "while closing %s file gzip reader", targzPath)
 
 	buf := make([]byte, tarBlockSize)
 	n, err := gzr.Read(buf)
@@ -64,14 +66,14 @@ func (tarGzFormat) Make(targzPath string, filePaths []string) error {
 	if err != nil {
 		return fmt.Errorf("error creating %s: %v", targzPath, err)
 	}
-	defer out.Close()
+	defer deferutil.CheckFn(out.Close, "while closing %s file", targzPath)
 
 	return writeTarGz(filePaths, out, targzPath)
 }
 
 func writeTarGz(filePaths []string, output io.Writer, dest string) error {
 	gzw := gzip.NewWriter(output)
-	defer gzw.Close()
+	defer deferutil.CheckFn(gzw.Close, "while closing gzip writer")
 
 	return writeTar(filePaths, gzw, dest)
 }
@@ -83,7 +85,7 @@ func (tarGzFormat) Read(input io.Reader, destination string) error {
 	if err != nil {
 		return fmt.Errorf("error decompressing: %v", err)
 	}
-	defer gzr.Close()
+	defer deferutil.CheckFn(gzr.Close, "while closing gzip reader")
 
 	return Tar.Read(gzr, destination)
 }
@@ -94,7 +96,7 @@ func (tarGzFormat) Open(source, destination string) error {
 	if err != nil {
 		return fmt.Errorf("%s: failed to open archive: %v", source, err)
 	}
-	defer f.Close()
+	defer deferutil.CheckFn(f.Close, "while closing %s file", source)
 
 	return TarGz.Read(f, destination)
 }

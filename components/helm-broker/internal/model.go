@@ -62,7 +62,10 @@ func (cr *ChartRef) GobDecode(in []byte) error {
 
 	cr.Name = dto.Name
 
-	ver, _ := semver.NewVersion(dto.Version)
+	ver, err := semver.NewVersion(dto.Version)
+	if err != nil {
+		return errors.Wrap(err, "while creating SemVer model")
+	}
 	cr.Version = *ver
 
 	return nil

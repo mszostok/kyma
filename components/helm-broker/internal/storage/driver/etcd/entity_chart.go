@@ -16,18 +16,16 @@ import (
 )
 
 // NewChart creates new storage for Charts
-func NewChart(cli clientv3.KV) (*Chart, error) {
+func NewChart(cli clientv3.KV) *Chart {
 
 	prefixParts := append(entityNamespacePrefixParts(), string(entityNamespaceChart))
 	kv := namespace.NewKV(cli, strings.Join(prefixParts, entityNamespaceSeparator))
 
-	d := &Chart{
+	return &Chart{
 		generic: generic{
 			kv: kv,
 		},
 	}
-
-	return d, nil
 }
 
 // Chart provides storage operations on Chart entity

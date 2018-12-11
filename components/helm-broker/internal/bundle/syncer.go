@@ -151,13 +151,13 @@ func (s *Syncer) prepareIndexes(bundles []*internal.Bundle) (map[string][]*inter
 func (s *Syncer) upsert(bundleWithCharts CompleteBundle) {
 	_, err := s.bundleStorage.Upsert(bundleWithCharts.Bundle)
 	if err != nil {
-		s.log.Errorf("Could not upsert bundle %s (%s:%s): %s", bundleWithCharts.Bundle.ID, bundleWithCharts.Bundle.Name, bundleWithCharts.Bundle.Version, err.Error())
+		s.log.Errorf("Could not upsert bundle %s (%s:%s): %v", bundleWithCharts.Bundle.ID, bundleWithCharts.Bundle.Name, bundleWithCharts.Bundle.Version.String(), err)
 	}
 
 	for _, ch := range bundleWithCharts.Charts {
 		_, err := s.chartOperations.Upsert(ch)
 		if err != nil {
-			s.log.Errorf("Could not upsert chart %s:%s for bundle %s (%s:%s): %s")
+			s.log.Errorf("Could not upsert chart %s:%s for bundle %s (%s:%s): %v", ch.Metadata.Name, ch.Metadata.Version, bundleWithCharts.Bundle.ID, bundleWithCharts.Bundle.Name, bundleWithCharts.Bundle.Version.String(), err)
 		}
 	}
 }
@@ -174,7 +174,7 @@ func (s *Syncer) removeBundle(id internal.BundleID, existingBundle *internal.Bun
 		for _, plan := range existingBundle.Plans {
 			err := s.chartOperations.Remove(plan.ChartRef.Name, plan.ChartRef.Version)
 			if err != nil {
-				s.log.Warnf("Could not remove chart %s:%s used by bundle id: %s name: %s", plan.ChartRef.Name, plan.ChartRef.Version, id, existingBundle.Name)
+				s.log.Warnf("Could not remove chart %s:%s used by bundle id: %s name: %s", plan.ChartRef.Name, plan.ChartRef.Version.String(), id, existingBundle.Name)
 			}
 		}
 	}

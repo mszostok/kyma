@@ -17,18 +17,16 @@ import (
 )
 
 // NewBundle creates new storage for Bundles
-func NewBundle(cli clientv3.KV) (*Bundle, error) {
+func NewBundle(cli clientv3.KV) *Bundle {
 
 	prefixParts := append(entityNamespacePrefixParts(), string(entityNamespaceBundle))
 	kv := namespace.NewKV(cli, strings.Join(prefixParts, entityNamespaceSeparator))
 
-	d := &Bundle{
+	return &Bundle{
 		generic: generic{
 			kv: kv,
 		},
 	}
-
-	return d, nil
 }
 
 // Bundle implements etcd storage for Bundle entities.

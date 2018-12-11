@@ -18,17 +18,15 @@ import (
 )
 
 // NewInstanceOperation returns new instance of InstanceOperation storage.
-func NewInstanceOperation(cli clientv3.KV) (*InstanceOperation, error) {
+func NewInstanceOperation(cli clientv3.KV) *InstanceOperation {
 	prefixParts := append(entityNamespacePrefixParts(), string(entityNamespaceInstanceOperation))
 	kv := namespace.NewKV(cli, strings.Join(prefixParts, entityNamespaceSeparator))
 
-	d := &InstanceOperation{
+	return &InstanceOperation{
 		generic: generic{
 			kv: kv,
 		},
 	}
-
-	return d, nil
 }
 
 // InstanceOperation implements etcd based storage InstanceOperation.

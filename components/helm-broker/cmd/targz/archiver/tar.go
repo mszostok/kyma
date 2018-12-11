@@ -11,6 +11,8 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	"github.com/kyma-project/kyma/components/helm-broker/platform/deferutil"
 )
 
 // Tar is for Tar format
@@ -35,7 +37,7 @@ func isTar(tarPath string) bool {
 	if err != nil {
 		return false
 	}
-	defer f.Close()
+	defer deferutil.CheckFn(f.Close, "while closing tar file")
 
 	buf := make([]byte, tarBlockSize)
 	if _, err = io.ReadFull(f, buf); err != nil {
@@ -100,14 +102,14 @@ func (tarFormat) Make(tarPath string, filePaths []string) error {
 	if err != nil {
 		return fmt.Errorf("error creating %s: %v", tarPath, err)
 	}
-	defer out.Close()
+	defer deferutil.CheckFn(out.Close, "while closing %s file", tarPath)
 
 	return writeTar(filePaths, out, tarPath)
 }
 
 func writeTar(filePaths []string, output io.Writer, dest string) error {
 	tarWriter := tar.NewWriter(output)
-	defer tarWriter.Close()
+	defer deferutil.CheckFn(tarWriter.Close, "while closing tar writer")
 
 	return tarball(filePaths, tarWriter, dest)
 }
@@ -174,7 +176,7 @@ func tarFile(tarWriter *tar.Writer, source, dest string) error {
 			if err != nil {
 				return fmt.Errorf("%s: open: %v", path, err)
 			}
-			defer file.Close()
+			defer deferutil.CheckFn(file.Close, "while closing %s file", path)
 
 			_, err = io.CopyN(tarWriter, file, info.Size())
 			if err != nil && err != io.EOF {
@@ -197,7 +199,7 @@ func (tarFormat) Open(source, destination string) error {
 	if err != nil {
 		return fmt.Errorf("%s: failed to open archive: %v", source, err)
 	}
-	defer f.Close()
+	defer deferutil.CheckFn(f.Close, "while closing %s archive file", source)
 
 	return Tar.Read(f, destination)
 }

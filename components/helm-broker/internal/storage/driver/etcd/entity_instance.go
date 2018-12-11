@@ -14,18 +14,16 @@ import (
 )
 
 // NewInstance creates new Instances storage
-func NewInstance(cli clientv3.KV) (*Instance, error) {
+func NewInstance(cli clientv3.KV) *Instance {
 
 	prefixParts := append(entityNamespacePrefixParts(), string(entityNamespaceInstance))
 	kv := namespace.NewKV(cli, strings.Join(prefixParts, entityNamespaceSeparator))
 
-	d := &Instance{
+	return &Instance{
 		generic: generic{
 			kv: kv,
 		},
 	}
-
-	return d, nil
 }
 
 // Instance implements etcd based storage for Instance entities.
