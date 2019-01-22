@@ -57,11 +57,6 @@ metadata:
     installer: overrides
     component: core
 data:
-  console.cluster.headerLogoUrl: "assets/logo.svg"
-  console.cluster.headerTitle: ""
-  console.cluster.faviconUrl: "favicon.ico"
-  minio.accessKey: "admin"
-  minio.secretKey: "topSecretKey"
   minio.resources.requests.memory: 64Mi
   minio.resources.limits.cpu: 100m
 ---
@@ -74,10 +69,6 @@ metadata:
     installer: overrides
     component: istio
 data:
-  global.proxy.includeIPRanges: "10.0.0.1/8"
-
-  security.enabled: "true"
-
   gateways.istio-ingressgateway.loadBalancerIP: ""
   gateways.istio-ingressgateway.type: "NodePort"
 
