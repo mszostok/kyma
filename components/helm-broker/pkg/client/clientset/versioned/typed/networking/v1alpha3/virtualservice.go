@@ -37,7 +37,7 @@ type virtualServices struct {
 }
 
 // newVirtualServices returns a VirtualServices
-func newVirtualServices(c *AddonsV1alpha3Client, namespace string) *virtualServices {
+func newVirtualServices(c *NetworkingV1alpha3Client, namespace string) *virtualServices {
 	return &virtualServices{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -1,6 +1,6 @@
 // Package v1 contains API Schema definitions for the addons v1 API group
 // +kubebuilder:object:generate=true
-// +groupName=addons.kyma-project.io
+// +groupName=networking.istio.io
 package v1alpha3
 
 import (

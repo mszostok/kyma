@@ -3,7 +3,7 @@
 package fake
 
 import (
-	addonsv1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
+	networkingv1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -15,7 +15,7 @@ var scheme = runtime.NewScheme()
 var codecs = serializer.NewCodecFactory(scheme)
 var parameterCodec = runtime.NewParameterCodec(scheme)
 var localSchemeBuilder = runtime.SchemeBuilder{
-	addonsv1alpha3.AddToScheme,
+	networkingv1alpha3.AddToScheme,
 }
 
 // AddToScheme adds all types of this clientset into the given scheme. This allows composition

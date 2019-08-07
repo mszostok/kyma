@@ -14,13 +14,13 @@ import (
 
 // FakeVirtualServices implements VirtualServiceInterface
 type FakeVirtualServices struct {
-	Fake *FakeAddonsV1alpha3
+	Fake *FakeNetworkingV1alpha3
 	ns   string
 }
 
-var virtualservicesResource = schema.GroupVersionResource{Group: "addons.kyma-project.io", Version: "v1alpha3", Resource: "virtualservices"}
+var virtualservicesResource = schema.GroupVersionResource{Group: "networking.istio.io", Version: "v1alpha3", Resource: "virtualservices"}
 
-var virtualservicesKind = schema.GroupVersionKind{Group: "addons.kyma-project.io", Version: "v1alpha3", Kind: "VirtualService"}
+var virtualservicesKind = schema.GroupVersionKind{Group: "networking.istio.io", Version: "v1alpha3", Kind: "VirtualService"}
 
 // Get takes name of the virtualService, and returns the corresponding virtualService object, and an error if there is any.
 func (c *FakeVirtualServices) Get(name string, options v1.GetOptions) (result *v1alpha3.VirtualService, err error) {

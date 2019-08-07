@@ -2,5 +2,5 @@
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen=package,register
 // +k8s:defaulter-gen=TypeMeta
-// +groupName=addons.kyma-project.io
+// +groupName=networking.istio.io
 package v1alpha3

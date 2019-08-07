@@ -4,8 +4,8 @@ package fake
 
 import (
 	clientset "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned"
-	addonsv1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/networking/v1alpha3"
-	fakeaddonsv1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/networking/v1alpha3/fake"
+	networkingv1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/networking/v1alpha3"
+	fakenetworkingv1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/networking/v1alpha3/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -55,12 +55,12 @@ func (c *Clientset) Discovery() discovery.DiscoveryInterface {
 
 var _ clientset.Interface = &Clientset{}
 
-// AddonsV1alpha3 retrieves the AddonsV1alpha3Client
-func (c *Clientset) AddonsV1alpha3() addonsv1alpha3.AddonsV1alpha3Interface {
-	return &fakeaddonsv1alpha3.FakeAddonsV1alpha3{Fake: &c.Fake}
+// NetworkingV1alpha3 retrieves the NetworkingV1alpha3Client
+func (c *Clientset) NetworkingV1alpha3() networkingv1alpha3.NetworkingV1alpha3Interface {
+	return &fakenetworkingv1alpha3.FakeNetworkingV1alpha3{Fake: &c.Fake}
 }
 
-// Addons retrieves the AddonsV1alpha3Client
-func (c *Clientset) Addons() addonsv1alpha3.AddonsV1alpha3Interface {
-	return &fakeaddonsv1alpha3.FakeAddonsV1alpha3{Fake: &c.Fake}
+// Networking retrieves the NetworkingV1alpha3Client
+func (c *Clientset) Networking() networkingv1alpha3.NetworkingV1alpha3Interface {
+	return &fakenetworkingv1alpha3.FakeNetworkingV1alpha3{Fake: &c.Fake}
 }

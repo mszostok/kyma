@@ -9,22 +9,22 @@ import (
 	rest "k8s.io/client-go/rest"
 )
 
-type AddonsV1alpha3Interface interface {
+type NetworkingV1alpha3Interface interface {
 	RESTClient() rest.Interface
 	VirtualServicesGetter
 }
 
-// AddonsV1alpha3Client is used to interact with features provided by the addons.kyma-project.io group.
-type AddonsV1alpha3Client struct {
+// NetworkingV1alpha3Client is used to interact with features provided by the networking.istio.io group.
+type NetworkingV1alpha3Client struct {
 	restClient rest.Interface
 }
 
-func (c *AddonsV1alpha3Client) VirtualServices(namespace string) VirtualServiceInterface {
+func (c *NetworkingV1alpha3Client) VirtualServices(namespace string) VirtualServiceInterface {
 	return newVirtualServices(c, namespace)
 }
 
-// NewForConfig creates a new AddonsV1alpha3Client for the given config.
-func NewForConfig(c *rest.Config) (*AddonsV1alpha3Client, error) {
+// NewForConfig creates a new NetworkingV1alpha3Client for the given config.
+func NewForConfig(c *rest.Config) (*NetworkingV1alpha3Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -33,12 +33,12 @@ func NewForConfig(c *rest.Config) (*AddonsV1alpha3Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &AddonsV1alpha3Client{client}, nil
+	return &NetworkingV1alpha3Client{client}, nil
 }
 
-// NewForConfigOrDie creates a new AddonsV1alpha3Client for the given config and
+// NewForConfigOrDie creates a new NetworkingV1alpha3Client for the given config and
 // panics if there is an error in the config.
-func NewForConfigOrDie(c *rest.Config) *AddonsV1alpha3Client {
+func NewForConfigOrDie(c *rest.Config) *NetworkingV1alpha3Client {
 	client, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
@@ -46,9 +46,9 @@ func NewForConfigOrDie(c *rest.Config) *AddonsV1alpha3Client {
 	return client
 }
 
-// New creates a new AddonsV1alpha3Client for the given RESTClient.
-func New(c rest.Interface) *AddonsV1alpha3Client {
-	return &AddonsV1alpha3Client{c}
+// New creates a new NetworkingV1alpha3Client for the given RESTClient.
+func New(c rest.Interface) *NetworkingV1alpha3Client {
+	return &NetworkingV1alpha3Client{c}
 }
 
 func setConfigDefaults(config *rest.Config) error {
@@ -66,7 +66,7 @@ func setConfigDefaults(config *rest.Config) error {
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *AddonsV1alpha3Client) RESTClient() rest.Interface {
+func (c *NetworkingV1alpha3Client) RESTClient() rest.Interface {
 	if c == nil {
 		return nil
 	}

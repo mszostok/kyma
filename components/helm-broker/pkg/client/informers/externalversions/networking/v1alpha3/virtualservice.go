@@ -45,13 +45,13 @@ func NewFilteredVirtualServiceInformer(client versioned.Interface, namespace str
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AddonsV1alpha3().VirtualServices(namespace).List(options)
+				return client.NetworkingV1alpha3().VirtualServices(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AddonsV1alpha3().VirtualServices(namespace).Watch(options)
+				return client.NetworkingV1alpha3().VirtualServices(namespace).Watch(options)
 			},
 		},
 		&networkingv1alpha3.VirtualService{},
