@@ -7,7 +7,7 @@ import (
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/gqlschema"
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/pager"
 	"github.com/kyma-project/kyma/components/console-backend-service/pkg/resource"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	addonsClientset "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/addons/v1alpha1"
 	"github.com/pkg/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -31,15 +31,15 @@ func newClusterAddonsConfigurationService(addonsCfgInformer cache.SharedIndexInf
 	}
 }
 
-func (s *clusterAddonsConfigurationService) List(pagingParams pager.PagingParams) ([]*v1alpha1.ClusterAddonsConfiguration, error) {
+func (s *clusterAddonsConfigurationService) List(pagingParams pager.PagingParams) ([]*v1alpha3.ClusterAddonsConfiguration, error) {
 	items, err := pager.From(s.addonsCfgInformer.GetStore()).Limit(pagingParams)
 	if err != nil {
 		return nil, err
 	}
 
-	var addons []*v1alpha1.ClusterAddonsConfiguration
+	var addons []*v1alpha3.ClusterAddonsConfiguration
 	for _, item := range items {
-		ac, ok := item.(*v1alpha1.ClusterAddonsConfiguration)
+		ac, ok := item.(*v1alpha3.ClusterAddonsConfiguration)
 		if !ok {
 			return nil, fmt.Errorf("incorrect item type: %T, should be: *v1alpha1.ClusterAddonsConfiguration", item)
 		}
@@ -50,7 +50,7 @@ func (s *clusterAddonsConfigurationService) List(pagingParams pager.PagingParams
 	return addons, nil
 }
 
-func (s *clusterAddonsConfigurationService) AddRepos(name string, urls []string) (*v1alpha1.ClusterAddonsConfiguration, error) {
+func (s *clusterAddonsConfigurationService) AddRepos(name string, urls []string) (*v1alpha3.ClusterAddonsConfiguration, error) {
 	addon, err := s.getClusterAddonsConfiguration(name)
 	if err != nil {
 		return nil, err
@@ -58,7 +58,7 @@ func (s *clusterAddonsConfigurationService) AddRepos(name string, urls []string)
 
 	addonCpy := addon.DeepCopy()
 	for _, u := range urls {
-		addonCpy.Spec.Repositories = append(addonCpy.Spec.Repositories, v1alpha1.SpecRepository{URL: u})
+		addonCpy.Spec.Repositories = append(addonCpy.Spec.Repositories, v1alpha3.SpecRepository{URL: u})
 	}
 
 	result, err := s.addonsCfgClient.ClusterAddonsConfigurations().Update(addonCpy)
@@ -69,7 +69,7 @@ func (s *clusterAddonsConfigurationService) AddRepos(name string, urls []string)
 	return result, nil
 }
 
-func (s *clusterAddonsConfigurationService) RemoveRepos(name string, urls []string) (*v1alpha1.ClusterAddonsConfiguration, error) {
+func (s *clusterAddonsConfigurationService) RemoveRepos(name string, urls []string) (*v1alpha3.ClusterAddonsConfiguration, error) {
 	addon, err := s.getClusterAddonsConfiguration(name)
 	if err != nil {
 		return nil, err
@@ -88,14 +88,14 @@ func (s *clusterAddonsConfigurationService) RemoveRepos(name string, urls []stri
 	return updatedAddon, nil
 }
 
-func (s *clusterAddonsConfigurationService) Create(name string, urls []string, labels *gqlschema.Labels) (*v1alpha1.ClusterAddonsConfiguration, error) {
-	addon := &v1alpha1.ClusterAddonsConfiguration{
+func (s *clusterAddonsConfigurationService) Create(name string, urls []string, labels *gqlschema.Labels) (*v1alpha3.ClusterAddonsConfiguration, error) {
+	addon := &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:   name,
 			Labels: s.toMapLabels(labels),
 		},
-		Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
+		Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
 				Repositories: s.toSpecRepositories(urls),
 			},
 		},
@@ -109,7 +109,7 @@ func (s *clusterAddonsConfigurationService) Create(name string, urls []string, l
 	return result, nil
 }
 
-func (s *clusterAddonsConfigurationService) Update(name string, urls []string, labels *gqlschema.Labels) (*v1alpha1.ClusterAddonsConfiguration, error) {
+func (s *clusterAddonsConfigurationService) Update(name string, urls []string, labels *gqlschema.Labels) (*v1alpha3.ClusterAddonsConfiguration, error) {
 	addon, err := s.getClusterAddonsConfiguration(name)
 	if err != nil {
 		return nil, err
@@ -127,7 +127,7 @@ func (s *clusterAddonsConfigurationService) Update(name string, urls []string, l
 	return result, nil
 }
 
-func (s *clusterAddonsConfigurationService) Delete(name string) (*v1alpha1.ClusterAddonsConfiguration, error) {
+func (s *clusterAddonsConfigurationService) Delete(name string) (*v1alpha3.ClusterAddonsConfiguration, error) {
 	addon, err := s.getClusterAddonsConfiguration(name)
 	if err != nil {
 		return nil, err
@@ -140,13 +140,13 @@ func (s *clusterAddonsConfigurationService) Delete(name string) (*v1alpha1.Clust
 	return addon, nil
 }
 
-func (s *clusterAddonsConfigurationService) filterOutRepositories(repos []v1alpha1.SpecRepository, urls []string) []v1alpha1.SpecRepository {
+func (s *clusterAddonsConfigurationService) filterOutRepositories(repos []v1alpha3.SpecRepository, urls []string) []v1alpha3.SpecRepository {
 	idxURLs := map[string]struct{}{}
 	for _, u := range urls {
 		idxURLs[u] = struct{}{}
 	}
 
-	var result []v1alpha1.SpecRepository
+	var result []v1alpha3.SpecRepository
 	for _, r := range repos {
 		if _, found := idxURLs[r.URL]; !found {
 			result = append(result, r)
@@ -167,16 +167,16 @@ func (s *clusterAddonsConfigurationService) toMapLabels(givenLabels *gqlschema.L
 	return labels
 }
 
-func (s *clusterAddonsConfigurationService) toSpecRepositories(urls []string) []v1alpha1.SpecRepository {
-	var repos []v1alpha1.SpecRepository
+func (s *clusterAddonsConfigurationService) toSpecRepositories(urls []string) []v1alpha3.SpecRepository {
+	var repos []v1alpha3.SpecRepository
 	for _, u := range urls {
-		repos = append(repos, v1alpha1.SpecRepository{URL: u})
+		repos = append(repos, v1alpha3.SpecRepository{URL: u})
 	}
 
 	return repos
 }
 
-func (s *clusterAddonsConfigurationService) getClusterAddonsConfiguration(name string) (*v1alpha1.ClusterAddonsConfiguration, error) {
+func (s *clusterAddonsConfigurationService) getClusterAddonsConfiguration(name string) (*v1alpha3.ClusterAddonsConfiguration, error) {
 	item, exists, err := s.addonsCfgInformer.GetStore().GetByKey(name)
 	if err != nil {
 		return nil, errors.Wrapf(err, "while getting %s %s", pretty.AddonsConfiguration, name)
@@ -186,7 +186,7 @@ func (s *clusterAddonsConfigurationService) getClusterAddonsConfiguration(name s
 		return nil, errors.Errorf("%s doesn't exists", name)
 	}
 
-	addons, ok := item.(*v1alpha1.ClusterAddonsConfiguration)
+	addons, ok := item.(*v1alpha3.ClusterAddonsConfiguration)
 	if !ok {
 		return nil, fmt.Errorf("incorrect item type: %T, should be: *v1alpha1.ClusterAddonsConfiguration", item)
 	}

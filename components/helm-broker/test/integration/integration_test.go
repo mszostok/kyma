@@ -5,7 +5,7 @@ package integration_test
 import (
 	"testing"
 
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 )
 
 func TestGetCatalogHappyPath(t *testing.T) {
@@ -20,14 +20,14 @@ func TestGetCatalogHappyPath(t *testing.T) {
 		suite.createAddonsConfiguration("stage", addonsConfigName, []string{redisAndAccTestRepo})
 
 		// then
-		suite.waitForAddonsConfigurationPhase("stage", addonsConfigName, v1alpha1.AddonsConfigurationReady)
+		suite.waitForAddonsConfigurationPhase("stage", addonsConfigName, v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("ns/stage", []string{redisAddonID, accTestAddonID})
 		suite.assertNoServicesInCatalogEndpoint("ns/prod")
 		suite.assertNoServicesInCatalogEndpoint("cluster")
 
 		// when
 		suite.createAddonsConfiguration("prod", addonsConfigName, []string{redisAndAccTestRepo})
-		suite.waitForAddonsConfigurationPhase("prod", addonsConfigName, v1alpha1.AddonsConfigurationReady)
+		suite.waitForAddonsConfigurationPhase("prod", addonsConfigName, v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("ns/prod", []string{redisAddonID, accTestAddonID})
 
 		// when
@@ -46,7 +46,7 @@ func TestGetCatalogHappyPath(t *testing.T) {
 		suite.createClusterAddonsConfiguration(addonsConfigName, []string{redisRepo})
 
 		// then
-		suite.waitForClusterAddonsConfigurationPhase(addonsConfigName, v1alpha1.AddonsConfigurationReady)
+		suite.waitForClusterAddonsConfigurationPhase(addonsConfigName, v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("cluster", []string{redisAddonID})
 
 		// when
@@ -69,7 +69,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		//  - wait for readiness and wait for service redis at the catalog endpoint
-		suite.waitForAddonsConfigurationPhase("stage", "first", v1alpha1.AddonsConfigurationReady)
+		suite.waitForAddonsConfigurationPhase("stage", "first", v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("ns/stage", []string{redisAddonID})
 
 		// when
@@ -78,7 +78,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect phase "failed", still redis service at the catalog endpoint
-		suite.waitForAddonsConfigurationPhase("stage", "second", v1alpha1.AddonsConfigurationFailed)
+		suite.waitForAddonsConfigurationPhase("stage", "second", v1alpha3.AddonsConfigurationFailed)
 		suite.waitForServicesInCatalogEndpoint("ns/stage", []string{redisAddonID})
 
 		// when
@@ -87,7 +87,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect for readiness and 2 services at the catalog endpoint
-		suite.waitForAddonsConfigurationPhase("stage", "second", v1alpha1.AddonsConfigurationReady)
+		suite.waitForAddonsConfigurationPhase("stage", "second", v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("ns/stage", []string{redisAddonID, accTestAddonID})
 
 		// when
@@ -96,7 +96,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect failed (because of the conflict)
-		suite.waitForAddonsConfigurationPhase("stage", "third", v1alpha1.AddonsConfigurationFailed)
+		suite.waitForAddonsConfigurationPhase("stage", "third", v1alpha3.AddonsConfigurationFailed)
 
 		// when
 		// - delete second (cluster) addons configuration, so the third will be reprocessed
@@ -104,7 +104,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect readiness
-		suite.waitForAddonsConfigurationPhase("stage", "third", v1alpha1.AddonsConfigurationReady)
+		suite.waitForAddonsConfigurationPhase("stage", "third", v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("ns/stage", []string{accTestAddonID})
 	})
 
@@ -115,7 +115,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		//  - wait for readiness and wait for service redis at the catalog endpoint
-		suite.waitForClusterAddonsConfigurationPhase("first", v1alpha1.AddonsConfigurationReady)
+		suite.waitForClusterAddonsConfigurationPhase("first", v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("cluster", []string{redisAddonID})
 
 		// when
@@ -124,7 +124,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect phase "failed", still redis service at the catalog endpoint
-		suite.waitForClusterAddonsConfigurationPhase("second", v1alpha1.AddonsConfigurationFailed)
+		suite.waitForClusterAddonsConfigurationPhase("second", v1alpha3.AddonsConfigurationFailed)
 		suite.waitForServicesInCatalogEndpoint("cluster", []string{redisAddonID})
 
 		// when
@@ -133,7 +133,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect for readiness and 2 services at the catalog endpoint
-		suite.waitForClusterAddonsConfigurationPhase("second", v1alpha1.AddonsConfigurationReady)
+		suite.waitForClusterAddonsConfigurationPhase("second", v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("cluster", []string{redisAddonID, accTestAddonID})
 
 		// when
@@ -142,7 +142,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect failed (because of the conflict)
-		suite.waitForClusterAddonsConfigurationPhase("third", v1alpha1.AddonsConfigurationFailed)
+		suite.waitForClusterAddonsConfigurationPhase("third", v1alpha3.AddonsConfigurationFailed)
 
 		// when
 		// - delete second cluster addons configuration, so the third will be reprocessed
@@ -150,7 +150,7 @@ func TestAddonsConflicts(t *testing.T) {
 
 		// then
 		// - expect readiness
-		suite.waitForClusterAddonsConfigurationPhase("third", v1alpha1.AddonsConfigurationReady)
+		suite.waitForClusterAddonsConfigurationPhase("third", v1alpha3.AddonsConfigurationReady)
 		suite.waitForServicesInCatalogEndpoint("cluster", []string{accTestAddonID})
 	})
 }

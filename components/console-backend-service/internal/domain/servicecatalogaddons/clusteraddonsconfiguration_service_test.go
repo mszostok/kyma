@@ -9,7 +9,7 @@ import (
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/gqlschema"
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/pager"
 	testingUtils "github.com/kyma-project/kyma/components/console-backend-service/internal/testing"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	addonsFakeCli "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/fake"
 	addonsClientset "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/addons/v1alpha1"
 	addonsInformers "github.com/kyma-project/kyma/components/helm-broker/pkg/client/informers/externalversions"
@@ -43,7 +43,7 @@ func TestAddonsConfigurationService_AddRepos_Success(t *testing.T) {
 		t.Run(tn, func(t *testing.T) {
 			// given
 			fixAddonCfg := fixClusterAddonsConfiguration("test")
-			fixAddonCfg.Spec.Repositories = []v1alpha1.SpecRepository{
+			fixAddonCfg.Spec.Repositories = []v1alpha3.SpecRepository{
 				{URL: "www.already.present.url"},
 			}
 			expURLs := append(tc.urls, "www.already.present.url")
@@ -91,12 +91,12 @@ func TestAddonsConfigurationService_AddRepos_Failure(t *testing.T) {
 func TestAddonsConfigurationService_DeleteRepos(t *testing.T) {
 	for tn, tc := range map[string]struct {
 		name         string
-		repos        []v1alpha1.SpecRepository
+		repos        []v1alpha3.SpecRepository
 		urlsToRemove []string
 	}{
 		"delete URL": {
 			name: "test",
-			repos: []v1alpha1.SpecRepository{
+			repos: []v1alpha3.SpecRepository{
 				{URL: "www.already.present.url"},
 				{URL: "www.next"},
 			},
@@ -106,7 +106,7 @@ func TestAddonsConfigurationService_DeleteRepos(t *testing.T) {
 		},
 		"delete many URLs": {
 			name: "test",
-			repos: []v1alpha1.SpecRepository{
+			repos: []v1alpha3.SpecRepository{
 				{URL: "www.already.present.url"},
 				{URL: "www.next"},
 				{URL: "www.second"},
@@ -168,7 +168,7 @@ func TestAddonsConfigurationService_CreateAddonsConfiguration(t *testing.T) {
 		urls   []string
 		labels *gqlschema.Labels
 
-		expectedResult *v1alpha1.ClusterAddonsConfiguration
+		expectedResult *v1alpha3.ClusterAddonsConfiguration
 	}{
 		"successWithLabels": {
 			name: "test",
@@ -179,7 +179,7 @@ func TestAddonsConfigurationService_CreateAddonsConfiguration(t *testing.T) {
 			urls: []string{
 				"ww.fix.k",
 			},
-			expectedResult: &v1alpha1.ClusterAddonsConfiguration{
+			expectedResult: &v1alpha3.ClusterAddonsConfiguration{
 				ObjectMeta: metav1.ObjectMeta{
 					Name: "test",
 					Labels: map[string]string{
@@ -187,9 +187,9 @@ func TestAddonsConfigurationService_CreateAddonsConfiguration(t *testing.T) {
 						"ion": "al",
 					},
 				},
-				Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-					CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
-						Repositories: []v1alpha1.SpecRepository{
+				Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+					CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
+						Repositories: []v1alpha3.SpecRepository{
 							{URL: "ww.fix.k"},
 						},
 					},
@@ -201,13 +201,13 @@ func TestAddonsConfigurationService_CreateAddonsConfiguration(t *testing.T) {
 			urls: []string{
 				"ww.fix.k",
 			},
-			expectedResult: &v1alpha1.ClusterAddonsConfiguration{
+			expectedResult: &v1alpha3.ClusterAddonsConfiguration{
 				ObjectMeta: metav1.ObjectMeta{
 					Name: "test",
 				},
-				Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-					CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
-						Repositories: []v1alpha1.SpecRepository{
+				Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+					CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
+						Repositories: []v1alpha3.SpecRepository{
 							{URL: "ww.fix.k"},
 						},
 					},
@@ -238,7 +238,7 @@ func TestAddonsConfigurationService_UpdateAddonsConfiguration(t *testing.T) {
 		urls   []string
 		labels *gqlschema.Labels
 
-		expectedResult *v1alpha1.ClusterAddonsConfiguration
+		expectedResult *v1alpha3.ClusterAddonsConfiguration
 	}{
 		"successWithLabels": {
 			name: "test",
@@ -249,7 +249,7 @@ func TestAddonsConfigurationService_UpdateAddonsConfiguration(t *testing.T) {
 			urls: []string{
 				"ww.fix.k",
 			},
-			expectedResult: &v1alpha1.ClusterAddonsConfiguration{
+			expectedResult: &v1alpha3.ClusterAddonsConfiguration{
 				ObjectMeta: metav1.ObjectMeta{
 					Name: "test",
 					Labels: map[string]string{
@@ -257,9 +257,9 @@ func TestAddonsConfigurationService_UpdateAddonsConfiguration(t *testing.T) {
 						"ion": "al",
 					},
 				},
-				Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-					CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
-						Repositories: []v1alpha1.SpecRepository{
+				Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+					CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
+						Repositories: []v1alpha3.SpecRepository{
 							{URL: "ww.fix.k"},
 						},
 					},
@@ -271,13 +271,13 @@ func TestAddonsConfigurationService_UpdateAddonsConfiguration(t *testing.T) {
 			urls: []string{
 				"ww.fix.k",
 			},
-			expectedResult: &v1alpha1.ClusterAddonsConfiguration{
+			expectedResult: &v1alpha3.ClusterAddonsConfiguration{
 				ObjectMeta: metav1.ObjectMeta{
 					Name: "test",
 				},
-				Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-					CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
-						Repositories: []v1alpha1.SpecRepository{
+				Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+					CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
+						Repositories: []v1alpha3.SpecRepository{
 							{URL: "ww.fix.k"},
 						},
 					},
@@ -339,18 +339,18 @@ func TestAddonsConfigurationService_DeleteAddonsConfiguration_Error(t *testing.T
 func TestAddonsConfigurationService_ListAddonsConfigurations(t *testing.T) {
 	for tn, tc := range map[string]struct {
 		alreadyExitedCfgs  []runtime.Object
-		expectedAddonsCfgs []*v1alpha1.ClusterAddonsConfiguration
+		expectedAddonsCfgs []*v1alpha3.ClusterAddonsConfiguration
 	}{
 		"empty": {
 			alreadyExitedCfgs:  []runtime.Object{},
-			expectedAddonsCfgs: []*v1alpha1.ClusterAddonsConfiguration(nil),
+			expectedAddonsCfgs: []*v1alpha3.ClusterAddonsConfiguration(nil),
 		},
 		"few addons configurations": {
 			alreadyExitedCfgs: []runtime.Object{
 				fixClusterAddonsConfiguration("test"),
 				fixClusterAddonsConfiguration("test2"),
 			},
-			expectedAddonsCfgs: []*v1alpha1.ClusterAddonsConfiguration{
+			expectedAddonsCfgs: []*v1alpha3.ClusterAddonsConfiguration{
 				fixClusterAddonsConfiguration("test"),
 				fixClusterAddonsConfiguration("test2"),
 			},
@@ -373,14 +373,14 @@ func TestAddonsConfigurationService_ListAddonsConfigurations(t *testing.T) {
 	}
 }
 
-func fixClusterAddonsConfiguration(name string) *v1alpha1.ClusterAddonsConfiguration {
-	return &v1alpha1.ClusterAddonsConfiguration{
+func fixClusterAddonsConfiguration(name string) *v1alpha3.ClusterAddonsConfiguration {
+	return &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: name,
 		},
-		Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
-				Repositories: []v1alpha1.SpecRepository{
+		Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
+				Repositories: []v1alpha3.SpecRepository{
 					{URL: "www.piko.bello"},
 				},
 			},

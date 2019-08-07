@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	"github.com/sirupsen/logrus"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/labels"
@@ -61,15 +61,15 @@ func (s *MigrationService) migrateConfigMap(cm *v1.ConfigMap) error {
 	if !exists {
 		return fmt.Errorf("could not find URLs fired in the 'Data'")
 	}
-	cac := &v1alpha1.ClusterAddonsConfiguration{}
-	cac.Spec.Repositories = []v1alpha1.SpecRepository{}
+	cac := &v1alpha3.ClusterAddonsConfiguration{}
+	cac.Spec.Repositories = []v1alpha3.SpecRepository{}
 	cac.Name = cm.Name
 
 	for _, url := range strings.Split(urlsAsString, "\n") {
 		if strings.HasSuffix(url, "/") {
 			url = url + "index.yaml"
 		}
-		cac.Spec.Repositories = append(cac.Spec.Repositories, v1alpha1.SpecRepository{
+		cac.Spec.Repositories = append(cac.Spec.Repositories, v1alpha3.SpecRepository{
 			URL: url,
 		})
 	}

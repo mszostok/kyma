@@ -3,7 +3,7 @@ package addons
 import (
 	"fmt"
 
-	addonsv1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	addonsv1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 )
 
 // RepositoryCollection keeps and process collection of RepositoryController
@@ -93,7 +93,7 @@ func (rc *RepositoryCollection) ReviseAddonDuplicationInRepository() {
 		} else {
 			ids[addon.ID] = idConflictData{
 				repositoryURL: addon.URL,
-				addonsName:    fmt.Sprintf("%s:%s", addon.Addon.Name, addon.Addon.Version),
+				//addonsName:    fmt.Sprintf("%s:%s", addon.Addon.Name, addon.Addon.Version),
 			}
 		}
 	}
@@ -101,7 +101,7 @@ func (rc *RepositoryCollection) ReviseAddonDuplicationInRepository() {
 
 // ReviseAddonDuplicationInStorage checks all completed addons (addons without fetch/load error)
 // they have no name:version conflict with other AddonConfiguration
-func (rc *RepositoryCollection) ReviseAddonDuplicationInStorage(acList *addonsv1alpha1.AddonsConfigurationList) {
+func (rc *RepositoryCollection) ReviseAddonDuplicationInStorage(acList *addonsv1alpha1.VirtualServiceList) {
 	for _, addon := range rc.completeAddons() {
 		rc.findExistingAddon(addon, acList)
 	}
@@ -115,7 +115,7 @@ func (rc *RepositoryCollection) ReviseAddonDuplicationInClusterStorage(acList *a
 	}
 }
 
-func (rc *RepositoryCollection) findExistingAddon(addon *AddonController, list *addonsv1alpha1.AddonsConfigurationList) {
+func (rc *RepositoryCollection) findExistingAddon(addon *AddonController, list *addonsv1alpha1.VirtualServiceList) {
 	for _, existAddonConfiguration := range list.Items {
 		for _, repo := range existAddonConfiguration.Status.Repositories {
 			if rc.addonAlreadyRegistered(*addon, rc.filterReadyAddons(repo)) {

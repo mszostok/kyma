@@ -16,7 +16,7 @@ import (
 	scc "github.com/kubernetes-incubator/service-catalog/pkg/client/clientset_generated/clientset"
 
 	corev1 "github.com/kubernetes/client-go/kubernetes/typed/core/v1"
-	v1alpha12 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	v1alpha12 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	"github.com/kyma-project/kyma/tests/acceptance/pkg/repeat"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
@@ -60,7 +60,7 @@ func TestBrokerHasIstioRbacAuthorizationRules(t *testing.T) {
 func TestHelmBrokerAddonsConfiguration(t *testing.T) {
 	// given
 	namespace := fmt.Sprintf("test-acc-addonsconfig-%s", rand.String(4))
-	addonsConfig := &v1alpha12.AddonsConfiguration{
+	addonsConfig := &v1alpha12.VirtualService{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      "testing-addons-config",
 			Namespace: namespace,

@@ -1,7 +1,7 @@
 // Package v1 contains API Schema definitions for the addons v1 API group
 // +kubebuilder:object:generate=true
 // +groupName=addons.kyma-project.io
-package v1alpha1
+package v1alpha3
 
 import (
 	"k8s.io/apimachinery/pkg/runtime/schema"

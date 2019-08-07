@@ -3,7 +3,7 @@
 package versioned
 
 import (
-	addonsv1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/addons/v1alpha1"
+	addonsv1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned/typed/networking/v1alpha3"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"
@@ -11,27 +11,27 @@ import (
 
 type Interface interface {
 	Discovery() discovery.DiscoveryInterface
-	AddonsV1alpha1() addonsv1alpha1.AddonsV1alpha1Interface
+	AddonsV1alpha3() addonsv1alpha3.AddonsV1alpha3Interface
 	// Deprecated: please explicitly pick a version if possible.
-	Addons() addonsv1alpha1.AddonsV1alpha1Interface
+	Addons() addonsv1alpha3.AddonsV1alpha3Interface
 }
 
 // Clientset contains the clients for groups. Each group has exactly one
 // version included in a Clientset.
 type Clientset struct {
 	*discovery.DiscoveryClient
-	addonsV1alpha1 *addonsv1alpha1.AddonsV1alpha1Client
+	addonsV1alpha3 *addonsv1alpha3.AddonsV1alpha3Client
 }
 
-// AddonsV1alpha1 retrieves the AddonsV1alpha1Client
-func (c *Clientset) AddonsV1alpha1() addonsv1alpha1.AddonsV1alpha1Interface {
-	return c.addonsV1alpha1
+// AddonsV1alpha3 retrieves the AddonsV1alpha3Client
+func (c *Clientset) AddonsV1alpha3() addonsv1alpha3.AddonsV1alpha3Interface {
+	return c.addonsV1alpha3
 }
 
 // Deprecated: Addons retrieves the default version of AddonsClient.
 // Please explicitly pick a version.
-func (c *Clientset) Addons() addonsv1alpha1.AddonsV1alpha1Interface {
-	return c.addonsV1alpha1
+func (c *Clientset) Addons() addonsv1alpha3.AddonsV1alpha3Interface {
+	return c.addonsV1alpha3
 }
 
 // Discovery retrieves the DiscoveryClient
@@ -50,7 +50,7 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	}
 	var cs Clientset
 	var err error
-	cs.addonsV1alpha1, err = addonsv1alpha1.NewForConfig(&configShallowCopy)
+	cs.addonsV1alpha3, err = addonsv1alpha3.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 // panics if there is an error in the config.
 func NewForConfigOrDie(c *rest.Config) *Clientset {
 	var cs Clientset
-	cs.addonsV1alpha1 = addonsv1alpha1.NewForConfigOrDie(c)
+	cs.addonsV1alpha3 = addonsv1alpha3.NewForConfigOrDie(c)
 
 	cs.DiscoveryClient = discovery.NewDiscoveryClientForConfigOrDie(c)
 	return &cs
@@ -75,7 +75,7 @@ func NewForConfigOrDie(c *rest.Config) *Clientset {
 // New creates a new Clientset for the given RESTClient.
 func New(c rest.Interface) *Clientset {
 	var cs Clientset
-	cs.addonsV1alpha1 = addonsv1alpha1.New(c)
+	cs.addonsV1alpha3 = addonsv1alpha3.New(c)
 
 	cs.DiscoveryClient = discovery.NewDiscoveryClient(c)
 	return &cs

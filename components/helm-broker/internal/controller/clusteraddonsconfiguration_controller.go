@@ -9,7 +9,7 @@ import (
 	"github.com/kyma-project/kyma/components/helm-broker/internal"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/controller/addons"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/storage"
-	addonsv1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	addonsv1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	exerr "github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -123,7 +123,7 @@ func (r *ReconcileClusterAddonsConfiguration) Reconcile(request reconcile.Reques
 		preAddon, err := r.prepareForProcessing(addon)
 		if err != nil {
 			r.log.Errorf("while preparing for processing: %v", err)
-			return reconcile.Result{Requeue: true}, exerr.Wrapf(err, "while adding a finalizer to AddonsConfiguration %q", request.NamespacedName)
+			return reconcile.Result{Requeue: true}, exerr.Wrapf(err, "while adding a finalizer to VirtualService %q", request.NamespacedName)
 		}
 		err = r.addAddonsProcess(preAddon, preAddon.Status)
 		if err != nil {

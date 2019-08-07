@@ -13,14 +13,14 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"
 
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 )
 
 const namespace = "stage"
 
 func TestMigrationService_MigrateOneURL(t *testing.T) {
 	// GIVEN
-	sch, err := v1alpha1.SchemeBuilder.Build()
+	sch, err := v1alpha3.SchemeBuilder.Build()
 	v1.AddToScheme(sch)
 	require.NoError(t, err)
 
@@ -35,7 +35,7 @@ func TestMigrationService_MigrateOneURL(t *testing.T) {
 	require.NoError(t, err)
 
 	// THEN
-	expCAC := &v1alpha1.ClusterAddonsConfiguration{}
+	expCAC := &v1alpha3.ClusterAddonsConfiguration{}
 	err = cli.Get(context.TODO(), types.NamespacedName{Name: "main", Namespace: ""}, expCAC)
 	require.NoError(t, err)
 	assert.Equal(t, 1, len(expCAC.Spec.Repositories))
@@ -46,7 +46,7 @@ func TestMigrationService_MigrateOneURL(t *testing.T) {
 
 func TestMigrationService_MigrateTwoURLs(t *testing.T) {
 	// GIVEN
-	sch, err := v1alpha1.SchemeBuilder.Build()
+	sch, err := v1alpha3.SchemeBuilder.Build()
 	v1.AddToScheme(sch)
 	require.NoError(t, err)
 
@@ -61,7 +61,7 @@ func TestMigrationService_MigrateTwoURLs(t *testing.T) {
 	require.NoError(t, err)
 
 	// THEN
-	expCAC := &v1alpha1.ClusterAddonsConfiguration{}
+	expCAC := &v1alpha3.ClusterAddonsConfiguration{}
 	err = cli.Get(context.TODO(), types.NamespacedName{Name: "main"}, expCAC)
 	require.NoError(t, err)
 	assert.Equal(t, 2, len(expCAC.Spec.Repositories))
@@ -72,7 +72,7 @@ func TestMigrationService_MigrateTwoURLs(t *testing.T) {
 
 func TestMigrationService_MigrateTwoConfigMaps(t *testing.T) {
 	// GIVEN
-	sch, err := v1alpha1.SchemeBuilder.Build()
+	sch, err := v1alpha3.SchemeBuilder.Build()
 	v1.AddToScheme(sch)
 	require.NoError(t, err)
 
@@ -92,7 +92,7 @@ func TestMigrationService_MigrateTwoConfigMaps(t *testing.T) {
 	require.NoError(t, err)
 
 	// THEN
-	cacList := &v1alpha1.ClusterAddonsConfigurationList{}
+	cacList := &v1alpha3.ClusterAddonsConfigurationList{}
 	err = cli.List(context.TODO(), &client.ListOptions{}, cacList)
 	require.NoError(t, err)
 	assert.Equal(t, 2, len(cacList.Items))
@@ -107,7 +107,7 @@ func TestMigrationService_MigrateTwoConfigMaps(t *testing.T) {
 
 func TestMigrationService_NotMigrateDefaultConfiguration(t *testing.T) {
 	// GIVEN
-	sch, err := v1alpha1.SchemeBuilder.Build()
+	sch, err := v1alpha3.SchemeBuilder.Build()
 	v1.AddToScheme(sch)
 	require.NoError(t, err)
 
@@ -122,7 +122,7 @@ func TestMigrationService_NotMigrateDefaultConfiguration(t *testing.T) {
 	require.NoError(t, err)
 
 	// THEN
-	expCAC := &v1alpha1.ClusterAddonsConfiguration{}
+	expCAC := &v1alpha3.ClusterAddonsConfiguration{}
 	err = cli.Get(context.TODO(), types.NamespacedName{Name: "main", Namespace: ""}, expCAC)
 	require.Error(t, err)
 

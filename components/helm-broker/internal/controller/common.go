@@ -5,7 +5,7 @@ import (
 
 	add "github.com/kyma-project/kyma/components/helm-broker/internal/addon"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/controller/addons"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )
@@ -17,7 +17,7 @@ type addonLoader struct {
 }
 
 // Load loads repositories from given addon
-func (a *addonLoader) Load(repos []v1alpha1.SpecRepository) *addons.RepositoryCollection {
+func (a *addonLoader) Load(repos []v1alpha3.SpecRepository) *addons.RepositoryCollection {
 	repositories := addons.NewRepositoryCollection()
 	for _, specRepository := range repos {
 		a.log.Infof("- create addons for %q repository", specRepository.URL)

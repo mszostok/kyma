@@ -9,11 +9,11 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 )
 
 func main() {
-	sch, err := v1alpha1.SchemeBuilder.Build()
+	sch, err := v1alpha3.SchemeBuilder.Build()
 	fatalOnError(err)
 	err = v1.AddToScheme(sch)
 	fatalOnError(err)

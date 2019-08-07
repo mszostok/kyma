@@ -1,7 +1,11 @@
 package main
 
 import (
+	"context"
 	"flag"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
+	"github.com/sanity-io/litter"
+	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	"github.com/kyma-project/kyma/components/helm-broker/internal/controller"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/storage"
@@ -11,7 +15,6 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"sigs.k8s.io/controller-runtime/pkg/client/config"
-	"sigs.k8s.io/controller-runtime/pkg/runtime/signals"
 )
 
 func main() {
@@ -35,10 +38,16 @@ func main() {
 	fatalOnError(err, "while setting up a client")
 
 	mgr := controller.SetupAndStartController(cfg, ctrCfg, metricsAddr, sFact, lg)
+	cli := mgr.GetClient()
 
-	lg.Info("Starting the Controller.")
-	err = mgr.Start(signals.SetupSignalHandler())
-	fatalOnError(err, "unable to run the manager")
+	vs := v1alpha3.VirtualService{}
+	err = cli.Get(context.TODO(), client.ObjectKey{}, &vs)
+	fatalOnError(err, "")
+
+	litter.Dump(vs)
+	//lg.Info("Starting the Controller.")
+	//err = mgr.Start(signals.SetupSignalHandler())
+	//fatalOnError(err, "unable to run the manager")
 }
 
 func fatalOnError(err error, msg string) {

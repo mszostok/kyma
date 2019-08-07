@@ -5,21 +5,21 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 )
 
 //go:generate mockery -name=gqlClusterAddonsConfigurationConverter -output=automock -outpkg=automock -case=underscore
 type gqlClusterAddonsConfigurationConverter interface {
-	ToGQL(item *v1alpha1.ClusterAddonsConfiguration) *gqlschema.AddonsConfiguration
+	ToGQL(item *v1alpha3.ClusterAddonsConfiguration) *gqlschema.AddonsConfiguration
 }
 
 type AddonsConfiguration struct {
 	channel   chan<- gqlschema.AddonsConfigurationEvent
-	filter    func(entity *v1alpha1.ClusterAddonsConfiguration) bool
+	filter    func(entity *v1alpha3.ClusterAddonsConfiguration) bool
 	converter gqlClusterAddonsConfigurationConverter
 }
 
-func NewClusterAddonsConfiguration(channel chan<- gqlschema.AddonsConfigurationEvent, filter func(entity *v1alpha1.ClusterAddonsConfiguration) bool, converter gqlClusterAddonsConfigurationConverter) *AddonsConfiguration {
+func NewClusterAddonsConfiguration(channel chan<- gqlschema.AddonsConfigurationEvent, filter func(entity *v1alpha3.ClusterAddonsConfiguration) bool, converter gqlClusterAddonsConfigurationConverter) *AddonsConfiguration {
 	return &AddonsConfiguration{
 		channel:   channel,
 		filter:    filter,
@@ -40,7 +40,7 @@ func (l *AddonsConfiguration) OnDelete(object interface{}) {
 }
 
 func (l *AddonsConfiguration) onEvent(eventType gqlschema.SubscriptionEventType, object interface{}) {
-	entity, ok := object.(*v1alpha1.ClusterAddonsConfiguration)
+	entity, ok := object.(*v1alpha3.ClusterAddonsConfiguration)
 	if !ok {
 		glog.Error(fmt.Errorf("incorrect object type: %T, should be: *v1alpha1.ClusterAddonsConfiguration", object))
 		return
@@ -51,7 +51,7 @@ func (l *AddonsConfiguration) onEvent(eventType gqlschema.SubscriptionEventType,
 	}
 }
 
-func (l *AddonsConfiguration) notify(eventType gqlschema.SubscriptionEventType, entity *v1alpha1.ClusterAddonsConfiguration) {
+func (l *AddonsConfiguration) notify(eventType gqlschema.SubscriptionEventType, entity *v1alpha3.ClusterAddonsConfiguration) {
 	gqlAddonsConfiguration := l.converter.ToGQL(entity)
 	if gqlAddonsConfiguration == nil {
 		return

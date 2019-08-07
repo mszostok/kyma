@@ -3,4 +3,4 @@
 // +k8s:deepcopy-gen=package,register
 // +k8s:defaulter-gen=TypeMeta
 // +groupName=addons.kyma-project.io
-package v1alpha1
+package v1alpha3

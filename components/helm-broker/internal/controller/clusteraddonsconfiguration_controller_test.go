@@ -14,7 +14,7 @@ import (
 	"github.com/kyma-project/kyma/components/helm-broker/internal"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/controller/automock"
 	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	"github.com/kyma-project/kyma/components/helm-broker/platform/logger/spy"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -64,10 +64,10 @@ func TestReconcileClusterAddonsConfiguration_AddAddonsProcess(t *testing.T) {
 	assert.NoError(t, err)
 	assert.False(t, result.Requeue)
 
-	res := v1alpha1.ClusterAddonsConfiguration{}
+	res := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Namespace: fixAddonsCfg.Namespace, Name: fixAddonsCfg.Name}, &res)
 	assert.NoError(t, err)
-	assert.Contains(t, res.Finalizers, v1alpha1.FinalizerAddonsConfiguration)
+	assert.Contains(t, res.Finalizers, v1alpha3.FinalizerAddonsConfiguration)
 }
 
 func TestReconcileClusterAddonsConfiguration_AddAddonsProcess_Error(t *testing.T) {
@@ -105,10 +105,10 @@ func TestReconcileClusterAddonsConfiguration_AddAddonsProcess_Error(t *testing.T
 	assert.Error(t, err)
 	assert.False(t, result.Requeue)
 
-	res := v1alpha1.ClusterAddonsConfiguration{}
+	res := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Name: fixAddonsCfg.Name}, &res)
 	assert.NoError(t, err)
-	assert.Contains(t, res.Finalizers, v1alpha1.FinalizerAddonsConfiguration)
+	assert.Contains(t, res.Finalizers, v1alpha3.FinalizerAddonsConfiguration)
 }
 
 func TestReconcileClusterAddonsConfiguration_UpdateAddonsProcess(t *testing.T) {
@@ -150,7 +150,7 @@ func TestReconcileClusterAddonsConfiguration_UpdateAddonsProcess(t *testing.T) {
 	assert.False(t, result.Requeue)
 	assert.NoError(t, err)
 
-	res := v1alpha1.ClusterAddonsConfiguration{}
+	res := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Name: fixAddonsCfg.Name}, &res)
 	assert.NoError(t, err)
 	assert.Equal(t, res.Status.ObservedGeneration, int64(2))
@@ -184,11 +184,11 @@ func TestReconcileClusterAddonsConfiguration_UpdateAddonsProcess_ConflictingAddo
 	assert.NoError(t, err)
 	assert.False(t, result.Requeue)
 
-	res := v1alpha1.ClusterAddonsConfiguration{}
+	res := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Name: fixAddonsCfg.Name}, &res)
 	assert.NoError(t, err)
 	assert.Equal(t, res.Status.ObservedGeneration, int64(2))
-	assert.Equal(t, res.Status.Phase, v1alpha1.AddonsConfigurationFailed)
+	assert.Equal(t, res.Status.Phase, v1alpha3.AddonsConfigurationFailed)
 }
 
 func TestReconcileClusterAddonsConfiguration_DeleteAddonsProcess(t *testing.T) {
@@ -217,10 +217,10 @@ func TestReconcileClusterAddonsConfiguration_DeleteAddonsProcess(t *testing.T) {
 	assert.NoError(t, err)
 	assert.False(t, result.Requeue)
 
-	res := v1alpha1.ClusterAddonsConfiguration{}
+	res := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Name: fixAddonsCfg.Name}, &res)
 	assert.NoError(t, err)
-	assert.NotContains(t, res.Finalizers, v1alpha1.FinalizerAddonsConfiguration)
+	assert.NotContains(t, res.Finalizers, v1alpha3.FinalizerAddonsConfiguration)
 }
 
 func TestReconcileClusterAddonsConfiguration_DeleteAddonsProcess_ReconcileOtherAddons(t *testing.T) {
@@ -250,15 +250,15 @@ func TestReconcileClusterAddonsConfiguration_DeleteAddonsProcess_ReconcileOtherA
 	assert.NoError(t, err)
 	assert.False(t, result.Requeue)
 
-	otherAddon := v1alpha1.ClusterAddonsConfiguration{}
+	otherAddon := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Name: failedAddCfg.Name}, &otherAddon)
 	assert.NoError(t, err)
 	assert.Equal(t, int(otherAddon.Spec.ReprocessRequest), 1)
 
-	res := v1alpha1.ClusterAddonsConfiguration{}
+	res := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Name: fixAddonsCfg.Name}, &res)
 	assert.NoError(t, err)
-	assert.NotContains(t, res.Finalizers, v1alpha1.FinalizerAddonsConfiguration)
+	assert.NotContains(t, res.Finalizers, v1alpha3.FinalizerAddonsConfiguration)
 }
 
 func TestReconcileClusterAddonsConfiguration_DeleteAddonsProcess_Error(t *testing.T) {
@@ -278,10 +278,10 @@ func TestReconcileClusterAddonsConfiguration_DeleteAddonsProcess_Error(t *testin
 	assert.False(t, result.Requeue)
 	assert.Equal(t, result.RequeueAfter, time.Second*15)
 
-	res := v1alpha1.ClusterAddonsConfiguration{}
+	res := v1alpha3.ClusterAddonsConfiguration{}
 	err = ts.mgr.GetClient().Get(context.Background(), types.NamespacedName{Name: fixAddonsCfg.Name}, &res)
 	assert.NoError(t, err)
-	assert.Contains(t, res.Finalizers, v1alpha1.FinalizerAddonsConfiguration)
+	assert.Contains(t, res.Finalizers, v1alpha3.FinalizerAddonsConfiguration)
 }
 
 type clusterTestSuite struct {
@@ -297,7 +297,7 @@ type clusterTestSuite struct {
 }
 
 func getClusterTestSuite(t *testing.T, objects ...runtime.Object) *clusterTestSuite {
-	sch, err := v1alpha1.SchemeBuilder.Build()
+	sch, err := v1alpha3.SchemeBuilder.Build()
 	require.NoError(t, err)
 	require.NoError(t, apis.AddToScheme(sch))
 	require.NoError(t, v1beta1.AddToScheme(sch))
@@ -327,15 +327,15 @@ func (ts *clusterTestSuite) assertExpectations() {
 	ts.addonGetterFactory.AssertExpectations(ts.t)
 }
 
-func fixClusterAddonsConfiguration() *v1alpha1.ClusterAddonsConfiguration {
-	return &v1alpha1.ClusterAddonsConfiguration{
+func fixClusterAddonsConfiguration() *v1alpha3.ClusterAddonsConfiguration {
+	return &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: "test",
 		},
-		Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
+		Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
 				ReprocessRequest: 0,
-				Repositories: []v1alpha1.SpecRepository{
+				Repositories: []v1alpha3.SpecRepository{
 					{
 						URL: "http://example.com/index.yaml",
 					},
@@ -345,29 +345,29 @@ func fixClusterAddonsConfiguration() *v1alpha1.ClusterAddonsConfiguration {
 	}
 }
 
-func fixFailedClusterAddonsConfiguration() *v1alpha1.ClusterAddonsConfiguration {
-	return &v1alpha1.ClusterAddonsConfiguration{
+func fixFailedClusterAddonsConfiguration() *v1alpha3.ClusterAddonsConfiguration {
+	return &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: "failed",
 		},
-		Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
+		Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
 				ReprocessRequest: 0,
-				Repositories: []v1alpha1.SpecRepository{
+				Repositories: []v1alpha3.SpecRepository{
 					{
 						URL: "http://example.com/index.yaml",
 					},
 				},
 			},
 		},
-		Status: v1alpha1.ClusterAddonsConfigurationStatus{
-			CommonAddonsConfigurationStatus: v1alpha1.CommonAddonsConfigurationStatus{
-				Repositories: []v1alpha1.StatusRepository{
+		Status: v1alpha3.ClusterAddonsConfigurationStatus{
+			CommonAddonsConfigurationStatus: v1alpha3.CommonAddonsConfigurationStatus{
+				Repositories: []v1alpha3.StatusRepository{
 					{
-						Status: v1alpha1.RepositoryStatusFailed,
-						Addons: []v1alpha1.Addon{
+						Status: v1alpha3.RepositoryStatusFailed,
+						Addons: []v1alpha3.Addon{
 							{
-								Status:  v1alpha1.AddonStatusFailed,
+								Status:  v1alpha3.AddonStatusFailed,
 								Name:    "redis",
 								Version: "0.0.1",
 							},
@@ -379,29 +379,29 @@ func fixFailedClusterAddonsConfiguration() *v1alpha1.ClusterAddonsConfiguration 
 	}
 }
 
-func fixReadyClusterAddonsConfiguration() *v1alpha1.ClusterAddonsConfiguration {
-	return &v1alpha1.ClusterAddonsConfiguration{
+func fixReadyClusterAddonsConfiguration() *v1alpha3.ClusterAddonsConfiguration {
+	return &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: "ready",
 		},
-		Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
+		Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
 				ReprocessRequest: 0,
-				Repositories: []v1alpha1.SpecRepository{
+				Repositories: []v1alpha3.SpecRepository{
 					{
 						URL: "http://example.com/index.yaml",
 					},
 				},
 			},
 		},
-		Status: v1alpha1.ClusterAddonsConfigurationStatus{
-			CommonAddonsConfigurationStatus: v1alpha1.CommonAddonsConfigurationStatus{
-				Repositories: []v1alpha1.StatusRepository{
+		Status: v1alpha3.ClusterAddonsConfigurationStatus{
+			CommonAddonsConfigurationStatus: v1alpha3.CommonAddonsConfigurationStatus{
+				Repositories: []v1alpha3.StatusRepository{
 					{
-						Status: v1alpha1.RepositoryStatusReady,
-						Addons: []v1alpha1.Addon{
+						Status: v1alpha3.RepositoryStatusReady,
+						Addons: []v1alpha3.Addon{
 							{
-								Status:  v1alpha1.AddonStatusReady,
+								Status:  v1alpha3.AddonStatusReady,
 								Name:    "redis",
 								Version: "0.0.1",
 							},
@@ -413,32 +413,32 @@ func fixReadyClusterAddonsConfiguration() *v1alpha1.ClusterAddonsConfiguration {
 	}
 }
 
-func fixDeletedClusterAddonsConfiguration() *v1alpha1.ClusterAddonsConfiguration {
-	return &v1alpha1.ClusterAddonsConfiguration{
+func fixDeletedClusterAddonsConfiguration() *v1alpha3.ClusterAddonsConfiguration {
+	return &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:              "deleted",
 			DeletionTimestamp: &metav1.Time{Time: time.Now()},
-			Finalizers:        []string{v1alpha1.FinalizerAddonsConfiguration},
+			Finalizers:        []string{v1alpha3.FinalizerAddonsConfiguration},
 		},
-		Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
+		Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
 				ReprocessRequest: 0,
-				Repositories: []v1alpha1.SpecRepository{
+				Repositories: []v1alpha3.SpecRepository{
 					{
 						URL: "http://example.com/index.yaml",
 					},
 				},
 			},
 		},
-		Status: v1alpha1.ClusterAddonsConfigurationStatus{
-			CommonAddonsConfigurationStatus: v1alpha1.CommonAddonsConfigurationStatus{
-				Phase: v1alpha1.AddonsConfigurationReady,
-				Repositories: []v1alpha1.StatusRepository{
+		Status: v1alpha3.ClusterAddonsConfigurationStatus{
+			CommonAddonsConfigurationStatus: v1alpha3.CommonAddonsConfigurationStatus{
+				Phase: v1alpha3.AddonsConfigurationReady,
+				Repositories: []v1alpha3.StatusRepository{
 					{
-						Status: v1alpha1.RepositoryStatusReady,
-						Addons: []v1alpha1.Addon{
+						Status: v1alpha3.RepositoryStatusReady,
+						Addons: []v1alpha3.Addon{
 							{
-								Status:  v1alpha1.AddonStatusReady,
+								Status:  v1alpha3.AddonStatusReady,
 								Name:    "redis",
 								Version: "0.0.1",
 							},

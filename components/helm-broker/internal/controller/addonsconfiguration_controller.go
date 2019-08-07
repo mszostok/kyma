@@ -9,7 +9,7 @@ import (
 	"github.com/kyma-project/kyma/components/helm-broker/internal"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/controller/addons"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/storage"
-	addonsv1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	addonsv1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	exerr "github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -42,8 +42,8 @@ func (acc *AddonsConfigurationController) Start(mgr manager.Manager) error {
 		return err
 	}
 
-	// Watch for changes to AddonsConfiguration
-	err = c.Watch(&source.Kind{Type: &addonsv1alpha1.AddonsConfiguration{}}, &handler.EnqueueRequestForObject{})
+	// Watch for changes to VirtualService
+	err = c.Watch(&source.Kind{Type: &addonsv1alpha1.VirtualService{}}, &handler.EnqueueRequestForObject{})
 	if err != nil {
 		return err
 	}
@@ -53,7 +53,7 @@ func (acc *AddonsConfigurationController) Start(mgr manager.Manager) error {
 
 var _ reconcile.Reconciler = &ReconcileAddonsConfiguration{}
 
-// ReconcileAddonsConfiguration reconciles a AddonsConfiguration object
+// ReconcileAddonsConfiguration reconciles a VirtualService object
 type ReconcileAddonsConfiguration struct {
 	log logrus.FieldLogger
 	client.Client
@@ -99,10 +99,10 @@ func NewReconcileAddonsConfiguration(mgr manager.Manager, addonGetterFactory add
 	}
 }
 
-// Reconcile reads that state of the cluster for a AddonsConfiguration object and makes changes based on the state read
-// and what is in the AddonsConfiguration.Spec
+// Reconcile reads that state of the cluster for a VirtualService object and makes changes based on the state read
+// and what is in the VirtualService.Spec
 func (r *ReconcileAddonsConfiguration) Reconcile(request reconcile.Request) (reconcile.Result, error) {
-	addon := &addonsv1alpha1.AddonsConfiguration{}
+	addon := &addonsv1alpha1.VirtualService{}
 	err := r.Get(context.TODO(), request.NamespacedName, addon)
 	if err != nil {
 		return reconcile.Result{}, err
@@ -111,54 +111,54 @@ func (r *ReconcileAddonsConfiguration) Reconcile(request reconcile.Request) (rec
 
 	if addon.DeletionTimestamp != nil {
 		if err := r.deleteAddonsProcess(addon); err != nil {
-			r.log.Errorf("while deleting AddonsConfiguration process: %v", err)
+			r.log.Errorf("while deleting VirtualService process: %v", err)
 			return reconcile.Result{RequeueAfter: time.Second * 15}, exerr.Wrapf(err, "while deleting AddonConfiguration %q", request.NamespacedName)
 		}
 		return reconcile.Result{}, nil
 	}
 
 	if addon.Status.ObservedGeneration == 0 {
-		r.log.Infof("Start add AddonsConfiguration %s/%s process", addon.Name, addon.Namespace)
+		r.log.Infof("Start add VirtualService %s/%s process", addon.Name, addon.Namespace)
 
 		preAddon, err := r.prepareForProcessing(addon)
 		if err != nil {
 			r.log.Errorf("while preparing for processing: %v", err)
-			return reconcile.Result{Requeue: true}, exerr.Wrapf(err, "while adding a finalizer to AddonsConfiguration %q", request.NamespacedName)
+			return reconcile.Result{Requeue: true}, exerr.Wrapf(err, "while adding a finalizer to VirtualService %q", request.NamespacedName)
 		}
 		err = r.addAddonsProcess(preAddon, preAddon.Status)
 		if err != nil {
-			r.log.Errorf("while adding AddonsConfiguration process: %v", err)
+			r.log.Errorf("while adding VirtualService process: %v", err)
 			return reconcile.Result{}, exerr.Wrapf(err, "while creating ClusterAddonsConfiguration %q", request.NamespacedName)
 		}
-		r.log.Info("Add AddonsConfiguration process completed")
+		r.log.Info("Add VirtualService process completed")
 
 	} else if addon.Generation > addon.Status.ObservedGeneration {
-		r.log.Infof("Start update AddonsConfiguration %s/%s process", addon.Name, addon.Namespace)
+		r.log.Infof("Start update VirtualService %s/%s process", addon.Name, addon.Namespace)
 
 		lastAddon := addon.DeepCopy()
 		addon.Status = addonsv1alpha1.AddonsConfigurationStatus{}
 		err = r.addAddonsProcess(addon, lastAddon.Status)
 		if err != nil {
-			r.log.Errorf("while updating AddonsConfiguration process: %v", err)
-			return reconcile.Result{}, exerr.Wrapf(err, "while updating AddonsConfiguration %q", request.NamespacedName)
+			r.log.Errorf("while updating VirtualService process: %v", err)
+			return reconcile.Result{}, exerr.Wrapf(err, "while updating VirtualService %q", request.NamespacedName)
 		}
-		r.log.Info("Update AddonsConfiguration process completed")
+		r.log.Info("Update VirtualService process completed")
 	}
 
 	return reconcile.Result{}, nil
 }
 
-func (r *ReconcileAddonsConfiguration) addAddonsProcess(addon *addonsv1alpha1.AddonsConfiguration, lastStatus addonsv1alpha1.AddonsConfigurationStatus) error {
+func (r *ReconcileAddonsConfiguration) addAddonsProcess(addon *addonsv1alpha1.VirtualService, lastStatus addonsv1alpha1.AddonsConfigurationStatus) error {
 	r.log.Infof("- load addons and charts for each addon")
 	repositories := r.addonLoader.Load(addon.Spec.Repositories)
 
 	r.log.Info("- check duplicate ID addons alongside repositories")
 	repositories.ReviseAddonDuplicationInRepository()
 
-	r.log.Info("- check duplicates ID addons in existing AddonsConfiguration")
+	r.log.Info("- check duplicates ID addons in existing VirtualService")
 	list, err := r.existingAddonsConfigurations(addon)
 	if err != nil {
-		return exerr.Wrap(err, "while fetching AddonsConfiguration list")
+		return exerr.Wrap(err, "while fetching VirtualService list")
 	}
 	repositories.ReviseAddonDuplicationInStorage(list)
 
@@ -174,7 +174,7 @@ func (r *ReconcileAddonsConfiguration) addAddonsProcess(addon *addonsv1alpha1.Ad
 	switch addon.Status.Phase {
 	case addonsv1alpha1.AddonsConfigurationFailed:
 		if _, err = r.updateAddonStatus(r.statusSnapshot(addon, repositories)); err != nil {
-			return exerr.Wrap(err, "while updating AddonsConfiguration status")
+			return exerr.Wrap(err, "while updating VirtualService status")
 		}
 		if lastStatus.Phase == addonsv1alpha1.AddonsConfigurationReady {
 			deletedAddons, err = r.deleteAddonsFromRepository(addon.Namespace, lastStatus.Repositories)
@@ -188,7 +188,7 @@ func (r *ReconcileAddonsConfiguration) addAddonsProcess(addon *addonsv1alpha1.Ad
 			return exerr.Wrap(err, "while saving ready addons and charts in storage")
 		}
 		if _, err = r.updateAddonStatus(r.statusSnapshot(addon, repositories)); err != nil {
-			return exerr.Wrap(err, "while updating AddonsConfiguration status")
+			return exerr.Wrap(err, "while updating VirtualService status")
 		}
 		if lastStatus.Phase == addonsv1alpha1.AddonsConfigurationReady {
 			deletedAddons, err = r.deleteOrphanAddons(addon.Namespace, addon.Status.Repositories, lastStatus.Repositories)
@@ -218,8 +218,8 @@ func (r *ReconcileAddonsConfiguration) addAddonsProcess(addon *addonsv1alpha1.Ad
 	return nil
 }
 
-func (r *ReconcileAddonsConfiguration) deleteAddonsProcess(addon *addonsv1alpha1.AddonsConfiguration) error {
-	r.log.Infof("Start delete AddonsConfiguration %s/%s process", addon.Name, addon.Namespace)
+func (r *ReconcileAddonsConfiguration) deleteAddonsProcess(addon *addonsv1alpha1.VirtualService) error {
+	r.log.Infof("Start delete VirtualService %s/%s process", addon.Name, addon.Namespace)
 
 	if addon.Status.Phase == addonsv1alpha1.AddonsConfigurationReady {
 		adds, err := r.existingAddonsConfigurations(addon)
@@ -232,7 +232,7 @@ func (r *ReconcileAddonsConfiguration) deleteAddonsProcess(addon *addonsv1alpha1
 			if addon.Status.Phase != addonsv1alpha1.AddonsConfigurationReady {
 				// reprocess AddonConfig again if it was failed
 				if err := r.reprocessAddonsConfiguration(&addon); err != nil {
-					return exerr.Wrapf(err, "while requesting reprocess for AddonsConfiguration %s", addon.Name)
+					return exerr.Wrapf(err, "while requesting reprocess for VirtualService %s", addon.Name)
 
 				}
 			} else {
@@ -271,11 +271,11 @@ func (r *ReconcileAddonsConfiguration) deleteAddonsProcess(addon *addonsv1alpha1
 		return exerr.Wrapf(err, "while deleting finalizer for AddonConfiguration %s/%s", addon.Name, addon.Namespace)
 	}
 
-	r.log.Info("Delete AddonsConfiguration process completed")
+	r.log.Info("Delete VirtualService process completed")
 	return nil
 }
 
-func (r *ReconcileAddonsConfiguration) ensureBroker(addon *addonsv1alpha1.AddonsConfiguration) error {
+func (r *ReconcileAddonsConfiguration) ensureBroker(addon *addonsv1alpha1.VirtualService) error {
 	exist, err := r.brokerFacade.Exist(addon.Namespace)
 	if err != nil {
 		return exerr.Wrapf(err, "while checking if ServiceBroker exist in namespace %s", addon.Namespace)
@@ -293,8 +293,8 @@ func (r *ReconcileAddonsConfiguration) ensureBroker(addon *addonsv1alpha1.Addons
 	return nil
 }
 
-func (r *ReconcileAddonsConfiguration) existingAddonsConfigurations(addon *addonsv1alpha1.AddonsConfiguration) (*addonsv1alpha1.AddonsConfigurationList, error) {
-	addonsList := &addonsv1alpha1.AddonsConfigurationList{}
+func (r *ReconcileAddonsConfiguration) existingAddonsConfigurations(addon *addonsv1alpha1.VirtualService) (*addonsv1alpha1.VirtualServiceList, error) {
+	addonsList := &addonsv1alpha1.VirtualServiceList{}
 	addonsConfigurationList, err := r.addonsConfigurationList(addon.Namespace)
 	if err != nil {
 		return nil, exerr.Wrapf(err, "while listing AddonsConfigurations from namespace %s", addon.Namespace)
@@ -309,8 +309,8 @@ func (r *ReconcileAddonsConfiguration) existingAddonsConfigurations(addon *addon
 	return addonsList, nil
 }
 
-func (r *ReconcileAddonsConfiguration) addonsConfigurationList(namespace string) (*addonsv1alpha1.AddonsConfigurationList, error) {
-	addonsConfigurationList := &addonsv1alpha1.AddonsConfigurationList{}
+func (r *ReconcileAddonsConfiguration) addonsConfigurationList(namespace string) (*addonsv1alpha1.VirtualServiceList, error) {
+	addonsConfigurationList := &addonsv1alpha1.VirtualServiceList{}
 
 	err := r.Client.List(context.TODO(), &client.ListOptions{Namespace: namespace}, addonsConfigurationList)
 	if err != nil {
@@ -376,7 +376,7 @@ func (r *ReconcileAddonsConfiguration) removeAddon(ad addonsv1alpha1.Addon, name
 	return &b.ID, nil
 }
 
-func (r *ReconcileAddonsConfiguration) reprocessConflictingAddonsConfiguration(key string, list *addonsv1alpha1.AddonsConfigurationList) error {
+func (r *ReconcileAddonsConfiguration) reprocessConflictingAddonsConfiguration(key string, list *addonsv1alpha1.VirtualServiceList) error {
 	for _, addonsCfg := range list.Items {
 		if addonsCfg.Status.Phase != addonsv1alpha1.AddonsConfigurationReady {
 			for _, repo := range addonsCfg.Status.Repositories {
@@ -393,8 +393,8 @@ func (r *ReconcileAddonsConfiguration) reprocessConflictingAddonsConfiguration(k
 	return nil
 }
 
-func (r *ReconcileAddonsConfiguration) reprocessAddonsConfiguration(addon *addonsv1alpha1.AddonsConfiguration) error {
-	ad := &addonsv1alpha1.AddonsConfiguration{}
+func (r *ReconcileAddonsConfiguration) reprocessAddonsConfiguration(addon *addonsv1alpha1.VirtualService) error {
+	ad := &addonsv1alpha1.VirtualService{}
 	if err := r.Client.Get(context.Background(), types.NamespacedName{Name: addon.Name, Namespace: addon.Namespace}, ad); err != nil {
 		return exerr.Wrapf(err, "while getting ClusterAddonsConfiguration %s", addon.Name)
 	}
@@ -447,7 +447,7 @@ func (r *ReconcileAddonsConfiguration) saveCharts(namespace internal.Namespace, 
 	return nil
 }
 
-func (r *ReconcileAddonsConfiguration) statusSnapshot(addon *addonsv1alpha1.AddonsConfiguration, repositories *addons.RepositoryCollection) *addonsv1alpha1.AddonsConfiguration {
+func (r *ReconcileAddonsConfiguration) statusSnapshot(addon *addonsv1alpha1.VirtualService, repositories *addons.RepositoryCollection) *addonsv1alpha1.VirtualService {
 	addon.Status.Repositories = nil
 
 	for _, repo := range repositories.Repositories {
@@ -462,19 +462,19 @@ func (r *ReconcileAddonsConfiguration) statusSnapshot(addon *addonsv1alpha1.Addo
 	return addon
 }
 
-func (r *ReconcileAddonsConfiguration) updateAddonStatus(addon *addonsv1alpha1.AddonsConfiguration) (*addonsv1alpha1.AddonsConfiguration, error) {
+func (r *ReconcileAddonsConfiguration) updateAddonStatus(addon *addonsv1alpha1.VirtualService) (*addonsv1alpha1.VirtualService, error) {
 	addon.Status.ObservedGeneration = addon.Generation
 	addon.Status.LastProcessedTime = &v1.Time{Time: time.Now()}
 
-	r.log.Infof("- update AddonsConfiguration %s/%s status", addon.Name, addon.Namespace)
+	r.log.Infof("- update VirtualService %s/%s status", addon.Name, addon.Namespace)
 	err := r.Status().Update(context.TODO(), addon)
 	if err != nil {
-		return nil, exerr.Wrap(err, "while update AddonsConfiguration status")
+		return nil, exerr.Wrap(err, "while update VirtualService status")
 	}
 	return addon, nil
 }
 
-func (r *ReconcileAddonsConfiguration) prepareForProcessing(addon *addonsv1alpha1.AddonsConfiguration) (*addonsv1alpha1.AddonsConfiguration, error) {
+func (r *ReconcileAddonsConfiguration) prepareForProcessing(addon *addonsv1alpha1.VirtualService) (*addonsv1alpha1.VirtualService, error) {
 	obj := addon.DeepCopy()
 	obj.Status.Phase = addonsv1alpha1.AddonsConfigurationPending
 
@@ -495,7 +495,7 @@ func (r *ReconcileAddonsConfiguration) prepareForProcessing(addon *addonsv1alpha
 	return pendingInstance, nil
 }
 
-func (r *ReconcileAddonsConfiguration) deleteFinalizer(addon *addonsv1alpha1.AddonsConfiguration) error {
+func (r *ReconcileAddonsConfiguration) deleteFinalizer(addon *addonsv1alpha1.VirtualService) error {
 	obj := addon.DeepCopy()
 	if !r.protection.hasFinalizer(obj.Finalizers) {
 		return nil

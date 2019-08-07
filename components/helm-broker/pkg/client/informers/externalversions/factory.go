@@ -8,8 +8,8 @@ import (
 	time "time"
 
 	versioned "github.com/kyma-project/kyma/components/helm-broker/pkg/client/clientset/versioned"
-	addons "github.com/kyma-project/kyma/components/helm-broker/pkg/client/informers/externalversions/addons"
 	internalinterfaces "github.com/kyma-project/kyma/components/helm-broker/pkg/client/informers/externalversions/internalinterfaces"
+	networking "github.com/kyma-project/kyma/components/helm-broker/pkg/client/informers/externalversions/networking"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -156,9 +156,9 @@ type SharedInformerFactory interface {
 	ForResource(resource schema.GroupVersionResource) (GenericInformer, error)
 	WaitForCacheSync(stopCh <-chan struct{}) map[reflect.Type]bool
 
-	Addons() addons.Interface
+	Addons() networking.Interface
 }
 
-func (f *sharedInformerFactory) Addons() addons.Interface {
-	return addons.New(f, f.namespace, f.tweakListOptions)
+func (f *sharedInformerFactory) Addons() networking.Interface {
+	return networking.New(f, f.namespace, f.tweakListOptions)
 }

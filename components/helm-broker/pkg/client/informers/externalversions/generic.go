@@ -5,7 +5,7 @@ package externalversions
 import (
 	"fmt"
 
-	v1alpha1 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	v1alpha3 "github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )
@@ -36,11 +36,9 @@ func (f *genericInformer) Lister() cache.GenericLister {
 // TODO extend this to unknown resources with a client pool
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
-	// Group=addons.kyma-project.io, Version=v1alpha1
-	case v1alpha1.SchemeGroupVersion.WithResource("addonsconfigurations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Addons().V1alpha1().AddonsConfigurations().Informer()}, nil
-	case v1alpha1.SchemeGroupVersion.WithResource("clusteraddonsconfigurations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Addons().V1alpha1().ClusterAddonsConfigurations().Informer()}, nil
+	// Group=addons.kyma-project.io, Version=v1alpha3
+	case v1alpha3.SchemeGroupVersion.WithResource("virtualservices"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Addons().V1alpha3().VirtualServices().Informer()}, nil
 
 	}
 

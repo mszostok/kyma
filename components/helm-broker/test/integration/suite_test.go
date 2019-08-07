@@ -14,7 +14,7 @@ import (
 
 	"github.com/kyma-project/kyma/components/helm-broker/internal/config"
 	"github.com/kyma-project/kyma/components/helm-broker/internal/storage/testdata"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	osb "github.com/pmorie/go-open-service-broker-client/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -50,7 +50,7 @@ const (
 )
 
 func newTestSuite(t *testing.T) *testSuite {
-	sch, err := v1alpha1.SchemeBuilder.Build()
+	sch, err := v1alpha3.SchemeBuilder.Build()
 	require.NoError(t, err)
 	require.NoError(t, apis.AddToScheme(sch))
 	require.NoError(t, v1beta1.AddToScheme(sch))
@@ -223,17 +223,17 @@ func (ts *testSuite) checkServiceIDs(osbClient osb.Client, ids []string) error {
 	return nil
 }
 
-func (ts *testSuite) waitForClusterAddonsConfigurationPhase(name string, expectedPhase v1alpha1.AddonsConfigurationPhase) {
-	var cac v1alpha1.ClusterAddonsConfiguration
+func (ts *testSuite) waitForClusterAddonsConfigurationPhase(name string, expectedPhase v1alpha3.AddonsConfigurationPhase) {
+	var cac v1alpha3.ClusterAddonsConfiguration
 	ts.waitForPhase(&cac, &(cac.Status.CommonAddonsConfigurationStatus), types.NamespacedName{Name: name}, expectedPhase)
 }
 
-func (ts *testSuite) waitForAddonsConfigurationPhase(namespace, name string, expectedPhase v1alpha1.AddonsConfigurationPhase) {
-	var ac v1alpha1.AddonsConfiguration
+func (ts *testSuite) waitForAddonsConfigurationPhase(namespace, name string, expectedPhase v1alpha3.AddonsConfigurationPhase) {
+	var ac v1alpha3.VirtualService
 	ts.waitForPhase(&ac, &(ac.Status.CommonAddonsConfigurationStatus), types.NamespacedName{Name: name, Namespace: namespace}, expectedPhase)
 }
 
-func (ts *testSuite) waitForPhase(obj runtime.Object, status *v1alpha1.CommonAddonsConfigurationStatus, nn types.NamespacedName, expectedPhase v1alpha1.AddonsConfigurationPhase) {
+func (ts *testSuite) waitForPhase(obj runtime.Object, status *v1alpha3.CommonAddonsConfigurationStatus, nn types.NamespacedName, expectedPhase v1alpha3.AddonsConfigurationPhase) {
 	timeoutCh := time.After(3 * time.Second)
 	for {
 		err := ts.dynamicClient.Get(context.TODO(), nn, obj)
@@ -254,7 +254,7 @@ func (ts *testSuite) waitForPhase(obj runtime.Object, status *v1alpha1.CommonAdd
 }
 
 func (ts *testSuite) deleteAddonsConfiguration(namespace, name string) {
-	require.NoError(ts.t, ts.dynamicClient.Delete(context.TODO(), &v1alpha1.AddonsConfiguration{
+	require.NoError(ts.t, ts.dynamicClient.Delete(context.TODO(), &v1alpha3.VirtualService{
 		ObjectMeta: v1.ObjectMeta{
 			Name:      name,
 			Namespace: namespace,
@@ -262,25 +262,25 @@ func (ts *testSuite) deleteAddonsConfiguration(namespace, name string) {
 }
 
 func (ts *testSuite) deleteClusterAddonsConfiguration(name string) {
-	require.NoError(ts.t, ts.dynamicClient.Delete(context.TODO(), &v1alpha1.ClusterAddonsConfiguration{
+	require.NoError(ts.t, ts.dynamicClient.Delete(context.TODO(), &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: v1.ObjectMeta{
 			Name: name,
 		}}))
 }
 
 func (ts *testSuite) createAddonsConfiguration(namespace, name string, urls []string) {
-	var repositories []v1alpha1.SpecRepository
+	var repositories []v1alpha3.SpecRepository
 	for _, url := range urls {
-		repositories = append(repositories, v1alpha1.SpecRepository{URL: ts.repoServer.URL + "/" + url})
+		repositories = append(repositories, v1alpha3.SpecRepository{URL: ts.repoServer.URL + "/" + url})
 	}
 
-	ts.dynamicClient.Create(context.TODO(), &v1alpha1.AddonsConfiguration{
+	ts.dynamicClient.Create(context.TODO(), &v1alpha3.VirtualService{
 		ObjectMeta: v1.ObjectMeta{
 			Name:      name,
 			Namespace: namespace,
 		},
-		Spec: v1alpha1.AddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
+		Spec: v1alpha3.AddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
 				Repositories: repositories,
 			},
 		},
@@ -288,17 +288,17 @@ func (ts *testSuite) createAddonsConfiguration(namespace, name string, urls []st
 }
 
 func (ts *testSuite) createClusterAddonsConfiguration(name string, urls []string) {
-	var repositories []v1alpha1.SpecRepository
+	var repositories []v1alpha3.SpecRepository
 	for _, url := range urls {
-		repositories = append(repositories, v1alpha1.SpecRepository{URL: ts.repoServer.URL + "/" + url})
+		repositories = append(repositories, v1alpha3.SpecRepository{URL: ts.repoServer.URL + "/" + url})
 	}
 
-	ts.dynamicClient.Create(context.TODO(), &v1alpha1.ClusterAddonsConfiguration{
+	ts.dynamicClient.Create(context.TODO(), &v1alpha3.ClusterAddonsConfiguration{
 		ObjectMeta: v1.ObjectMeta{
 			Name: name,
 		},
-		Spec: v1alpha1.ClusterAddonsConfigurationSpec{
-			CommonAddonsConfigurationSpec: v1alpha1.CommonAddonsConfigurationSpec{
+		Spec: v1alpha3.ClusterAddonsConfigurationSpec{
+			CommonAddonsConfigurationSpec: v1alpha3.CommonAddonsConfigurationSpec{
 				Repositories: repositories,
 			},
 		},
@@ -306,10 +306,10 @@ func (ts *testSuite) createClusterAddonsConfiguration(name string, urls []string
 }
 
 func (ts *testSuite) removeRepoFromAddonsConfiguration(namespace, name, url string) {
-	var addonsConfiguration v1alpha1.AddonsConfiguration
+	var addonsConfiguration v1alpha3.VirtualService
 	require.NoError(ts.t, ts.dynamicClient.Get(context.TODO(), types.NamespacedName{Name: name, Namespace: namespace}, &addonsConfiguration))
 
-	newRepositories := make([]v1alpha1.SpecRepository, 0)
+	newRepositories := make([]v1alpha3.SpecRepository, 0)
 	for _, repo := range addonsConfiguration.Spec.Repositories {
 		if repo.URL != (ts.repoServer.URL + "/" + url) {
 			newRepositories = append(newRepositories, repo)
@@ -321,10 +321,10 @@ func (ts *testSuite) removeRepoFromAddonsConfiguration(namespace, name, url stri
 }
 
 func (ts *testSuite) removeRepoFromClusterAddonsConfiguration(name, url string) {
-	var clusterAddonsConfiguration v1alpha1.ClusterAddonsConfiguration
+	var clusterAddonsConfiguration v1alpha3.ClusterAddonsConfiguration
 
 	require.NoError(ts.t, ts.dynamicClient.Get(context.TODO(), types.NamespacedName{Name: name}, &clusterAddonsConfiguration))
-	newRepositories := make([]v1alpha1.SpecRepository, 0)
+	newRepositories := make([]v1alpha3.SpecRepository, 0)
 	for _, repo := range clusterAddonsConfiguration.Spec.Repositories {
 		if repo.URL != (ts.repoServer.URL + "/" + url) {
 			newRepositories = append(newRepositories, repo)

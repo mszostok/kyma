@@ -2,12 +2,12 @@ package servicecatalogaddons
 
 import (
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/gqlschema"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 )
 
 type clusterAddonsConfigurationConverter struct{}
 
-func (c *clusterAddonsConfigurationConverter) ToGQL(item *v1alpha1.ClusterAddonsConfiguration) *gqlschema.AddonsConfiguration {
+func (c *clusterAddonsConfigurationConverter) ToGQL(item *v1alpha3.ClusterAddonsConfiguration) *gqlschema.AddonsConfiguration {
 	if item == nil {
 		return nil
 	}
@@ -26,7 +26,7 @@ func (c *clusterAddonsConfigurationConverter) ToGQL(item *v1alpha1.ClusterAddons
 	return &addonsCfg
 }
 
-func (c *clusterAddonsConfigurationConverter) ToGQLs(in []*v1alpha1.ClusterAddonsConfiguration) []gqlschema.AddonsConfiguration {
+func (c *clusterAddonsConfigurationConverter) ToGQLs(in []*v1alpha3.ClusterAddonsConfiguration) []gqlschema.AddonsConfiguration {
 	var result []gqlschema.AddonsConfiguration
 	for _, u := range in {
 		converted := c.ToGQL(u)

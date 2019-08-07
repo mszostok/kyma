@@ -11,7 +11,7 @@ import (
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/gqlschema"
 	"github.com/kyma-project/kyma/components/console-backend-service/internal/pager"
 	"github.com/kyma-project/kyma/components/console-backend-service/pkg/resource"
-	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/addons/v1alpha1"
+	"github.com/kyma-project/kyma/components/helm-broker/pkg/apis/networking/v1alpha3"
 	"github.com/pkg/errors"
 )
 
@@ -23,20 +23,20 @@ type addonsCfgService interface {
 
 //go:generate mockery -name=addonsCfgLister  -output=automock -outpkg=automock -case=underscore
 type addonsCfgLister interface {
-	List(pagingParams pager.PagingParams) ([]*v1alpha1.ClusterAddonsConfiguration, error)
+	List(pagingParams pager.PagingParams) ([]*v1alpha3.ClusterAddonsConfiguration, error)
 }
 
 //go:generate mockery -name=addonsCfgUpdater  -output=automock -outpkg=automock -case=underscore
 type addonsCfgUpdater interface {
-	AddRepos(name string, url []string) (*v1alpha1.ClusterAddonsConfiguration, error)
-	RemoveRepos(name string, urls []string) (*v1alpha1.ClusterAddonsConfiguration, error)
+	AddRepos(name string, url []string) (*v1alpha3.ClusterAddonsConfiguration, error)
+	RemoveRepos(name string, urls []string) (*v1alpha3.ClusterAddonsConfiguration, error)
 }
 
 //go:generate mockery -name=addonsCfgMutations  -output=automock -outpkg=automock -case=underscore
 type addonsCfgMutations interface {
-	Create(name string, urls []string, labels *gqlschema.Labels) (*v1alpha1.ClusterAddonsConfiguration, error)
-	Update(name string, urls []string, labels *gqlschema.Labels) (*v1alpha1.ClusterAddonsConfiguration, error)
-	Delete(name string) (*v1alpha1.ClusterAddonsConfiguration, error)
+	Create(name string, urls []string, labels *gqlschema.Labels) (*v1alpha3.ClusterAddonsConfiguration, error)
+	Update(name string, urls []string, labels *gqlschema.Labels) (*v1alpha3.ClusterAddonsConfiguration, error)
+	Delete(name string) (*v1alpha3.ClusterAddonsConfiguration, error)
 }
 
 type addonsConfigurationResolver struct {
@@ -122,7 +122,7 @@ func (r *addonsConfigurationResolver) RemoveAddonsConfigurationURLs(ctx context.
 func (r *addonsConfigurationResolver) AddonsConfigurationEventSubscription(ctx context.Context) (<-chan gqlschema.AddonsConfigurationEvent, error) {
 	channel := make(chan gqlschema.AddonsConfigurationEvent, 1)
 
-	filter := func(entity *v1alpha1.ClusterAddonsConfiguration) bool {
+	filter := func(entity *v1alpha3.ClusterAddonsConfiguration) bool {
 		return entity != nil
 	}
 
